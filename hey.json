@@ -4,5 +4,6 @@
   "posts": "posts",
   "public": "public",
   "templates": "templates",
-  "pages": []
+  "pages": [],
+  "files": ["404.md", "CNAME"]
 }
