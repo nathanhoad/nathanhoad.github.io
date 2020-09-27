@@ -31,32 +31,6 @@ window.addEventListener("DOMContentLoaded", function () {
   document.querySelector("footer > aside > span").textContent = new Date().getFullYear();
 
   //
-  // Redirect known unknowns
-  //
-  if (document.querySelector(".not-found")) {
-    [
-      {
-        from: "/what-i-learned-from-365-paintings",
-        to: "/2017-12-what-i-learned-from-365-paintings"
-      },
-      {
-        from: "/just-start-now",
-        to: "/2018-03-just-start-now"
-      },
-      {
-        from: "/dogs-playing-dnd",
-        to: "https://society6.com/product/dogs-playing-dd2443629_print?sku=s6-11945499p4a1v1"
-      }
-    ].forEach(function (route) {
-      if (document.location.search.split("=")[1] === route.from) {
-        document.location.replace(route.to);
-      } else if (document.location.pathname === route.from) {
-        document.location.replace(route.to);
-      }
-    });
-  }
-
-  //
   // Image captions
   //
   queryAll("img + br + em, a + br + em").forEach(function (em) {
