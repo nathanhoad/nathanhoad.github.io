@@ -21,6 +21,9 @@
     <link type="image/png" href="/favicon.png" rel="icon" />
 
     <link href="https://fonts.googleapis.com/css?family=Enriqueta|Open+Sans:400,700&display=swap" rel="stylesheet" />
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
+    <script defer src="/enhance.js"></script>
   </head>
 
   <body>
@@ -30,15 +33,9 @@
     </header>
 
     <section class="about">
-      <p>
-        Hi, I'm Nathan Hoad. I'm an independent game developer from Australia.
-      </p>
-      <p>
-        I love writing code, drawing pictures, and telling stories and making games combines all of those things.
-      </p>
-      <p>
-        When I was a kid I had a fondness for adventure games and as an adult that has only grown.
-      </p>
+      <p>Hi, I'm Nathan Hoad. I'm an independent game developer from Australia.</p>
+      <p>I love writing code, drawing pictures, and telling stories and making games combines all of those things.</p>
+      <p>When I was a kid I had a fondness for adventure games and as an adult that has only grown.</p>
       <p>
         I'm making an adventure game with
         <a href="https://lillypiri.com">Lilly Piri</a> about our cat, Coco. There's something special about following
@@ -61,26 +58,5 @@
     </section>
 
     <%- include('footer') %>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var background = document.querySelector(".welcome");
-        var foreground = background.firstElementChild;
-        var title = background.querySelector("h1");
-
-        function parallax() {
-          var bounds = background.getBoundingClientRect();
-          var scroll = bounds.bottom / window.innerHeight;
-
-          if (scroll > 2 || scroll < -1) return;
-
-          foreground.style.setProperty("transform", "translateY(" + scroll * 6 + "%)");
-          title.style.setProperty("transform", "translate(-50%, " + (scroll - 0.8) * 40 + "%)");
-        }
-        parallax();
-
-        window.addEventListener("scroll", parallax);
-      });
-    </script>
   </body>
 </html>

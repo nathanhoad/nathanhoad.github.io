@@ -16,13 +16,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Enriqueta|Open+Sans:400,700&display=swap" rel="stylesheet" />
 
-    <script src="/enhance.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
+    <script defer src="/enhance.js"></script>
   </head>
 
   <body>
     <aside>
       <a href="/"> Nathan Hoad</a>
-      <a href="#subscribe">Subscribe</a>
+      <a href="https://www.youtube.com/channel/UCIdCxj0B9BXJ5tHXLgNWF6w">Get video updates</a>
       <a href="https://twitter.com/nathanhoad">Follow me</a>
     </aside>
 
@@ -35,9 +36,7 @@
         </aside>
       </header>
 
-      <section>
-        <%- post.html %>
-      </section>
+      <section><%- post.html %></section>
     </article>
 
     <%- include('footer') %>

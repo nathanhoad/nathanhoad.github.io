@@ -12,7 +12,7 @@ Now create a `.text` file of the same name as the folder and put it in that fold
 
 The first lines of the post will be its title, followed by a list of its headers:
 
-```
+```md
 # Just start now
 
 - published: 2018-03-06

@@ -108,6 +108,56 @@ body > article {
       max-width: 100%;
       margin: 0;
     }
+
+    &[class*="language-"] {
+      font-size: 15px;
+      background: #292d3e;
+      color: #c8cde8;
+      line-height: 20px;
+      font-weight: bold;
+
+      .class-name,
+      .namespace {
+        color: #ffcb6b;
+
+        .keyword {
+          color: #f78c6c;
+        }
+      }
+
+      .comment {
+        color: #676e95;
+      }
+
+      .variable {
+        color: #c3e883;
+      }
+
+      .keyword {
+        color: #c792ea;
+
+        &.control {
+          color: #89ddff;
+        }
+      }
+
+      .function {
+        color: #82aaff;
+      }
+
+      .string {
+        color: #c3e883;
+      }
+
+      .number {
+        color: #f78c6c;
+      }
+
+      .operator,
+      .punctuation {
+        color: #a6accd;
+      }
+    }
   }
 
   p > code,
