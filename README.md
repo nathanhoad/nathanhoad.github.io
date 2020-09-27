@@ -1,4 +1,4 @@
-<img src="templates/footer.gif" />
+<img src="templates/logo.png" />
 
 # Nathan Hoad
 
@@ -29,3 +29,9 @@ There is a long road between a dream and reality. The path is not well worn and 
 To run the server just do `npm start`. Posts will be compiled statically and then a simple asset server will spin up.
 
 In development mode (`NODE_ENV !== 'production'`) the server will watch for changes to posts and templates and recompile/restart when needed.
+
+## Publishing to GitHub pages
+
+After previewing locally you'll have all the files needed to publish.
+
+Commit any changes and run `npm run publish`.
