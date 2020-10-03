@@ -1,0 +1,126 @@
+# SayWhat: Branching dialogue for Godot
+
+- published: 2020-10-03 10:00
+- tags: gamedev
+
+If you're using Godot and you want some branching dialogue then you should check out my new [SayWhat addon for Godot](https://github.com/nathanhoad/saywhat_godot).
+
+<section data-type="pull-right">
+
+![Dialogue balloon with response options](dialogue.jpg)  
+_An example dialogue balloon using dialogue with response options_
+
+</section>
+
+The plugin works in conjuction with my [SayWhat branching dialogue editor](https://nathanhoad.itch.io/saywhat).
+
+[Grab a copy](https://github.com/nathanhoad/saywhat_godot) and drop the folder into your `res://addons` directory and enable `SayWhat` in your project's plugins.
+
+This gives you a global `DialogueManager` that will... um... manage your dialogue.
+
+To initialise the dialogue manager you need two things: a dialogue resource and a game state object.
+
+The dialogue resource is something you export from the SayWhat editor.
+
+The game state object is a node that our dialogue manager can use to perform dialogue condition checks and run mutations against.
+
+Before using the dialogue manager you need to tell it about those things:
+
+```gdscript
+DialogueManager.resource = preload("res://text/dialogue.tres")
+DialogueManager.game_state = GameState
+```
+
+## Conditions
+
+This game state object is the first thing checked for dialogue conditionals and mutations (before failing over to checking the current scene).
+
+So, if you have a condition like `some_variable == 42` on a line of dialogue then the dialogue manager will check `GameState.some_variable`
+to see if the value is 42 to determine if the line should be shown.
+
+Conditions can also be functions. All functions for checking and mutating are given an array of strings as arguments. For example, a line with the
+condition `has_these_items potion sword` would run `has_these_items` with args `["potion", "sword"]`:
+
+```gdscript
+# game_state.gd
+
+var inventory : Array
+
+
+func has_these_items(args: Array) -> bool:
+  for item in args:
+    if not inventory.has(item):
+      return false
+  return true
+```
+
+## Mutations
+
+Mutations can be as simple as updating some game state.
+
+They can also be used for running little sequences.
+
+```gdscript
+func give_item(args: Array) -> void:
+  $ben.AnimationPlayer.play("give_item")
+  yield($ben.AnimationPlayer, "animation_finished")
+  GameState.inventory.add(args[0])
+```
+
+When running mutations it is recommended to yield for "completed" before continuing with dialogue.
+
+```gdscript
+yield(DialogueManager.mutate(dialogue.get("mutation")), "completed")
+# Mutations only have one next_node_id
+next_node_id = dialogue.get("next_node_id")
+```
+
+This way, it doesn't matter if the mutation is a simple function or a sequence.
+
+## Displaying dialogue
+
+It's up to you to actually render the dialogue in whatever way makes sense for your game.
+
+For example, I have a global `Interface` object that I can call `show_dialogue` on. This then
+instances a dialogue balloon scene that creates the visual elements needed to show the dialogue
+as well as handling user input for response options.
+
+The script for initiating a conversation looks something like this:
+
+```gdscript
+func show_dialogue(key: String) -> void:
+	var dialogue = DialogueManager.get_line(key)
+
+	# End conversation
+	if dialogue.size() == 0:
+		var camera := get_tree().current_scene.find_node("Camera")
+		yield(camera.return_to_target(), "completed")
+		dialogue_is_showing = false
+		emit_signal("dialogue_finished")
+		return
+
+	# Start conversation
+	if not dialogue_is_showing:
+		dialogue_is_showing = true
+		emit_signal("dialogue_started")
+
+	# Run the line
+	var next_node_id = ""
+	match dialogue.get("type"):
+		DialogueManager.TYPE_DIALOGUE:
+			var balloon := DialogueBalloon.instance()
+			balloon.dialogue = dialogue
+			add_child(balloon)
+			# The balloon might have response options so we have to get the
+      # next node id from it once it's ready
+			next_node_id = yield(balloon, "dialogue_next")
+
+		DialogueManager.TYPE_MUTATION:
+			yield(DialogueManager.mutate(dialogue.get("mutation")), "completed")
+			# Mutations only have one next_node_id
+			next_node_id = dialogue.get("next_node_id")
+
+	show_dialogue(next_node_id)
+```
+
+If you end up using SayWhat in your game then I'd love to [hear about it on Twitter](https://twitter.com/nathanhoad).
