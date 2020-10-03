@@ -112,7 +112,7 @@ func show_dialogue(key: String) -> void:
 			balloon.dialogue = dialogue
 			add_child(balloon)
 			# The balloon might have response options so we have to get the
-      # next node id from it once it's ready
+			# next node id from it once it's ready
 			next_node_id = yield(balloon, "dialogue_next")
 
 		DialogueManager.TYPE_MUTATION:
