@@ -7,8 +7,13 @@ body > article {
     padding-bottom: 50px;
 
     @media screen and (max-width: 440px) {
-      max-width: 100%;
-      // padding: 0 10px;
+      max-width: calc(100%);
+    }
+
+    @media screen and (max-width: 1200px) {
+      max-width: calc(100%);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
     }
 
     &:after {

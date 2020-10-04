@@ -191,8 +191,22 @@ window.addEventListener("DOMContentLoaded", function () {
     return image.parentElement.tagName !== "A";
   });
 
+  function openGallery(index) {
+    gallery.className = "main-gallery visible";
+    currentIndex = index;
+    currentImage.src = allImages[currentIndex].src;
+
+    document.body.style.position = "fixed";
+    document.body.style.top = -window.scrollY + "px";
+  }
+
   function closeGallery() {
     gallery.className = "main-gallery";
+
+    var scrollY = document.body.style.top;
+    document.body.style.position = "";
+    document.body.style.top = "";
+    window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
   }
 
   function previousImage() {
@@ -266,9 +280,7 @@ window.addEventListener("DOMContentLoaded", function () {
   allImages.forEach(function (image, index) {
     // Open the gallery on this index
     image.addEventListener("click", function () {
-      gallery.className = "main-gallery visible";
-      currentIndex = index;
-      currentImage.src = allImages[currentIndex].src;
+      openGallery(index);
     });
   });
 });
