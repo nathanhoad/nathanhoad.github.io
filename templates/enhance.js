@@ -203,16 +203,16 @@ window.addEventListener("DOMContentLoaded", function () {
     var scrollbarWidth = scroller.offsetWidth - scroller.clientWidth;
     document.body.removeChild(scroller);
 
-    console.log("width?", scrollbarWidth);
-
+    // Stop body scrolling
+    document.body.style.top = -window.scrollY + "px";
     document.body.style.position = "fixed";
     document.body.style.width = "calc(100% - " + scrollbarWidth + "px)";
-    document.body.style.top = -window.scrollY + "px";
   }
 
   function closeGallery() {
     gallery.className = "main-gallery";
 
+    // Restore body scrolling
     document.body.style.width = "100%";
     var scrollY = document.body.style.top;
     document.body.style.position = "";
