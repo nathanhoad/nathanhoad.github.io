@@ -196,13 +196,24 @@ window.addEventListener("DOMContentLoaded", function () {
     currentIndex = index;
     currentImage.src = allImages[currentIndex].src;
 
+    // Get the body scrollbar width
+    var scroller = document.createElement("div");
+    scroller.className = "measure-scrollbar-width";
+    document.body.appendChild(scroller);
+    var scrollbarWidth = scroller.offsetWidth - scroller.clientWidth;
+    document.body.removeChild(scroller);
+
+    console.log("width?", scrollbarWidth);
+
     document.body.style.position = "fixed";
+    document.body.style.width = "calc(100% - " + scrollbarWidth + "px)";
     document.body.style.top = -window.scrollY + "px";
   }
 
   function closeGallery() {
     gallery.className = "main-gallery";
 
+    document.body.style.width = "100%";
     var scrollY = document.body.style.top;
     document.body.style.position = "";
     document.body.style.top = "";

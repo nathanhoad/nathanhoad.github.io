@@ -1,3 +1,15 @@
+body {
+  width: 100%;
+}
+
+.measure-scrollbar-width {
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+  position: absolute;
+  top: -200%;
+}
+
 .section-wide {
   margin: 40px -130px;
 
