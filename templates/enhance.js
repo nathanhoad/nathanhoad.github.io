@@ -119,14 +119,11 @@ window.addEventListener("DOMContentLoaded", function () {
         media = media.querySelector("img");
         break;
 
-      case "IMG":
-        // Do nothing. We already have the image
-        break;
-
       case "VIDEO":
         // Do nothing. We already have the video
         break;
 
+      case "IMG":
       default:
         media = media.querySelector("img");
     }
