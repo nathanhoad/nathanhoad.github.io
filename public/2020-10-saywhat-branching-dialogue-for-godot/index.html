@@ -13,7 +13,7 @@ src="/enhance.js"></script> <style type="text/css">
 </section>
 
 <p>The plugin works in conjuction with my <a href="https://nathanhoad.itch.io/saywhat">SayWhat branching dialogue editor</a>.</p>
-<p><a href="https://github.com/nathanhoad/saywhat_godot">Grab a copy</a> and drop the folder into your <code>res://addons</code> directory and enable <code>SayWhat</code> in your project&#39;s plugins.</p>
+<p><a href="https://github.com/nathanhoad/saywhat_godot">Grab a copy of the addon</a> and drop the files into <code>res://addons/saywhat_godot</code> and enable <code>SayWhat</code> in your project&#39;s plugins.</p>
 <p>This gives you a global <code>DialogueManager</code> that will... um... manage your dialogue.</p>
 <p>To initialise the dialogue manager you need two things: a dialogue resource and a game state object.</p>
 <p>The dialogue resource is something you export from the SayWhat editor.</p>
@@ -45,9 +45,9 @@ condition <code>has_these_items potion sword</code> would run <code>has_these_it
   <span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token variable">$ben</span><span class="token punctuation">.</span>AnimationPlayer<span class="token punctuation">,</span> <span class="token string">"animation_finished"</span><span class="token punctuation">)</span>
   GameState<span class="token punctuation">.</span>inventory<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
 <p>When running mutations it is recommended to yield for &quot;completed&quot; before continuing with dialogue.</p>
-<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span>dialogue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"mutation"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
+<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span>dialogue<span class="token punctuation">.</span>mutation<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
 <span class="token comment"># Mutations only have one next_node_id</span>
-next_node_id <span class="token operator">=</span> dialogue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"next_node_id"</span><span class="token punctuation">)</span></code></pre>
+next_node_id <span class="token operator">=</span> dialogue<span class="token punctuation">.</span>next_node_id</code></pre>
 <p>This way, it doesn&#39;t matter if the mutation is a simple function or a sequence.</p>
 <h2 id="displaying-dialogue">Displaying dialogue</h2>
 <p>It&#39;s up to you to actually render the dialogue in whatever way makes sense for your game.</p>
@@ -59,7 +59,7 @@ as well as handling user input for response options.</p>
     <span class="token keyword">var</span> dialogue <span class="token operator">=</span> DialogueManager<span class="token punctuation">.</span><span class="token function">get_line</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
 
     <span class="token comment"># End conversation</span>
-    <span class="token keyword control">if</span> dialogue<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+    <span class="token keyword control">if</span> dialogue <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">:</span>
         <span class="token keyword">var</span> camera <span class="token operator">:=</span> <span class="token function">get_tree</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>current_scene<span class="token punctuation">.</span><span class="token function">find_node</span><span class="token punctuation">(</span><span class="token string">"Camera"</span><span class="token punctuation">)</span>
         <span class="token keyword">yield</span><span class="token punctuation">(</span>camera<span class="token punctuation">.</span><span class="token function">return_to_target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
         dialogue_is_showing <span class="token operator">=</span> <span class="token boolean">false</span>
@@ -73,7 +73,7 @@ as well as handling user input for response options.</p>
 
     <span class="token comment"># Run the line</span>
     <span class="token keyword">var</span> next_node_id <span class="token operator">=</span> <span class="token string">""</span>
-    <span class="token keyword">match</span> dialogue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"type"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">match</span> dialogue<span class="token punctuation">.</span>type<span class="token punctuation">:</span>
         DialogueManager<span class="token punctuation">.</span><span class="token constant">TYPE_DIALOGUE</span><span class="token punctuation">:</span>
             <span class="token keyword">var</span> balloon <span class="token operator">:=</span> DialogueBalloon<span class="token punctuation">.</span><span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
             balloon<span class="token punctuation">.</span>dialogue <span class="token operator">=</span> dialogue
@@ -83,9 +83,9 @@ as well as handling user input for response options.</p>
             next_node_id <span class="token operator">=</span> <span class="token keyword">yield</span><span class="token punctuation">(</span>balloon<span class="token punctuation">,</span> <span class="token string">"dialogue_next"</span><span class="token punctuation">)</span>
 
         DialogueManager<span class="token punctuation">.</span><span class="token constant">TYPE_MUTATION</span><span class="token punctuation">:</span>
-            <span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span>dialogue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"mutation"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
+            <span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span>dialogue<span class="token punctuation">.</span>mutation<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
             <span class="token comment"># Mutations only have one next_node_id</span>
-            next_node_id <span class="token operator">=</span> dialogue<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"next_node_id"</span><span class="token punctuation">)</span>
+            next_node_id <span class="token operator">=</span> dialogue<span class="token punctuation">.</span>next_node_id
 
     <span class="token function">show_dialogue</span><span class="token punctuation">(</span>next_node_id<span class="token punctuation">)</span></code></pre>
 <p>If you end up using SayWhat in your game then I&#39;d love to <a href="https://twitter.com/nathanhoad">hear about it on Twitter</a>.</p>

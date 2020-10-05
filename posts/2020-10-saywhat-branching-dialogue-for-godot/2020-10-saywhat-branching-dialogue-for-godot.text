@@ -14,7 +14,7 @@ _An example dialogue balloon using dialogue with response options_
 
 The plugin works in conjuction with my [SayWhat branching dialogue editor](https://nathanhoad.itch.io/saywhat).
 
-[Grab a copy](https://github.com/nathanhoad/saywhat_godot) and drop the folder into your `res://addons` directory and enable `SayWhat` in your project's plugins.
+[Grab a copy of the addon](https://github.com/nathanhoad/saywhat_godot) and drop the files into `res://addons/saywhat_godot` and enable `SayWhat` in your project's plugins.
 
 This gives you a global `DialogueManager` that will... um... manage your dialogue.
 
@@ -70,9 +70,9 @@ func give_item(args: Array) -> void:
 When running mutations it is recommended to yield for "completed" before continuing with dialogue.
 
 ```gdscript
-yield(DialogueManager.mutate(dialogue.get("mutation")), "completed")
+yield(DialogueManager.mutate(dialogue.mutation), "completed")
 # Mutations only have one next_node_id
-next_node_id = dialogue.get("next_node_id")
+next_node_id = dialogue.next_node_id
 ```
 
 This way, it doesn't matter if the mutation is a simple function or a sequence.
@@ -92,7 +92,7 @@ func show_dialogue(key: String) -> void:
 	var dialogue = DialogueManager.get_line(key)
 
 	# End conversation
-	if dialogue.size() == 0:
+	if dialogue == null:
 		var camera := get_tree().current_scene.find_node("Camera")
 		yield(camera.return_to_target(), "completed")
 		dialogue_is_showing = false
@@ -106,7 +106,7 @@ func show_dialogue(key: String) -> void:
 
 	# Run the line
 	var next_node_id = ""
-	match dialogue.get("type"):
+	match dialogue.type:
 		DialogueManager.TYPE_DIALOGUE:
 			var balloon := DialogueBalloon.instance()
 			balloon.dialogue = dialogue
@@ -116,9 +116,9 @@ func show_dialogue(key: String) -> void:
 			next_node_id = yield(balloon, "dialogue_next")
 
 		DialogueManager.TYPE_MUTATION:
-			yield(DialogueManager.mutate(dialogue.get("mutation")), "completed")
+			yield(DialogueManager.mutate(dialogue.mutation), "completed")
 			# Mutations only have one next_node_id
-			next_node_id = dialogue.get("next_node_id")
+			next_node_id = dialogue.next_node_id
 
 	show_dialogue(next_node_id)
 ```
