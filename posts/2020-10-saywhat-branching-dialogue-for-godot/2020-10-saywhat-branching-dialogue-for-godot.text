@@ -105,7 +105,7 @@ func show_dialogue(key: String) -> void:
 		emit_signal("dialogue_started")
 
 	# Run the line
-	var next_node_id = ""
+	var next_node_id = dialogue.next_node_id
 	match dialogue.type:
 		DialogueManager.TYPE_DIALOGUE:
 			var balloon := DialogueBalloon.instance()
@@ -116,9 +116,7 @@ func show_dialogue(key: String) -> void:
 			next_node_id = yield(balloon, "dialogue_next")
 
 		DialogueManager.TYPE_MUTATION:
-			yield(DialogueManager.mutate(dialogue.mutation), "completed")
-			# Mutations only have one next_node_id
-			next_node_id = dialogue.next_node_id
+			yield(dialogue.mutate(), "completed")
 
 	show_dialogue(next_node_id)
 ```
