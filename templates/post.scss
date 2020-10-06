@@ -108,6 +108,7 @@ body > article {
     border-radius: 3px;
     font-size: 14px;
     overflow-x: scroll;
+    font-family: monospace;
 
     @media screen and (max-width: 440px) {
       max-width: 100%;
@@ -118,7 +119,7 @@ body > article {
       font-size: 15px;
       background: #292d3e;
       color: #c8cde8;
-      line-height: 20px;
+      line-height: 22px;
       font-weight: bold;
 
       .class-name,
