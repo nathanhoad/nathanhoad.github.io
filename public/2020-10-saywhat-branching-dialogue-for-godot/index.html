@@ -55,20 +55,11 @@ next_node_id <span class="token operator">=</span> dialogue<span class="token pu
 instances a dialogue balloon scene that creates the visual elements needed to show the dialogue
 as well as handling user input for response options.</p>
 <p>The script for initiating a conversation looks something like this:</p>
-<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">func</span> <span class="token function">show_dialogue</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
+<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">func</span> <span class="token function">show_dialogue</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> is_first_line<span class="token punctuation">:</span> <span class="token class-name">bool</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
     <span class="token keyword">var</span> dialogue <span class="token operator">=</span> DialogueManager<span class="token punctuation">.</span><span class="token function">get_line</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
 
-    <span class="token comment"># End conversation</span>
-    <span class="token keyword control">if</span> dialogue <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">:</span>
-        <span class="token keyword">var</span> camera <span class="token operator">:=</span> <span class="token function">get_tree</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>current_scene<span class="token punctuation">.</span><span class="token function">find_node</span><span class="token punctuation">(</span><span class="token string">"Camera"</span><span class="token punctuation">)</span>
-        <span class="token keyword">yield</span><span class="token punctuation">(</span>camera<span class="token punctuation">.</span><span class="token function">return_to_target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
-        dialogue_is_showing <span class="token operator">=</span> <span class="token boolean">false</span>
-        <span class="token function">emit_signal</span><span class="token punctuation">(</span><span class="token string">"dialogue_finished"</span><span class="token punctuation">)</span>
-        <span class="token keyword control">return</span>
-
     <span class="token comment"># Start conversation</span>
-    <span class="token keyword control">if</span> <span class="token keyword">not</span> dialogue_is_showing<span class="token punctuation">:</span>
-        dialogue_is_showing <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token keyword control">if</span> is_first_line<span class="token punctuation">:</span>
         <span class="token function">emit_signal</span><span class="token punctuation">(</span><span class="token string">"dialogue_started"</span><span class="token punctuation">)</span>
 
     <span class="token comment"># Run the line</span>
@@ -80,12 +71,20 @@ as well as handling user input for response options.</p>
             <span class="token function">add_child</span><span class="token punctuation">(</span>balloon<span class="token punctuation">)</span>
             <span class="token comment"># The balloon might have response options so we have to get the</span>
             <span class="token comment"># next node id from it once it's ready</span>
-            next_node_id <span class="token operator">=</span> <span class="token keyword">yield</span><span class="token punctuation">(</span>balloon<span class="token punctuation">,</span> <span class="token string">"dialogue_next"</span><span class="token punctuation">)</span>
+            next_node_id <span class="token operator">=</span> <span class="token keyword">yield</span><span class="token punctuation">(</span>balloon<span class="token punctuation">,</span> <span class="token string">"dialogue_actioned"</span><span class="token punctuation">)</span>
 
         DialogueManager<span class="token punctuation">.</span><span class="token constant">TYPE_MUTATION</span><span class="token punctuation">:</span>
             <span class="token keyword">yield</span><span class="token punctuation">(</span>dialogue<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
 
-    <span class="token function">show_dialogue</span><span class="token punctuation">(</span>next_node_id<span class="token punctuation">)</span></code></pre>
+    <span class="token comment"># End conversation</span>
+    <span class="token keyword control">if</span> next_node_id <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
+        <span class="token keyword">var</span> camera <span class="token operator">:=</span> <span class="token function">get_tree</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>current_scene<span class="token punctuation">.</span><span class="token function">find_node</span><span class="token punctuation">(</span><span class="token string">"Camera"</span><span class="token punctuation">)</span>
+        <span class="token keyword">yield</span><span class="token punctuation">(</span>camera<span class="token punctuation">.</span><span class="token function">return_to_target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
+        <span class="token function">emit_signal</span><span class="token punctuation">(</span><span class="token string">"dialogue_finished"</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># Next line</span>
+    <span class="token keyword control">else</span><span class="token punctuation">:</span>
+        <span class="token function">show_dialogue</span><span class="token punctuation">(</span>next_node_id<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span></code></pre>
 <p>If you end up using SayWhat in your game then I&#39;d love to <a href="https://twitter.com/nathanhoad">hear about it on Twitter</a>.</p>
 </section> </article> <footer>
 <div>
