@@ -21,12 +21,16 @@ src="/enhance.js"></script> <style type="text/css">
 <p>Before using the dialogue manager you need to tell it about those things:</p>
 <pre class="language-gdscript"><code class="language-gdscript">DialogueManager<span class="token punctuation">.</span>resource <span class="token operator">=</span> <span class="token keyword">preload</span><span class="token punctuation">(</span><span class="token string">"res://text/dialogue.tres"</span><span class="token punctuation">)</span>
 DialogueManager<span class="token punctuation">.</span>game_state <span class="token operator">=</span> GameState</code></pre>
+<h2 id="getting-some-dialogue">Getting some dialogue</h2>
+<p>The easiest way of getting a line of dialogue to display is by yielding to <code>get_next_dialogue_line</code> using an ID that you can copy from the SayWhat dialogue editor:</p>
+<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">var</span> dialogue <span class="token operator">=</span> <span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">get_next_dialogue_line</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span></code></pre>
+<p>The returned object will be the first dialogue line that passes its condition checks, running any mutations that were found along the way.</p>
 <h2 id="conditions">Conditions</h2>
 <p>This game state object is the first thing checked for dialogue conditionals and mutations (before failing over to checking the current scene).</p>
-<p>So, if you have a condition like <code>some_variable == 42</code> on a line of dialogue then the dialogue manager will check <code>GameState.some_variable</code>
+<p>So, if you have a condition like <code>[if some_variable == 42]</code> on a line of dialogue then the dialogue manager will check <code>GameState.some_variable</code>
 to see if the value is 42 to determine if the line should be shown.</p>
 <p>Conditions can also be functions. All functions for checking and mutating are given an array of strings as arguments. For example, a line with the
-condition <code>has_these_items potion sword</code> would run <code>has_these_items</code> with args <code>[&quot;potion&quot;, &quot;sword&quot;]</code>:</p>
+condition <code>[if has_these_items potion sword]</code> would run <code>has_these_items</code> with args <code>[&quot;potion&quot;, &quot;sword&quot;]</code>:</p>
 <pre class="language-gdscript"><code class="language-gdscript"><span class="token comment"># game_state.gd</span>
 
 <span class="token keyword">var</span> inventory <span class="token punctuation">:</span> <span class="token class-name">Array</span>
@@ -39,52 +43,26 @@ condition <code>has_these_items potion sword</code> would run <code>has_these_it
   <span class="token keyword control">return</span> <span class="token boolean">true</span></code></pre>
 <h2 id="mutations">Mutations</h2>
 <p>Mutations can be as simple as updating some game state.</p>
-<p>They can also be used for running little sequences.</p>
+<p>They can also be used for running little sequences. For example, if you had <code>[do give item]</code> as a mutation in your dialogue then the dialogue manager would look for a function called <code>give_item</code> on the <code>game_state</code> (and if nothing is found it would check the current scene).</p>
 <pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">func</span> <span class="token function">give_item</span><span class="token punctuation">(</span>args<span class="token punctuation">:</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
   <span class="token variable">$ben</span><span class="token punctuation">.</span>AnimationPlayer<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token string">"give_item"</span><span class="token punctuation">)</span>
   <span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token variable">$ben</span><span class="token punctuation">.</span>AnimationPlayer<span class="token punctuation">,</span> <span class="token string">"animation_finished"</span><span class="token punctuation">)</span>
   GameState<span class="token punctuation">.</span>inventory<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-<p>When running mutations it is recommended to yield for &quot;completed&quot; before continuing with dialogue.</p>
-<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span>dialogue<span class="token punctuation">.</span>mutation<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
-<span class="token comment"># Mutations only have one next_node_id</span>
-next_node_id <span class="token operator">=</span> dialogue<span class="token punctuation">.</span>next_node_id</code></pre>
-<p>This way, it doesn&#39;t matter if the mutation is a simple function or a sequence.</p>
 <h2 id="displaying-dialogue">Displaying dialogue</h2>
 <p>It&#39;s up to you to actually render the dialogue in whatever way makes sense for your game.</p>
 <p>For example, I have a global <code>Interface</code> object that I can call <code>show_dialogue</code> on. This then
 instances a dialogue balloon scene that creates the visual elements needed to show the dialogue
 as well as handling user input for response options.</p>
 <p>The script for initiating a conversation looks something like this:</p>
-<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">func</span> <span class="token function">show_dialogue</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">,</span> is_first_line<span class="token punctuation">:</span> <span class="token class-name">bool</span> <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
-    <span class="token keyword">var</span> dialogue <span class="token operator">=</span> DialogueManager<span class="token punctuation">.</span><span class="token function">get_line</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
-
-    <span class="token comment"># Start conversation</span>
-    <span class="token keyword control">if</span> is_first_line<span class="token punctuation">:</span>
-        <span class="token function">emit_signal</span><span class="token punctuation">(</span><span class="token string">"dialogue_started"</span><span class="token punctuation">)</span>
-
-    <span class="token comment"># Run the line</span>
-    <span class="token keyword">var</span> next_node_id <span class="token operator">=</span> dialogue<span class="token punctuation">.</span>next_node_id
-    <span class="token keyword">match</span> dialogue<span class="token punctuation">.</span>type<span class="token punctuation">:</span>
-        DialogueManager<span class="token punctuation">.</span><span class="token constant">TYPE_DIALOGUE</span><span class="token punctuation">:</span>
-            <span class="token keyword">var</span> balloon <span class="token operator">:=</span> DialogueBalloon<span class="token punctuation">.</span><span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-            balloon<span class="token punctuation">.</span>dialogue <span class="token operator">=</span> dialogue
-            <span class="token function">add_child</span><span class="token punctuation">(</span>balloon<span class="token punctuation">)</span>
-            <span class="token comment"># The balloon might have response options so we have to get the</span>
-            <span class="token comment"># next node id from it once it's ready</span>
-            next_node_id <span class="token operator">=</span> <span class="token keyword">yield</span><span class="token punctuation">(</span>balloon<span class="token punctuation">,</span> <span class="token string">"dialogue_actioned"</span><span class="token punctuation">)</span>
-
-        DialogueManager<span class="token punctuation">.</span><span class="token constant">TYPE_MUTATION</span><span class="token punctuation">:</span>
-            <span class="token keyword">yield</span><span class="token punctuation">(</span>dialogue<span class="token punctuation">.</span><span class="token function">mutate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
-
-    <span class="token comment"># End conversation</span>
-    <span class="token keyword control">if</span> next_node_id <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">:</span>
-        <span class="token keyword">var</span> camera <span class="token operator">:=</span> <span class="token function">get_tree</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>current_scene<span class="token punctuation">.</span><span class="token function">find_node</span><span class="token punctuation">(</span><span class="token string">"Camera"</span><span class="token punctuation">)</span>
-        <span class="token keyword">yield</span><span class="token punctuation">(</span>camera<span class="token punctuation">.</span><span class="token function">return_to_target</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
-        <span class="token function">emit_signal</span><span class="token punctuation">(</span><span class="token string">"dialogue_finished"</span><span class="token punctuation">)</span>
-
-    <span class="token comment"># Next line</span>
-    <span class="token keyword control">else</span><span class="token punctuation">:</span>
-        <span class="token function">show_dialogue</span><span class="token punctuation">(</span>next_node_id<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span></code></pre>
+<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">func</span> <span class="token function">show_dialogue</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
+    <span class="token keyword">var</span> dialogue <span class="token operator">=</span> <span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">get_next_dialogue_line</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
+    <span class="token keyword control">if</span> dialogue <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">:</span>
+        <span class="token keyword">var</span> balloon <span class="token operator">:=</span> DialogueBalloon<span class="token punctuation">.</span><span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        balloon<span class="token punctuation">.</span>dialogue <span class="token operator">=</span> dialogue
+        <span class="token function">add_child</span><span class="token punctuation">(</span>balloon<span class="token punctuation">)</span>
+        <span class="token comment"># Dialogue might have options so we have to wait and see</span>
+        <span class="token comment"># what the player choose</span>
+        <span class="token function">show_dialogue</span><span class="token punctuation">(</span><span class="token keyword">yield</span><span class="token punctuation">(</span>balloon<span class="token punctuation">,</span> <span class="token string">"dialogue_actioned"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
 <p>If you end up using SayWhat in your game then I&#39;d love to <a href="https://twitter.com/nathanhoad">hear about it on Twitter</a>.</p>
 </section> </article> <footer>
 <div>

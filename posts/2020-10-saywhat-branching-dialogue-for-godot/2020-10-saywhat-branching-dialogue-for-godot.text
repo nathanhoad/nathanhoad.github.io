@@ -31,15 +31,25 @@ DialogueManager.resource = preload("res://text/dialogue.tres")
 DialogueManager.game_state = GameState
 ```
 
+## Getting some dialogue
+
+The easiest way of getting a line of dialogue to display is by yielding to `get_next_dialogue_line` using an ID that you can copy from the SayWhat dialogue editor:
+
+```gdscript
+var dialogue = yield(DialogueManager.get_next_dialogue_line(id), "completed")
+```
+
+The returned object will be the first dialogue line that passes its condition checks, running any mutations that were found along the way.
+
 ## Conditions
 
 This game state object is the first thing checked for dialogue conditionals and mutations (before failing over to checking the current scene).
 
-So, if you have a condition like `some_variable == 42` on a line of dialogue then the dialogue manager will check `GameState.some_variable`
+So, if you have a condition like `[if some_variable == 42]` on a line of dialogue then the dialogue manager will check `GameState.some_variable`
 to see if the value is 42 to determine if the line should be shown.
 
 Conditions can also be functions. All functions for checking and mutating are given an array of strings as arguments. For example, a line with the
-condition `has_these_items potion sword` would run `has_these_items` with args `["potion", "sword"]`:
+condition `[if has_these_items potion sword]` would run `has_these_items` with args `["potion", "sword"]`:
 
 ```gdscript
 # game_state.gd
@@ -58,7 +68,7 @@ func has_these_items(args: Array) -> bool:
 
 Mutations can be as simple as updating some game state.
 
-They can also be used for running little sequences.
+They can also be used for running little sequences. For example, if you had `[do give item]` as a mutation in your dialogue then the dialogue manager would look for a function called `give_item` on the `game_state` (and if nothing is found it would check the current scene).
 
 ```gdscript
 func give_item(args: Array) -> void:
@@ -66,16 +76,6 @@ func give_item(args: Array) -> void:
   yield($ben.AnimationPlayer, "animation_finished")
   GameState.inventory.add(args[0])
 ```
-
-When running mutations it is recommended to yield for "completed" before continuing with dialogue.
-
-```gdscript
-yield(DialogueManager.mutate(dialogue.mutation), "completed")
-# Mutations only have one next_node_id
-next_node_id = dialogue.next_node_id
-```
-
-This way, it doesn't matter if the mutation is a simple function or a sequence.
 
 ## Displaying dialogue
 
@@ -88,36 +88,15 @@ as well as handling user input for response options.
 The script for initiating a conversation looks something like this:
 
 ```gdscript
-func show_dialogue(key: String, is_first_line: bool = true) -> void:
-	var dialogue = DialogueManager.get_line(key)
-	
-	# Start conversation
-	if is_first_line:
-		emit_signal("dialogue_started")
-	
-	# Run the line
-	var next_node_id = dialogue.next_node_id
-	match dialogue.type:
-		DialogueManager.TYPE_DIALOGUE:
-			var balloon := DialogueBalloon.instance()
-			balloon.dialogue = dialogue
-			add_child(balloon)
-			# The balloon might have response options so we have to get the
-			# next node id from it once it's ready
-			next_node_id = yield(balloon, "dialogue_actioned")
-		
-		DialogueManager.TYPE_MUTATION:
-			yield(dialogue.mutate(), "completed")
-	
-	# End conversation
-	if next_node_id == "":
-		var camera := get_tree().current_scene.find_node("Camera")
-		yield(camera.return_to_target(), "completed")
-		emit_signal("dialogue_finished")
-		
-	# Next line
-	else:
-		show_dialogue(next_node_id, false)
+func show_dialogue(key: String) -> void:
+	var dialogue = yield(DialogueManager.get_next_dialogue_line(key), "completed")
+	if dialogue != null:
+		var balloon := DialogueBalloon.instance()
+		balloon.dialogue = dialogue
+		add_child(balloon)
+		# Dialogue might have options so we have to wait and see
+		# what the player choose
+		show_dialogue(yield(balloon, "dialogue_actioned"))
 ```
 
 If you end up using SayWhat in your game then I'd love to [hear about it on Twitter](https://twitter.com/nathanhoad).
