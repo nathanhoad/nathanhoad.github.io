@@ -20,10 +20,14 @@ hr {
 // Back link
 body > aside:first-child {
   padding: 20px 40px;
-  margin-bottom: 150px;
+  margin-bottom: 120px;
   position: relative;
-  height: 64px;
   display: flex;
+
+  span {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
 
   & > a {
     display: inline-block;
@@ -49,8 +53,6 @@ body > aside:first-child {
       padding-top: 32px;
       height: 64px;
       padding-left: 80px;
-      flex-grow: 1;
-      flex-shrink: 0;
       color: #292929;
       font-weight: bold;
       font-size: 18px;
@@ -58,6 +60,14 @@ body > aside:first-child {
 
     &:last-of-type {
       margin-right: 0;
+    }
+
+    &[href*="youtube"]:hover {
+      border-bottom: 2px solid #f00;
+    }
+
+    &[href*="twitter"]:hover {
+      border-bottom: 2px solid #1da1f2;
     }
   }
 

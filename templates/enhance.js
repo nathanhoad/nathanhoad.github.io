@@ -4,6 +4,15 @@ function queryAll(selector, parent) {
 
 window.addEventListener("DOMContentLoaded", function () {
   //
+  // Get the body scrollbar width
+  //
+  var scroller = document.createElement("div");
+  scroller.className = "measure-scrollbar-width";
+  document.body.appendChild(scroller);
+  var SCROLLBAR_WIDTH = scroller.offsetWidth - scroller.clientWidth;
+  document.body.removeChild(scroller);
+
+  //
   // Give the home page header background some depth
   //
   var background = document.querySelector(".welcome");
@@ -109,6 +118,10 @@ window.addEventListener("DOMContentLoaded", function () {
   // Full screen scrolly sections
   //
   queryAll('section[data-type="block"]').forEach(function (section) {
+    // Adjust the width to account for scrollbars
+    section.style.setProperty("width", "calc(100vw - " + SCROLLBAR_WIDTH + "px)");
+    section.style.setProperty("margin-left", "calc(-50vw + 50% + " + (SCROLLBAR_WIDTH / 2) + "px)");
+
     // The first element is the background
     var media = section.firstElementChild;
     var caption;
@@ -196,17 +209,10 @@ window.addEventListener("DOMContentLoaded", function () {
     currentIndex = index;
     currentImage.src = allImages[currentIndex].src;
 
-    // Get the body scrollbar width
-    var scroller = document.createElement("div");
-    scroller.className = "measure-scrollbar-width";
-    document.body.appendChild(scroller);
-    var scrollbarWidth = scroller.offsetWidth - scroller.clientWidth;
-    document.body.removeChild(scroller);
-
     // Stop body scrolling
     document.body.style.top = -window.scrollY + "px";
     document.body.style.position = "fixed";
-    document.body.style.width = "calc(100% - " + scrollbarWidth + "px)";
+    document.body.style.width = "calc(100% - " + SCROLLBAR_WIDTH + "px)";
   }
 
   function closeGallery() {
