@@ -111,8 +111,9 @@ body > article {
     font-family: monospace;
 
     @media screen and (max-width: 440px) {
-      max-width: 100%;
-      margin: 0;
+      max-width: calc(100% + 20px);
+      margin: 0 -10px;
+      border-radius: 0;
     }
 
     &[class*="language-"] {
