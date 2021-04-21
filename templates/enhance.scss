@@ -2,6 +2,21 @@ body {
   width: 100%;
 }
 
+figure {
+  position: relative;
+
+  img + .play {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 45px;
+    background: url("/youtube-play.svg") no-repeat top left;
+    pointer-events: none;
+  }
+}
+
 .measure-scrollbar-width {
   width: 100px;
   height: 100px;
@@ -13,7 +28,8 @@ body {
 .section-wide {
   margin: 40px -130px;
 
-  & > * > img {
+  & > * > img,
+  & video {
     width: 100%;
   }
 
@@ -66,6 +82,10 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 4px;
+
+    img {
+      width: 100vw;
+    }
 
     &.one > * {
       max-width: 100%;

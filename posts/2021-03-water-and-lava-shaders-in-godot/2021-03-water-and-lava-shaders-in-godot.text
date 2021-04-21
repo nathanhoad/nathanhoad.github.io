@@ -1,0 +1,216 @@
+# 2D water and lava shaders in Godot
+
+- published: 2021-03-05 18:00
+- tags: gamedev
+
+<section data-type="wide">
+
+<figure>
+	<video src="water.mp4" autoplay playsinline muted loop></video>
+	<figcaption>
+		My water shader is pretty simple.
+	</figcaption>
+</figure>
+
+</section>
+
+[Water shaders](https://youtu.be/nG8OU1GwMtk) are definitely something you can spend a lot of time on. Mine, however, is not one of those.
+
+I like to keep things as simple as possible so that future me doesn't have to think too hard to remember how anything works.
+
+<section data-type="pull-left">
+
+![Water tiles](water-tiles.jpg)  
+_The water tiles are designed to sit on top of cliff tiles._
+
+</section>
+
+The water in my game is drawn initially as just another tile in the tileset.
+
+Each of the different tiles is designed to pair up with a cliff tile so that the water sits on top and distorts the part of the cliff that sits below it.
+
+The reddish/greenish squiggly colours are used to draw the foam and the solid blue is used to draw the water itself.
+
+This makes a bit more sense once you see the shader code.
+
+```glsl
+shader_type canvas_item;
+
+uniform vec4 color : hint_color = vec4(0.16, 0.3, 0.58, 1.0);
+uniform float translucency = 0.8;
+uniform vec4 foam_color : hint_color = vec4(1, 1, 1, 0.8);
+
+varying vec2 vert;
+
+void vertex() {
+	vert = VERTEX;
+}
+
+void fragment() {
+	vec4 input = texture(TEXTURE, UV);
+
+	if (input.a == 0.0) {
+		COLOR = input;
+
+	} else {
+		// Waves/rippling
+		vec2 tiled_uvs = UV * 100.0;
+		vec2 displacement = vec2(
+			cos(TIME * 5.0 + tiled_uvs.x + tiled_uvs.y) * 0.002,
+			cos(TIME * 0.1 + tiled_uvs.x + tiled_uvs.y) * 0.002
+		);
+
+		// Below the surface
+		vec4 refraction = texture(SCREEN_TEXTURE, SCREEN_UV + displacement);
+		// Weird stuff happens at the 0,0 seam
+		if (vert.x < 1.0 || vert.y < 1.0) {
+			refraction = texture(SCREEN_TEXTURE, SCREEN_UV);
+		}
+
+		// The actual water color is a mix of the surface and below
+		vec4 water = mix(refraction, color, translucency);
+
+		// To simulate waves we alternate between the red pixels
+		// and the green pixels as the white foam
+		bool use_red = int(TIME) % 2 == 0;
+
+		// NOTE: green is "on top", meaning it is closer to the rocks/shore than
+		// red so we need a special case to make sure green is transparent
+		if (use_red) {
+			if (input.r > 0.5) {
+				COLOR = foam_color;
+			} else if (input.b > 0.5) {
+				COLOR = water;
+			} else {
+				COLOR = vec4(0);
+			}
+		} else {
+			if (input.g > 0.5) {
+				COLOR = foam_color;
+			} else {
+				COLOR = water;
+			}
+		}
+	}
+}
+```
+
+So this shader is broken up into three steps.
+
+Step 1 is to work out the refraction of what's below the surface.
+
+To get the displacement or the waviness we just use cos, time, and the input UV to get it animating.
+
+Step 2 is to mix that with the actual water colour which is given in a uniform.
+
+And step 3 is to work out this foam which is based on the murky red and green that we saw earlier.
+
+We alternate between red and green each second. If we are currently looking for red, and the pixel below is red then it's foam.
+
+If it's blue, then it's water. Anything else is just transparent.
+
+And then if we're looking for green and the pixel is green: foam, otherwise: water.
+
+And that's it for the water shader.
+
+<section data-type="wide">
+
+<figure>
+	<video src="lava.mp4" autoplay playsinline muted loop></video>
+	<figcaption>
+		A lava shader isn't that different to a water shader.
+	</figcaption>
+</figure>
+
+</section>
+
+Now let's see how we can modify it a little to [get a _lava_ shader](https://youtu.be/VxzElAcKZzY).
+
+We use the same tileset tiles but swap out for a different shader.
+
+The main difference between the two is how we calculate the surface.
+
+<section data-type="pull-right">
+
+![Noise texture](noise.jpg)  
+_Godot has a built-in Open Simplex Noise texture generator._
+
+</section>
+
+I've added a `sampler2D` uniform called `surface_texture` that will I've populated with an `OpenSimplexNoise` texture in Godot.
+
+This gives us some seemingly random (but still gradually changing per pixel) input to use when generating the coloured areas for the lava.
+
+If we move the texture over a copy of itself we get blobs of white that grow and shrink over time.
+
+We can colour them based on their brightness.
+
+The whole shader isn't overly complicated:
+
+```glsl
+shader_type canvas_item;
+render_mode unshaded;
+
+uniform vec4 color : hint_color = vec4(1, 0.2, 0, 1);
+uniform vec4 lighter_color: hint_color = vec4(1, 0.47, 0, 1.0);
+uniform vec4 darker_color : hint_color = vec4(0.6, 0.2, 0, 1);
+uniform vec4 edge_color : hint_color = vec4(1, 0.7, 0, 1);
+uniform sampler2D surface_texture;
+uniform vec2 flow_speed = vec2(3.0, 0.0);
+
+varying vec2 vert;
+
+void vertex() {
+	vert = VERTEX;
+}
+
+void fragment() {
+	vec4 input = texture(TEXTURE, UV);
+
+	if (input.a == 0.0) {
+		COLOR = input;
+
+	} else {
+		// For the surface we move the noise texture over itself to generate blobs
+		vec2 map_uv = vert / vec2(512.0);
+		vec4 surface1 = texture(surface_texture, map_uv + floor(TIME * flow_speed) * TEXTURE_PIXEL_SIZE);
+		vec4 surface2 = texture(surface_texture, map_uv);
+		float v = (surface1 + surface2).r;
+
+		// Then we colour each blob area based on its brightness
+		vec4 lava = color;
+		if (v >= 1.1) {
+			lava = darker_color;
+		} else if (v > 0.95) {
+			lava = lighter_color;
+		}
+
+		// Then we actually render the lava based on the actual pixel
+		if (input.r > 0.5) {
+			COLOR = edge_color;
+		} else if (input.b > 0.5) {
+			COLOR = lava;
+		} else {
+			COLOR = vec4(0);
+		}
+	}
+}
+```
+
+And that's it for lava.
+
+---
+
+If you're the kind of person that prefers to see these things in video format then you're in luck! I have videos about both of these shaders on my game dev YouTube channel:
+
+<section data-type="gallery" data-layout="2">
+
+[![YouTube: Super simple 2D water shader in Godot](water-thumb.png)](https://youtu.be/nG8OU1GwMtk)  
+_YouTube: Super simple 2D water shader in Godot._
+
+[![YouTube: Simple 2D Lava in Godot](lava-thumb.png)](https://youtu.be/VxzElAcKZzY)  
+_YouTube: Simple 2D Lava in Godot._
+
+</section>
+
+Feel free to [subscribe on YouTube](https://www.youtube.com/channel/UCZrNPqjLoBUY66z1hPm8Qug) for more game dev videos.

@@ -3,4 +3,4 @@ Thumbs.db
 node_modules
 /artifacts
 /posts/draft*
-/public/draft*
+/docs/draft*

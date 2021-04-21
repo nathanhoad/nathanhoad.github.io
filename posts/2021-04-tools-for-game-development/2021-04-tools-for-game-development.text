@@ -1,0 +1,76 @@
+# Tools I use for indie game development
+
+- published: 2021-04-11
+- tags: gamedev
+
+<section data-type="pull-right">
+
+[![Watch Tools I use to make indie games](youtube.png)](https://youtu.be/Q9pkHiAvvFk)  
+_YouTube: Tools I use to make indie games_
+
+</section>
+
+I've been sharing some game dev progress screenshots and video in a few places around the Internet and, so far, the response has been great.
+
+In game dev circles I get asked a lot about what tool I use to do _blank_ so I figured I'd make a short list to send people to.
+
+## Coding
+
+I use the [Godot Game engine](https://godotengine.org/) to make the games themselves.
+
+Godot is free and open source. While that's probably reason enough to give it a try it is also amazing at what it does.
+
+It's super easy to learn and there are a bunch of great resources around.
+
+It just makes building games fun and the Godot community is friendly and really helpful.
+
+You can use just about any language you want to make your game in too.
+
+In the past I've used C# (back when I was [writing my own engine](/2019-04-a-year-working-game-engine/) on top of [MonoGame](https://www.monogame.net/)) but with Godot I generally use GDScript.
+
+## Art
+
+[Aseprite](https://www.aseprite.org/) is what I use to draw and animate all of the pixel art in the game.
+
+<section data-type="pull-right">
+
+![I've used Aseprite a lot](aseprite-steam.jpg)  
+_I've definitely got my money's worth from Aseprite._
+
+</section>
+
+It's really cheap and I've definitely got my money's worth.
+
+While pixel art itself can be difficult to master, Aseprite definitely makes things easier.
+
+I use [Inkscape](https://inkscape.org/) for all of the non-pixel art assets for the game.
+
+Inkscape has a pretty simple workflow and, best of all, it uses SVG as its native file format.
+
+## Music
+
+I use [LMMS](https://lmms.io/) for my music.
+
+The learning curve for LMMS can be quite steep but I've found you don't need to know a whole lot in order to get something that sounds ok.
+
+My secret is just using reverb in a few places and adding the StereoEnhancer effect to the main mixer.
+
+I use [Audacity](https://www.audacityteam.org/) for my sound effects.
+
+All of the sound effects in the game so far have been recorded on my microphone and messed about with in Audacity.
+
+It can be a fun challenge finding ways to make the right sound effects with stuff that you have lying around your house.
+
+## Videos
+
+All of the videos on [my game dev YouTube channel](https://www.youtube.com/channel/UCZrNPqjLoBUY66z1hPm8Qug) have been edited in [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/).
+
+DaVinci Resolve is a very powerful video editor and visual effects compositor.
+
+The free version is surprisingly full-featured; I've yet to come across something I wanted to do but couldn't.
+
+I also use [OBS Studio](https://obsproject.com/) for recording the screen to get snippets of game play.
+
+----
+
+If you have any suggestion of other great game dev tools then [let me know](https://twitter.com/nathanhoad) on Twitter.

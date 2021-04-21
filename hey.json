@@ -2,9 +2,9 @@
   "title": "Nathan Hoad",
   "url": "https://nathanhoad.net",
   "posts": "posts",
-  "public": "public",
+  "public": "docs",
   "templates": "templates",
   "pages": [],
   "files": ["404.md", "CNAME"],
-  "highlight": ["gdscript"]
+  "highlight": ["gdscript", "glsl"]
 }

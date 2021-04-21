@@ -4,8 +4,7 @@
   "description": "The code that powers https://nathanhoad.net",
   "private": true,
   "scripts": {
-    "start": "hey run",
-    "publish": "git subtree push --prefix public origin gh-pages"
+    "start": "hey run"
   },
   "author": "Nathan Hoad",
   "homepage": "https://github.com/nathanhoad/nathanhoad#readme",
