@@ -15,23 +15,31 @@ window.addEventListener("DOMContentLoaded", function () {
   //
   // Give the home page header background some depth
   //
-  var background = document.querySelector(".welcome");
-  if (background) {
+  var welcome = document.querySelector(".welcome");
+  if (welcome) {
+    var background = welcome.firstElementChild;
     var foreground = background.firstElementChild;
-    var title = background.querySelector("h1");
+    var title = welcome.querySelector("h1");
 
     function parallax() {
-      var bounds = background.getBoundingClientRect();
+      var bounds = welcome.getBoundingClientRect();
       var scroll = bounds.bottom / window.innerHeight;
 
       if (scroll > 2 || scroll < -1) return;
 
-      foreground.style.setProperty("transform", "translateY(" + scroll * 6 + "%)");
-      title.style.setProperty("transform", "translate(-50%, " + (scroll - 0.8) * 40 + "%)");
+      background.style.setProperty("transform", "translateY(" + (scroll * -3 + 10) + "%)");
+      foreground.style.setProperty("transform", "translateY(" + (scroll * 8 - 15) + "%)");
+      title.style.setProperty("transform", "translate(-50%, " + ((scroll - 0.8) * 40 - 20) + "%)");
     }
     parallax();
 
-    window.addEventListener("scroll", parallax);
+    window.addEventListener(
+      "scroll",
+      function () {
+        requestAnimationFrame(parallax);
+      },
+      { passive: true }
+    );
   }
 
   //
