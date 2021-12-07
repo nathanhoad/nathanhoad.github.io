@@ -21,10 +21,12 @@ October 2020 </aside> </header> <section>
 <p>The game state object is a node that our dialogue manager can use to perform dialogue condition checks and run mutations against.</p>
 <p>Before using the dialogue manager you need to tell it about those things:</p>
 <pre class="language-gdscript"><code class="language-gdscript">DialogueManager<span class="token punctuation">.</span>resource <span class="token operator">=</span> <span class="token keyword">preload</span><span class="token punctuation">(</span><span class="token string">"res://text/dialogue.tres"</span><span class="token punctuation">)</span>
-DialogueManager<span class="token punctuation">.</span>game_state <span class="token operator">=</span> GameState</code></pre>
+DialogueManager<span class="token punctuation">.</span>game_state <span class="token operator">=</span> GameState
+</code></pre>
 <h2 id="getting-some-dialogue">Getting some dialogue</h2>
 <p>The easiest way of getting a line of dialogue to display is by yielding to <code>get_next_dialogue_line</code> using an ID that you can copy from the SayWhat dialogue editor:</p>
-<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">var</span> dialogue <span class="token operator">=</span> <span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">get_next_dialogue_line</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span></code></pre>
+<pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">var</span> dialogue <span class="token operator">=</span> <span class="token keyword">yield</span><span class="token punctuation">(</span>DialogueManager<span class="token punctuation">.</span><span class="token function">get_next_dialogue_line</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"completed"</span><span class="token punctuation">)</span>
+</code></pre>
 <p>The returned object will be the first dialogue line that passes its condition checks, running any mutations that were found along the way.</p>
 <h2 id="conditions">Conditions</h2>
 <p>This game state object is the first thing checked for dialogue conditionals and mutations (before failing over to checking the current scene).</p>
@@ -41,14 +43,16 @@ condition <code>[if has_these_items potion sword]</code> would run <code>has_the
   <span class="token keyword control">for</span> item <span class="token keyword control">in</span> args<span class="token punctuation">:</span>
     <span class="token keyword control">if</span> <span class="token keyword">not</span> inventory<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">:</span>
       <span class="token keyword control">return</span> <span class="token boolean">false</span>
-  <span class="token keyword control">return</span> <span class="token boolean">true</span></code></pre>
+  <span class="token keyword control">return</span> <span class="token boolean">true</span>
+</code></pre>
 <h2 id="mutations">Mutations</h2>
 <p>Mutations can be as simple as updating some game state.</p>
 <p>They can also be used for running little sequences. For example, if you had <code>[do give item]</code> as a mutation in your dialogue then the dialogue manager would look for a function called <code>give_item</code> on the <code>game_state</code> (and if nothing is found it would check the current scene).</p>
 <pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">func</span> <span class="token function">give_item</span><span class="token punctuation">(</span>args<span class="token punctuation">:</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
   <span class="token variable">$ben</span><span class="token punctuation">.</span>AnimationPlayer<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token string">"give_item"</span><span class="token punctuation">)</span>
   <span class="token keyword">yield</span><span class="token punctuation">(</span><span class="token variable">$ben</span><span class="token punctuation">.</span>AnimationPlayer<span class="token punctuation">,</span> <span class="token string">"animation_finished"</span><span class="token punctuation">)</span>
-  GameState<span class="token punctuation">.</span>inventory<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+  GameState<span class="token punctuation">.</span>inventory<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
 <h2 id="displaying-dialogue">Displaying dialogue</h2>
 <p>It&#39;s up to you to actually render the dialogue in whatever way makes sense for your game.</p>
 <p>For example, I have a global <code>Interface</code> object that I can call <code>show_dialogue</code> on. This then
@@ -63,7 +67,8 @@ as well as handling user input for response options.</p>
         <span class="token function">add_child</span><span class="token punctuation">(</span>balloon<span class="token punctuation">)</span>
         <span class="token comment"># Dialogue might have options so we have to wait and see</span>
         <span class="token comment"># what the player choose</span>
-        <span class="token function">show_dialogue</span><span class="token punctuation">(</span><span class="token keyword">yield</span><span class="token punctuation">(</span>balloon<span class="token punctuation">,</span> <span class="token string">"dialogue_actioned"</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+        <span class="token function">show_dialogue</span><span class="token punctuation">(</span><span class="token keyword">yield</span><span class="token punctuation">(</span>balloon<span class="token punctuation">,</span> <span class="token string">"dialogue_actioned"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
 <p>If you end up using SayWhat in your game then I&#39;d love to <a href="https://twitter.com/nathanhoad">hear about it on Twitter</a>.</p>
 </section> </article> <footer>
 <div>

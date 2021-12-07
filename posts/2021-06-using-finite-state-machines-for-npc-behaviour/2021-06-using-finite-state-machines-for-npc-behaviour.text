@@ -1,0 +1,96 @@
+# Using Finite State Machines for NPC behaviour
+
+- published: 2021-05-31 23:00
+- tags: gamedev
+
+<section data-type="wide">
+
+<figure>
+	<video src="sharing-states.mp4" autoplay playsinline muted loop></video>
+	<figcaption>
+		Designing states with dependency injection means they can be shared amongst different kinds of NPCs.
+	</figcaption>
+</figure>
+
+</section>
+
+First up, what is a finite state machine?
+
+The simplest example might be a light switch. It has two states: on and off.
+
+Now let's make it a bit more complicated by making them Christmas lights. They now have a few states: off, blinking, chasing, and solid.
+
+Each state has its own behaviour and the lights can only be in one state at a time.
+
+From here we can make the leap to NPC behaviour in a game. If we think of each NPC as being in one of a finite set of states then it makes it easier to write their behaviour.
+
+Setting up the initial state machine is [well documented for Godot by GDQuest](https://www.gdquest.com/tutorial/godot/design-patterns/finite-state-machine/) so I won't go over that here.
+
+What we do need to do is work out what kinds of behaviours we will need. For enemies we might need "patrolling", "chasing", and "attacking" and for townsfolk we might need "patrolling" and "talking".
+
+Seing as how both will need a "patrolling" state we can share that behaviour between them.
+
+<section data-type="pull-right">
+
+![Exported variables](export-variables.jpg)  
+_Everything the patrolling state needs is dependency injected into it._
+
+</section>
+
+What makes sharing states easy is making sure each state script is self-contained and exports all of its dependencies.
+
+This is what's known as **dependency injection** and it means we can configure out patrolling state slightly differently for a town person compared to a skeleton enemy without having to change the state script itself (as far as the script is concerned, it doesn't care what kind of NPC its attached to).
+
+## Patrolling
+
+So, what does my patrolling state actually do?
+
+I give it a `Line2D` (not a `Path2D` due to issue with colliders, etc) and the NPC will follow that line until something triggers a state change.
+
+It does this by working on the next point in the line and using a `Navigation2D` to derive a path to get there.
+
+I give my town people a simple line to follow (making it easier to stop and chat to them) and my skeletons a slightly more complex patrol route (making it harder to avoid their gaze).
+
+When an enemy does see the player it emits a `saw_player` signal which the parent Skeleton node picks up on and transitions to the "chasing" state.
+
+## Chasing
+
+When an NPC is in the chasing state is uses a `Navigation2D` node to determine a path to where it last saw the player.
+
+It will follow that path unless it gets too close to a sibling. In that case it will determine the next best direction to move laterally (using a flattened dot product) away from its sibling but still kind of towards the player.
+
+<section data-type="wide">
+
+<figure>
+	<video src="skeletons-close.mp4" autoplay playsinline muted loop></video>
+	<figcaption>
+		The blue line indicates the decided upon direction.
+	</figcaption>
+</figure>
+
+</section>
+
+Once the enemy is close enough to the player it will transition to the "attacking" state which will continually swing its sword or emit a `lost_sight_of_player` signal.
+
+If it has lost sight of the player then it will transition to the chasing state and run towards the last known position of the player.
+
+---
+
+You can really have as many states as you want for an NPC.
+
+The main two rules to remember for keeping things clean are:
+
+1. All states define their dependencies
+2. No state refers directly to other states. Just emit signals and let the parent node handle transitions
+
+If you want more information about how all of this fits together then check out my state machine videos on [my Game Dev YouTube channel](https://www.youtube.com/channel/UCZrNPqjLoBUY66z1hPm8Qug).
+
+<section data-type="gallery" data-layout="2">
+
+[![YouTube: Enemy behaviour with Finite State Machines](enemy-behaviour-thumb.jpg)](https://youtu.be/tZgEXWleWxg)  
+_YouTube: Enemy behaviour with Finite State Machines._
+
+[![YouTube: Saving time by reusing behaviour states](smarter-npcs-thumb.jpg)](https://youtu.be/CZV9aNiZdRs)  
+_YouTube: Saving time by reusing behaviour states._
+
+</section>

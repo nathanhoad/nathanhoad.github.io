@@ -34,4 +34,4 @@ In development mode (`NODE_ENV !== 'production'`) the server will watch for chan
 
 After previewing locally you'll have all the files needed to publish.
 
-Commit any changes and run `npm run publish`.
+Commit any changes and just push to GitHub.

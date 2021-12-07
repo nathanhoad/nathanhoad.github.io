@@ -37,7 +37,8 @@ March 2021 </aside> </header> <section>
 
 
 <span class="token keyword">func</span> <span class="token function">_on_BodyDetector_body_exited</span><span class="token punctuation">(</span>body<span class="token punctuation">:</span> <span class="token class-name">KinematicBody2D</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
-  bodies<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>bodies<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+  bodies<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>bodies<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
 <p>Then in the process handler I loop over those bodies and check if they are moving.</p>
 <pre class="language-gdscript"><code class="language-gdscript"><span class="token keyword">func</span> <span class="token function">_physics_process</span><span class="token punctuation">(</span>delta<span class="token punctuation">:</span> <span class="token class-name">float</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
   <span class="token keyword">var</span> any_overlap <span class="token operator">:=</span> <span class="token boolean">false</span>
@@ -53,7 +54,8 @@ March 2021 </aside> </header> <section>
   <span class="token keyword control">if</span> any_overlap<span class="token punctuation">:</span>
     animation_player<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token string">"Rustle"</span><span class="token punctuation">)</span>
   <span class="token keyword control">else</span><span class="token punctuation">:</span>
-    animation_player<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token string">"Idle"</span><span class="token punctuation">)</span></code></pre>
+    animation_player<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token string">"Idle"</span><span class="token punctuation">)</span>
+</code></pre>
 <p>The grass also applies a negative speed buff to anything that can accept status changes.</p>
 <p>And that&#39;s it.</p>
 <p>If you prefer to see this kind of stuff in video form then you should <a href="https://www.youtube.com/channel/UCZrNPqjLoBUY66z1hPm8Qug">subscribe to my game dev YouTube channel</a> where I talk about all kinds of stuff like this.</p>
