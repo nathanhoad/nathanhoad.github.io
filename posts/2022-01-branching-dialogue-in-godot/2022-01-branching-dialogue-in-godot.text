@@ -1,0 +1,200 @@
+# SayWhat: A branching narrative tool
+
+- published: 2022-01-09 00:00
+- tags: gamedev
+
+Game dialogue is important, especially in an adventure game like mine.
+
+Being able to quickly and easily write branching dialogue and test it in the game is critical.
+
+That's why I made [SayWhat](https://nathanhoad.itch.io/saywhat).
+
+<section data-type="wide">
+
+[![SayWhat screenshot and example usage](saywhat.png)](https://nathanhoad.itch.io/saywhat)  
+_[SayWhat](https://nathanhoad.itch.io/saywhat) is my branching dialogue editor that I use to write dialogue for my game_
+
+</section>
+
+[A while ago](/2020-05-a-branching-dialogue-editor) I made the first version of my dialogue editor and runtime and called it SayWhat.
+
+I've been using it in my game since then but I've been wanting to revise how it works.
+
+The editor is kind of clunky and the syntax is a pain to use, especially once you start introducing conditional lines and lots of branching.
+
+So, I had a bit of time over the last few days allocated to see how far I can get into making a new version of SayWhat; one that felt better to use and had a better language syntax.
+
+<section data-type="pull-right">
+
+![Screenshot of old SayWhat interface with example dialogue](old-saywhat-screenshot.jpg)  
+_The previous version of SayWhat was kind of clunky._
+
+</section>
+
+The old SayWhat was made using [TypeScript](https://www.typescriptlang.org/) and [Electron](https://www.electronjs.org/) and while I have nothing against Electron (except maybe the file size) I wanted to see if I could use Godot itself to make the new editor.
+
+A couple of months ago I toyed with idea of making the editor to be something similar to [Emelio's Dialogic](https://github.com/coppolaemilio/dialogic). I'm a big fan of Dialogic and one of the only reasons I'm not using it in my game is that I want a bit more control than it provides.
+
+In the past I've made games using [Ink](https://www.inklestudios.com/ink/) to handle branching narratives and I do like the simplicity of just writing the dialogue as a text-based script.
+
+Plus I've been reading a bunch about [YarnSpinner](https://docs.yarnspinner.dev/) and I like the simplicity of the text-based approach there too.
+
+---
+
+I started by re-writing some of my game dialogue in the format that I'd like to end up with once this fictitious new parser was ready.
+
+```text
+# This is a node title
+
+Character: This is some dialogue.
+if some_variable == true
+	Character: This will only be said if some_variable is true.
+elif something_else >= 10
+	Character: Otherwise, this will be said if something_else is more than 9.
+else
+	Character: And if both of those are false then I'll say this.
+	if get_some_value()
+		Character: This is an inner condition check where some value was true.
+
+// This is a comment.
+do play_animation("wave")
+set some_variable = false
+set another_variable = get_some_value()
+
+Character: And here are some response options.
+- First one
+	Character: If you choose the first option I'll say this.
+	Character: You can use indented blocks for responses.
+	Character: You can also use a goto like the second option.
+	Character: If you go to # END it will end the conversation.
+	Character: Otherwise, it will continue below the responses list.
+- Second option [if check_thing()] goto # Another node
+- End conversation goto # END
+Character: If you picked the first option then we will end up down here.
+Character: Once a block has no more lines it will end the conversation.
+
+
+# Another node
+
+Character: This is a second title. 
+Character: We are here because you chose the second option.
+```
+
+I wanted **conditions** and **responses** to be able to have indented blocks underneath them to define the lines that belong to them.
+
+I also wanted to add `elif` and `else` as keywords to help with alternative conditional blocks.
+
+Then I worked out a basic Dictionary structure that the parser would generate from those lines.
+
+Having a start and a finish, it was then just a matter of writing a bunch of code to translate between the two. 
+
+<section data-type="pull-right">
+
+![Screenshot of SayWhat interface with example dialogue](saywhat-screenshot.jpg)  
+_Using Godot to make apps is fun._
+
+</section>
+
+It ended up being simpler than I expected with the whole parser being only about a hundred or so lines of code. 
+
+The next step was filling in the rest of the app stuff like saving and loading and the general UI. 
+
+Thanks to Godot, this part was easy. 
+
+In no time I had an app that could read my syntax and output a Godot resource. 
+
+The last step was to update [my existing Godot addon](https://github.com/nathanhoad/saywhat_godot) to use the new output format.
+
+In spite of the fact that the outward facing API remained pretty much the same, the internals of the addon are almost totally new.
+
+When I was building the editor I decided to move a bunch of the condition and mutation parsing out of the addon and into the editor's export code.
+
+That made things a bit simpler in the addon because the complicated stuff was already calculated.
+
+I also changed how the state objects were being checked and allowed for more than one to be passed in.
+
+In my own game I have a persistent `GameState` object that tracks whole-game stuff as well as an ephemeral `SessionState` object that just remembers stuff needed until the player has finished their current play session.
+
+This meant I could tidy up a bunch of the game code and take some conditional stuff that used to exist as methods on a few scenes and move it into the dialogue itself.
+
+---
+
+Ok, let's look at how to use SayWhat with Godot.
+
+Grab a [copy of the addon](https://github.com/nathanhoad/saywhat_godot) and drop the files into `res://addons/saywhat_godot` and enable `SayWhat` in your project's plugins.
+
+This gives you a global `DialogueManager` that will give you lines of dialogue to display.
+
+You can add any game state objects you have (mine are `SessionState` for temporary values and `GameState` for persisted values):
+
+```gdscript
+DialogueManager.game_states = [SessionState, GameState]
+```
+
+Then, when you need to grab a line of dialogue (assuming you have it's title) you can do something likes this:
+
+```gdscript
+# This resource is the file that you would have exported out of SayWhat
+var resource = preload("res://assets/dialogue.tres")
+var dialogue = yield(DialogueManager.get_next_dialogue_line(title, resource), "completed")
+```
+
+The `dialogue` object that gets returned will be the first line that passes any condition checks and after running any mutations that were found along the way.
+
+Now, assuming we had some dialogue like this:
+
+```text
+if some_variable >= 0
+    Coco: Hello
+    do some_action("example argument", 10)
+    Coco: That was a function!
+```
+
+...you would need to make sure that we have a property called `some_variable` defined on the current scene or one of the game states (in my case, `SessionState` and `GameState`).
+
+```gdscript
+var some_variable: int = 0
+```
+
+You would also need to implement a `some_action` method on either the current scene or one of those game states.
+
+```gdscript
+# The argument names themselves don't really matter
+func some_action(some_string: String, some_number: int) -> void
+	pass
+```
+
+If you are missing a property or method the addon will throw an error and tell you what you are missing.
+
+It's also up to you to implement the actual visualisation of the dialogue.
+
+In my game, I have something this:
+
+```gdscript
+# Start a conversation
+func show_dialogue(title: String, dialogue_resource: DialogueResource = null) -> void:
+	var dialogue = yield(DialogueManager.get_next_dialogue_line(title, dialogue_resource), "completed")
+	if dialogue != null:
+		var balloon := DialogueBalloon.instance()
+		balloon.dialogue = dialogue
+		add_child(balloon)
+		# Dialogue might have options so we have to wait and see
+		# what the player chose
+		show_dialogue(yield(balloon, "dialogue_actioned"), dialogue_resource)
+```
+
+Which finds each line and shows a text balloon, then waits for it to be actioned before calling the next one or ending the conversation.
+
+If you need more help with implementing dialogue then have a quick look at [this example project](https://github.com/nathanhoad/saywhat_godot_example).
+
+---
+
+As an added bonus I've released a [JavaScript runtime](https://github.com/nathanhoad/saywhat-js) as well.
+
+And the editor can also export standalone HTML pages for SayWhat stories too.
+
+I still have a number of ideas for other things to add to the editor and runtime but I'll wait to add them until I actually need them.
+
+In all, it has been a productive few days and I'm definitely happy with the result.
+
+Once again, Godot has proven itself to be a great way to make stuff.

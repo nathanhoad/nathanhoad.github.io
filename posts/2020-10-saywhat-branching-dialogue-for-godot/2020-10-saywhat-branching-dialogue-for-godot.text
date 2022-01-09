@@ -3,6 +3,12 @@
 - published: 2020-10-03 10:00
 - tags: gamedev
 
+<section data-type="wide" style="background: #c3e883; padding: 10px 30px; text-align: center">
+
+**NOTE: SayWhat has been updated. Check out [my more recent post](/2022-01-branching-dialogue-in-godot).**
+
+</section>
+
 If you're using Godot and you want some branching dialogue then you should check out my new [SayWhat addon for Godot](https://github.com/nathanhoad/saywhat_godot).
 
 <section data-type="pull-right">

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> <url> <loc>https://nathanhoad.net</loc> <priority>0.9</priority> </url>  <url> <loc>https://nathanhoad.net/2021-11-detecting-input-devices
+<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> <url> <loc>https://nathanhoad.net</loc> <priority>0.9</priority> </url>  <url> <loc>https://nathanhoad.net/2022-01-branching-dialogue-in-godot
+</loc> <priority>1.0</priority> </url>  <url> <loc>https://nathanhoad.net/2021-11-detecting-input-devices
 </loc> <priority>1.0</priority> </url>  <url> <loc>https://nathanhoad.net/2021-10-saving-and-loading-in-godot
 </loc> <priority>1.0</priority> </url>  <url> <loc>https://nathanhoad.net/2021-06-using-finite-state-machines-for-npc-behaviour
 </loc> <priority>1.0</priority> </url>  <url> <loc>https://nathanhoad.net/2021-04-tools-for-game-development

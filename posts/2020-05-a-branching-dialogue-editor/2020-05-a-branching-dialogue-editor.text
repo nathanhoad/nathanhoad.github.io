@@ -3,6 +3,12 @@
 - published: 2020-05-30
 - tags: gamedev
 
+<section data-type="wide" style="background: #c3e883; padding: 10px 30px; text-align: center">
+
+**NOTE: SayWhat has been updated. Check out [my more recent post](/2022-01-branching-dialogue-in-godot).**
+
+</section>
+
 The past couple of months have been a bit slow on the game dev front (what with a global pandemic and the release of Animal Crossing and all) but I have finally finished my [branching dialogue editor](https://nathanhoad.itch.io/saywhat).
 
 <section data-type="wide">
