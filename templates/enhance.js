@@ -225,6 +225,7 @@ window.addEventListener("DOMContentLoaded", function () {
     gallery.className = "main-gallery visible";
     currentIndex = index;
     currentImage.src = allImages[currentIndex].src;
+    currentImage.alt = allImages[currentIndex].alt;
 
     // Stop body scrolling
     document.body.style.top = -window.scrollY + "px";
@@ -246,12 +247,14 @@ window.addEventListener("DOMContentLoaded", function () {
   function previousImage() {
     currentIndex = currentIndex === 0 ? allImages.length - 1 : currentIndex - 1;
     currentImage.src = allImages[currentIndex].src;
+    currentImage.alt = allImages[currentIndex].alt;
     currentImage.className = currentImage.className.includes("1") ? "jiggle-left-2" : "jiggle-left-1";
   }
 
   function nextImage() {
     currentIndex = (currentIndex + 1) % allImages.length;
     currentImage.src = allImages[currentIndex].src;
+    currentImage.alt = allImages[currentIndex].alt;
     currentImage.className = currentImage.className.includes("1") ? "jiggle-right-2" : "jiggle-right-1";
   }
 
@@ -263,6 +266,7 @@ window.addEventListener("DOMContentLoaded", function () {
   overlay.addEventListener("click", closeGallery);
   gallery.appendChild(overlay);
   var currentImage = new Image();
+  currentImage.alt = "";
   gallery.appendChild(currentImage);
 
   if (allImages.length > 1) {
