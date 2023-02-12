@@ -47,7 +47,7 @@
     opacity: 0.5;
   }
 
-  @media screen and (max-width: 440px) {
+  @media screen and (max-width: 700px) {
     header {
       max-width: calc(100% - 30px);
     }
@@ -58,7 +58,7 @@
     }
 
     aside a {
-      padding: 0.8rem 0 0 0.6rem;
+      padding: 0.3rem 0 0 0.6rem;
     }
     aside a img {
       max-width: 1.5rem;

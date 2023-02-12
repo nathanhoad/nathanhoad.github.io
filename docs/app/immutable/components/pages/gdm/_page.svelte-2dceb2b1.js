@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, l as claim_element, m as children, h as detach, n as attr, L as null_to_empty, b as insert_hydration, H as append_hydration, C as noop, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, f as transition_in, t as transition_out, A as destroy_component, q as text, r as claim_text, J as src_url_equal } from "../../../chunks/index-1cf7e9b2.js";
-import { H as Header_simple, A as Article } from "../../../chunks/article-9cffc996.js";
+import { H as Header_simple, A as Article } from "../../../chunks/article-e05b01a0.js";
 import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 var prismExports = {};

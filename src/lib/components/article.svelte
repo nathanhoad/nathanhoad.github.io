@@ -198,15 +198,20 @@
     left: 50%;
     transform: rotate(-0.5deg) translate(-50%, -55%);
   }
-  article :global(li > p > em:first-of-type::before) {
+  article :global(li > p:first-of-type > em) {
+    display: inline-block;
+    vertical-align: top;
+  }
+  article :global(li > p:first-of-type > em::before) {
     width: calc(100% + 70px);
+    transform: rotate(-0.5deg) translate(-52%, -55%);
   }
 
   @media screen and (max-width: 960px) {
-    article > :global(aside.left figure) {
+    article :global(aside.left figure) {
       margin: 1rem 2rem 1rem 0;
     }
-    article > :global(aside.right figure) {
+    article :global(aside.right figure) {
       margin: 1rem 0 1rem 2rem;
     }
   }

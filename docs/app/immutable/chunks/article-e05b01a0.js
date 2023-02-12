@@ -105,42 +105,42 @@ function create_fragment$1(ctx) {
     },
     h() {
       attr(a0, "href", "/");
-      attr(a0, "class", "svelte-7xbkhu");
-      attr(strong, "class", "svelte-7xbkhu");
+      attr(a0, "class", "svelte-18w1g1g");
+      attr(strong, "class", "svelte-18w1g1g");
       if (!src_url_equal(img0.src, img0_src_value = "/youtube-light.svg"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "YouTube");
       attr(img0, "width", "40");
       attr(img0, "height", "40");
-      attr(img0, "class", "svelte-7xbkhu");
+      attr(img0, "class", "svelte-18w1g1g");
       attr(a1, "href", "https://youtube.com/@nathan_hoad");
-      attr(a1, "class", "svelte-7xbkhu");
+      attr(a1, "class", "svelte-18w1g1g");
       if (!src_url_equal(img1.src, img1_src_value = "/discord-light.svg"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Discord");
       attr(img1, "width", "40");
       attr(img1, "height", "40");
-      attr(img1, "class", "svelte-7xbkhu");
+      attr(img1, "class", "svelte-18w1g1g");
       attr(a2, "href", "/discord");
-      attr(a2, "class", "svelte-7xbkhu");
+      attr(a2, "class", "svelte-18w1g1g");
       if (!src_url_equal(img2.src, img2_src_value = "/mastodon-light.svg"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "Mastodon");
       attr(img2, "width", "40");
       attr(img2, "height", "40");
-      attr(img2, "class", "svelte-7xbkhu");
+      attr(img2, "class", "svelte-18w1g1g");
       attr(a3, "href", "https://mastodon.social/@nathanhoad");
-      attr(a3, "class", "svelte-7xbkhu");
+      attr(a3, "class", "svelte-18w1g1g");
       if (!src_url_equal(img3.src, img3_src_value = "/github-light.svg"))
         attr(img3, "src", img3_src_value);
       attr(img3, "alt", "GitHub");
       attr(img3, "width", "40");
       attr(img3, "height", "40");
-      attr(img3, "class", "svelte-7xbkhu");
+      attr(img3, "class", "svelte-18w1g1g");
       attr(a4, "href", "https://github.com/nathanhoad");
-      attr(a4, "class", "svelte-7xbkhu");
-      attr(aside, "class", "svelte-7xbkhu");
-      attr(header, "class", "svelte-7xbkhu");
+      attr(a4, "class", "svelte-18w1g1g");
+      attr(aside, "class", "svelte-18w1g1g");
+      attr(header, "class", "svelte-18w1g1g");
     },
     m(target, anchor) {
       insert_hydration(target, header, anchor);
@@ -207,7 +207,7 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(article, "class", "svelte-18ogtv1");
+      attr(article, "class", "svelte-18jwldi");
     },
     m(target, anchor) {
       insert_hydration(target, article, anchor);
