@@ -36,7 +36,7 @@
     font-family: var(--font-sans);
     font-size: 1.2rem;
     line-height: 1.6rem;
-    color: #999;
+    color: #757575;
     text-align: center;
   }
 

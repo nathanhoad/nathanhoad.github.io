@@ -326,28 +326,28 @@ function create_fragment(ctx) {
     },
     h() {
       attr(a0, "href", "https://youtube.com/@nathan_hoad");
-      attr(a0, "class", "svelte-1wjc3jb");
+      attr(a0, "class", "svelte-1sbn5no");
       attr(a1, "href", "/discord");
-      attr(a1, "class", "svelte-1wjc3jb");
-      attr(p, "class", "svelte-1wjc3jb");
+      attr(a1, "class", "svelte-1sbn5no");
+      attr(p, "class", "svelte-1sbn5no");
       attr(a2, "href", "https://youtube.com/@nathan_hoad");
-      attr(a2, "class", "svelte-1wjc3jb");
-      attr(li0, "class", "svelte-1wjc3jb");
+      attr(a2, "class", "svelte-1sbn5no");
+      attr(li0, "class", "svelte-1sbn5no");
       attr(a3, "href", "/discord");
-      attr(a3, "class", "svelte-1wjc3jb");
-      attr(li1, "class", "svelte-1wjc3jb");
+      attr(a3, "class", "svelte-1sbn5no");
+      attr(li1, "class", "svelte-1sbn5no");
       attr(a4, "href", "https://mastodon.social/@nathanhoad");
-      attr(a4, "class", "svelte-1wjc3jb");
-      attr(li2, "class", "svelte-1wjc3jb");
+      attr(a4, "class", "svelte-1sbn5no");
+      attr(li2, "class", "svelte-1sbn5no");
       attr(a5, "href", "https://github.com/nathanhoad");
-      attr(a5, "class", "svelte-1wjc3jb");
-      attr(li3, "class", "svelte-1wjc3jb");
+      attr(a5, "class", "svelte-1sbn5no");
+      attr(li3, "class", "svelte-1sbn5no");
       attr(a6, "href", "https://twitter.com/nathanhoad");
-      attr(a6, "class", "svelte-1wjc3jb");
-      attr(li4, "class", "svelte-1wjc3jb");
-      attr(ul, "class", "svelte-1wjc3jb");
-      attr(aside, "class", "svelte-1wjc3jb");
-      attr(footer, "class", "svelte-1wjc3jb");
+      attr(a6, "class", "svelte-1sbn5no");
+      attr(li4, "class", "svelte-1sbn5no");
+      attr(ul, "class", "svelte-1sbn5no");
+      attr(aside, "class", "svelte-1sbn5no");
+      attr(footer, "class", "svelte-1sbn5no");
     },
     m(target, anchor) {
       insert_hydration(target, footer, anchor);

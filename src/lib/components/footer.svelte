@@ -71,6 +71,6 @@
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    color: #777;
+    color: #888;
   }
 </style>

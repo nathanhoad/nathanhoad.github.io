@@ -125,7 +125,7 @@
     letter-spacing: 0.2rem;
     font-family: "Noto Sans", sans-serif;
     text-transform: uppercase;
-    color: #999;
+    color: #888;
     margin: 0 0 1rem 0;
     padding: 0;
   }
@@ -198,7 +198,7 @@
 
   .articles span {
     font-size: 1.1rem;
-    color: #999;
+    color: #757575;
     font-family: "Noto Sans", sans-serif;
   }
 

@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, k as element, q as text, a as space, l as claim_element, m as children, r as claim_text, h as detach, c as claim_space, n as attr, J as src_url_equal, b as insert_hydration, H as append_hydration, C as noop, x as create_component, y as claim_component, z as mount_component, f as transition_in, t as transition_out, A as destroy_component } from "../../chunks/index-1cf7e9b2.js";
-import { M as Meta, F as Footer } from "../../chunks/footer-523c7bc4.js";
+import { M as Meta, F as Footer } from "../../chunks/footer-03ca8822.js";
 const headerLarge_svelte_svelte_type_style_lang = "";
 function create_fragment$1(ctx) {
   let header;
@@ -65,22 +65,42 @@ function create_fragment$1(ctx) {
       var aside_nodes = children(aside);
       a0 = claim_element(aside_nodes, "A", { href: true, class: true });
       var a0_nodes = children(a0);
-      img0 = claim_element(a0_nodes, "IMG", { src: true, alt: true });
+      img0 = claim_element(a0_nodes, "IMG", {
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       a0_nodes.forEach(detach);
       t2 = claim_space(aside_nodes);
       a1 = claim_element(aside_nodes, "A", { href: true, class: true });
       var a1_nodes = children(a1);
-      img1 = claim_element(a1_nodes, "IMG", { src: true, alt: true });
+      img1 = claim_element(a1_nodes, "IMG", {
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       a1_nodes.forEach(detach);
       t3 = claim_space(aside_nodes);
       a2 = claim_element(aside_nodes, "A", { href: true, class: true });
       var a2_nodes = children(a2);
-      img2 = claim_element(a2_nodes, "IMG", { src: true, alt: true });
+      img2 = claim_element(a2_nodes, "IMG", {
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       a2_nodes.forEach(detach);
       t4 = claim_space(aside_nodes);
       a3 = claim_element(aside_nodes, "A", { href: true, class: true });
       var a3_nodes = children(a3);
-      img3 = claim_element(a3_nodes, "IMG", { src: true, alt: true });
+      img3 = claim_element(a3_nodes, "IMG", {
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       a3_nodes.forEach(detach);
       aside_nodes.forEach(detach);
       main_nodes.forEach(detach);
@@ -103,21 +123,29 @@ function create_fragment$1(ctx) {
       if (!src_url_equal(img0.src, img0_src_value = "/youtube-dark.svg"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "YouTube");
+      attr(img0, "width", "40");
+      attr(img0, "height", "40");
       attr(a0, "href", "https://youtube.com/@nathan_hoad");
       attr(a0, "class", "svelte-18wqezn");
       if (!src_url_equal(img1.src, img1_src_value = "/discord-dark.svg"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Discord");
+      attr(img1, "width", "40");
+      attr(img1, "height", "40");
       attr(a1, "href", "/discord");
       attr(a1, "class", "svelte-18wqezn");
       if (!src_url_equal(img2.src, img2_src_value = "/mastodon-dark.svg"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "Mastodon");
+      attr(img2, "width", "40");
+      attr(img2, "height", "40");
       attr(a2, "href", "https://mastodon.social/@nathanhoad");
       attr(a2, "class", "svelte-18wqezn");
       if (!src_url_equal(img3.src, img3_src_value = "/github-dark.svg"))
         attr(img3, "src", img3_src_value);
       attr(img3, "alt", "GitHub");
+      attr(img3, "width", "40");
+      attr(img3, "height", "40");
       attr(a3, "href", "https://github.com/nathanhoad");
       attr(a3, "class", "svelte-18wqezn");
       attr(aside, "class", "svelte-18wqezn");
@@ -764,114 +792,114 @@ function create_fragment(ctx) {
     },
     h() {
       attr(a0, "href", "https://lillypiri.com");
-      attr(a0, "class", "svelte-kto6rr");
+      attr(a0, "class", "svelte-a7rh27");
       attr(a1, "href", "https://youtube.com/@nathan_hoad");
-      attr(a1, "class", "svelte-kto6rr");
+      attr(a1, "class", "svelte-a7rh27");
       attr(a2, "href", "https://godotengine.org/");
-      attr(a2, "class", "svelte-kto6rr");
-      attr(section0, "class", "svelte-kto6rr");
-      attr(h20, "class", "svelte-kto6rr");
+      attr(a2, "class", "svelte-a7rh27");
+      attr(section0, "class", "svelte-a7rh27");
+      attr(h20, "class", "svelte-a7rh27");
       if (!src_url_equal(img0.src, img0_src_value = "/devlogs-on-youtube.png"))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "");
       attr(img0, "width", "960");
       attr(img0, "height", "540");
-      attr(img0, "class", "svelte-kto6rr");
-      attr(span0, "class", "svelte-kto6rr");
+      attr(img0, "class", "svelte-a7rh27");
+      attr(span0, "class", "svelte-a7rh27");
       attr(a3, "href", "https://youtube.com/@nathan_hoad");
-      attr(a3, "class", "svelte-kto6rr");
-      attr(li0, "class", "svelte-kto6rr");
+      attr(a3, "class", "svelte-a7rh27");
+      attr(li0, "class", "svelte-a7rh27");
       if (!src_url_equal(img1.src, img1_src_value = "/dialogue-manager.jpg"))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "");
       attr(img1, "width", "960");
       attr(img1, "height", "540");
-      attr(img1, "class", "svelte-kto6rr");
-      attr(span1, "class", "svelte-kto6rr");
+      attr(img1, "class", "svelte-a7rh27");
+      attr(span1, "class", "svelte-a7rh27");
       attr(a4, "href", "https://github.com/nathanhoad/godot_dialogue_manager");
-      attr(a4, "class", "svelte-kto6rr");
-      attr(li1, "class", "svelte-kto6rr");
+      attr(a4, "class", "svelte-a7rh27");
+      attr(li1, "class", "svelte-a7rh27");
       if (!src_url_equal(img2.src, img2_src_value = "/puzzle-dependencies.jpg"))
         attr(img2, "src", img2_src_value);
       attr(img2, "alt", "");
       attr(img2, "width", "960");
       attr(img2, "height", "540");
-      attr(img2, "class", "svelte-kto6rr");
-      attr(span2, "class", "svelte-kto6rr");
+      attr(img2, "class", "svelte-a7rh27");
+      attr(span2, "class", "svelte-a7rh27");
       attr(a5, "href", "https://github.com/nathanhoad/godot_puzzle_dependencies");
-      attr(a5, "class", "svelte-kto6rr");
-      attr(li2, "class", "svelte-kto6rr");
+      attr(a5, "class", "svelte-a7rh27");
+      attr(li2, "class", "svelte-a7rh27");
       if (!src_url_equal(img3.src, img3_src_value = "/input-helper.jpg"))
         attr(img3, "src", img3_src_value);
       attr(img3, "alt", "");
       attr(img3, "width", "960");
       attr(img3, "height", "540");
-      attr(img3, "class", "svelte-kto6rr");
-      attr(span3, "class", "svelte-kto6rr");
+      attr(img3, "class", "svelte-a7rh27");
+      attr(span3, "class", "svelte-a7rh27");
       attr(a6, "href", "https://github.com/nathanhoad/godot_input_helper");
-      attr(a6, "class", "svelte-kto6rr");
-      attr(li3, "class", "svelte-kto6rr");
+      attr(a6, "class", "svelte-a7rh27");
+      attr(li3, "class", "svelte-a7rh27");
       if (!src_url_equal(img4.src, img4_src_value = "/the-definitely-ending-story.jpg"))
         attr(img4, "src", img4_src_value);
       attr(img4, "alt", "");
       attr(img4, "width", "960");
       attr(img4, "height", "540");
-      attr(img4, "class", "svelte-kto6rr");
-      attr(span4, "class", "svelte-kto6rr");
+      attr(img4, "class", "svelte-a7rh27");
+      attr(span4, "class", "svelte-a7rh27");
       attr(a7, "href", "https://nathanhoad.itch.io/the-definitely-ending-story");
-      attr(a7, "class", "svelte-kto6rr");
-      attr(li4, "class", "svelte-kto6rr");
+      attr(a7, "class", "svelte-a7rh27");
+      attr(li4, "class", "svelte-a7rh27");
       if (!src_url_equal(img5.src, img5_src_value = "/timesweeper.jpg"))
         attr(img5, "src", img5_src_value);
       attr(img5, "alt", "");
       attr(img5, "width", "960");
       attr(img5, "height", "540");
-      attr(img5, "class", "svelte-kto6rr");
-      attr(span5, "class", "svelte-kto6rr");
+      attr(img5, "class", "svelte-a7rh27");
+      attr(span5, "class", "svelte-a7rh27");
       attr(a8, "href", "https://nathanhoad.itch.io/timesweeper");
-      attr(a8, "class", "svelte-kto6rr");
-      attr(li5, "class", "svelte-kto6rr");
-      attr(ul0, "class", "projects svelte-kto6rr");
-      attr(section1, "class", "svelte-kto6rr");
-      attr(h21, "class", "svelte-kto6rr");
+      attr(a8, "class", "svelte-a7rh27");
+      attr(li5, "class", "svelte-a7rh27");
+      attr(ul0, "class", "projects svelte-a7rh27");
+      attr(section1, "class", "svelte-a7rh27");
+      attr(h21, "class", "svelte-a7rh27");
       attr(a9, "href", "/puzzles");
-      attr(a9, "class", "svelte-kto6rr");
-      attr(span6, "class", "svelte-kto6rr");
-      attr(li6, "class", "svelte-kto6rr");
+      attr(a9, "class", "svelte-a7rh27");
+      attr(span6, "class", "svelte-a7rh27");
+      attr(li6, "class", "svelte-a7rh27");
       attr(a10, "href", "/uses");
-      attr(a10, "class", "svelte-kto6rr");
-      attr(span7, "class", "svelte-kto6rr");
-      attr(li7, "class", "svelte-kto6rr");
+      attr(a10, "class", "svelte-a7rh27");
+      attr(span7, "class", "svelte-a7rh27");
+      attr(li7, "class", "svelte-a7rh27");
       attr(a11, "href", "/gdm");
-      attr(a11, "class", "svelte-kto6rr");
-      attr(span8, "class", "svelte-kto6rr");
-      attr(li8, "class", "svelte-kto6rr");
+      attr(a11, "class", "svelte-a7rh27");
+      attr(span8, "class", "svelte-a7rh27");
+      attr(li8, "class", "svelte-a7rh27");
       attr(a12, "href", "/prototypes");
-      attr(a12, "class", "svelte-kto6rr");
-      attr(span9, "class", "svelte-kto6rr");
-      attr(li9, "class", "svelte-kto6rr");
+      attr(a12, "class", "svelte-a7rh27");
+      attr(span9, "class", "svelte-a7rh27");
+      attr(li9, "class", "svelte-a7rh27");
       attr(a13, "href", "/fsm");
-      attr(a13, "class", "svelte-kto6rr");
-      attr(span10, "class", "svelte-kto6rr");
-      attr(li10, "class", "svelte-kto6rr");
+      attr(a13, "class", "svelte-a7rh27");
+      attr(span10, "class", "svelte-a7rh27");
+      attr(li10, "class", "svelte-a7rh27");
       attr(a14, "href", "/godot");
-      attr(a14, "class", "svelte-kto6rr");
-      attr(span11, "class", "svelte-kto6rr");
-      attr(li11, "class", "svelte-kto6rr");
+      attr(a14, "class", "svelte-a7rh27");
+      attr(span11, "class", "svelte-a7rh27");
+      attr(li11, "class", "svelte-a7rh27");
       attr(a15, "href", "/jsn");
-      attr(a15, "class", "svelte-kto6rr");
-      attr(span12, "class", "svelte-kto6rr");
-      attr(li12, "class", "svelte-kto6rr");
+      attr(a15, "class", "svelte-a7rh27");
+      attr(span12, "class", "svelte-a7rh27");
+      attr(li12, "class", "svelte-a7rh27");
       attr(a16, "href", "/365");
-      attr(a16, "class", "svelte-kto6rr");
-      attr(span13, "class", "svelte-kto6rr");
-      attr(li13, "class", "svelte-kto6rr");
+      attr(a16, "class", "svelte-a7rh27");
+      attr(span13, "class", "svelte-a7rh27");
+      attr(li13, "class", "svelte-a7rh27");
       attr(a17, "href", "/hackathon");
-      attr(a17, "class", "svelte-kto6rr");
-      attr(span14, "class", "svelte-kto6rr");
-      attr(li14, "class", "svelte-kto6rr");
-      attr(ul1, "class", "articles svelte-kto6rr");
-      attr(section2, "class", "svelte-kto6rr");
+      attr(a17, "class", "svelte-a7rh27");
+      attr(span14, "class", "svelte-a7rh27");
+      attr(li14, "class", "svelte-a7rh27");
+      attr(ul1, "class", "articles svelte-a7rh27");
+      attr(section2, "class", "svelte-a7rh27");
     },
     m(target, anchor) {
       mount_component(meta, target, anchor);

@@ -3,10 +3,10 @@
     <h1>Nathan Hoad</h1>
 
     <aside>
-      <a href="https://youtube.com/@nathan_hoad"><img src="/youtube-dark.svg" alt="YouTube" /></a>
-      <a href="/discord"><img src="/discord-dark.svg" alt="Discord" /></a>
-      <a href="https://mastodon.social/@nathanhoad"><img src="/mastodon-dark.svg" alt="Mastodon" /></a>
-      <a href="https://github.com/nathanhoad"><img src="/github-dark.svg" alt="GitHub" /></a>
+      <a href="https://youtube.com/@nathan_hoad"><img src="/youtube-dark.svg" alt="YouTube" width="40" height="40" /></a>
+      <a href="/discord"><img src="/discord-dark.svg" alt="Discord" width="40" height="40" /></a>
+      <a href="https://mastodon.social/@nathanhoad"><img src="/mastodon-dark.svg" alt="Mastodon" width="40" height="40" /></a>
+      <a href="https://github.com/nathanhoad"><img src="/github-dark.svg" alt="GitHub" width="40" height="40" /></a>
     </aside>
   </main>
 

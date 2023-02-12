@@ -1,6 +1,6 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, b as insert_hydration, f as transition_in, t as transition_out, A as destroy_component, h as detach, k as element, q as text, l as claim_element, m as children, r as claim_text, J as src_url_equal, n as attr, H as append_hydration, C as noop } from "../../../chunks/index-1cf7e9b2.js";
-import { M as Meta, F as Footer } from "../../../chunks/footer-523c7bc4.js";
-import { H as Header_simple, A as Article } from "../../../chunks/article-ab5fd542.js";
+import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
+import { H as Header_simple, A as Article } from "../../../chunks/article-9cffc996.js";
 const TIMESWEEPER_URL = "" + new URL("../../../assets/timesweeper-d76e803e.jpg", import.meta.url).href;
 const TRASH_TREASURE_URL = "" + new URL("../../../assets/trash-treasure-43eabd58.jpg", import.meta.url).href;
 function create_default_slot(ctx) {
