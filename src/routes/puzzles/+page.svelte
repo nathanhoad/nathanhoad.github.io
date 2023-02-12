@@ -19,7 +19,7 @@
 <Article>
   <header>
     <h1>What makes a good puzzle?</h1>
-    <aside>February 2022</aside>
+    <aside>February 2023</aside>
   </header>
 
   <p>I made a <a href="https://github.com/nathanhoad/godot_puzzle_dependencies">Godot addon for building puzzle dependency charts</a>.</p>
@@ -44,7 +44,7 @@
 
       <aside class="right">
         <figure>
-          <img src={LINKS_AWAKENING_URL} alt="Screenshot from Link's Awakening on Nintendo Switch" />
+          <img src={LINKS_AWAKENING_URL} alt="Screenshot from Link's Awakening on Nintendo Switch" width="800" height="450" />
           <figcaption>There are varying degrees of subtlety when it comes to telegraphing puzzles.</figcaption>
         </figure>
       </aside>
@@ -70,7 +70,7 @@
 
       <aside class="right">
         <figure>
-          <img src={FULL_THROTTLE_URL} alt="Screenshot from Full Throttle on PC" />
+          <img src={FULL_THROTTLE_URL} alt="Screenshot from Full Throttle on PC" width="640" height="400" />
           <figcaption>Sometimes the solution is just rearranging the pieces.</figcaption>
         </figure>
       </aside>

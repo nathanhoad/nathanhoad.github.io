@@ -116,7 +116,7 @@ function create_default_slot(ctx) {
       t0 = text("What makes a good puzzle?");
       t1 = space();
       aside0 = element("aside");
-      t2 = text("February 2022");
+      t2 = text("February 2023");
       t3 = space();
       p0 = element("p");
       t4 = text("I made a ");
@@ -226,7 +226,7 @@ function create_default_slot(ctx) {
       t1 = claim_space(header_nodes);
       aside0 = claim_element(header_nodes, "ASIDE", {});
       var aside0_nodes = children(aside0);
-      t2 = claim_text(aside0_nodes, "February 2022");
+      t2 = claim_text(aside0_nodes, "February 2023");
       aside0_nodes.forEach(detach);
       header_nodes.forEach(detach);
       t3 = claim_space(nodes);
@@ -296,7 +296,12 @@ function create_default_slot(ctx) {
       var aside1_nodes = children(aside1);
       figure0 = claim_element(aside1_nodes, "FIGURE", {});
       var figure0_nodes = children(figure0);
-      img0 = claim_element(figure0_nodes, "IMG", { src: true, alt: true });
+      img0 = claim_element(figure0_nodes, "IMG", {
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       t26 = claim_space(figure0_nodes);
       figcaption0 = claim_element(figure0_nodes, "FIGCAPTION", {});
       var figcaption0_nodes = children(figcaption0);
@@ -360,7 +365,12 @@ function create_default_slot(ctx) {
       var aside2_nodes = children(aside2);
       figure1 = claim_element(aside2_nodes, "FIGURE", {});
       var figure1_nodes = children(figure1);
-      img1 = claim_element(figure1_nodes, "IMG", { src: true, alt: true });
+      img1 = claim_element(figure1_nodes, "IMG", {
+        src: true,
+        alt: true,
+        width: true,
+        height: true
+      });
       t47 = claim_space(figure1_nodes);
       figcaption1 = claim_element(figure1_nodes, "FIGCAPTION", {});
       var figcaption1_nodes = children(figcaption1);
@@ -408,10 +418,14 @@ function create_default_slot(ctx) {
       if (!src_url_equal(img0.src, img0_src_value = LINKS_AWAKENING_URL))
         attr(img0, "src", img0_src_value);
       attr(img0, "alt", "Screenshot from Link's Awakening on Nintendo Switch");
+      attr(img0, "width", "800");
+      attr(img0, "height", "450");
       attr(aside1, "class", "right");
       if (!src_url_equal(img1.src, img1_src_value = FULL_THROTTLE_URL))
         attr(img1, "src", img1_src_value);
       attr(img1, "alt", "Screenshot from Full Throttle on PC");
+      attr(img1, "width", "640");
+      attr(img1, "height", "400");
       attr(aside2, "class", "right");
     },
     m(target, anchor) {
