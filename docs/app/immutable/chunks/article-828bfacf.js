@@ -207,7 +207,7 @@ function create_fragment(ctx) {
       this.h();
     },
     h() {
-      attr(article, "class", "svelte-18jwldi");
+      attr(article, "class", "svelte-1xay51f");
     },
     m(target, anchor) {
       insert_hydration(target, article, anchor);

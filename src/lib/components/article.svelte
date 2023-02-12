@@ -76,7 +76,7 @@
   }
 
   article :global(p code) {
-    background: rgba(255, 208, 0, 0.2);
+    background: #eee;
     padding: 0.2rem 0.4rem;
     color: black;
     border-radius: 3px;
@@ -183,28 +183,8 @@
   }
 
   article :global(p em) {
-    position: relative;
-  }
-  article :global(p em::before) {
-    content: "";
     background: rgba(255, 208, 0, 0.2);
-    border-left: 3px solid rgba(255, 208, 0, 0.1);
-    box-shadow: 0 0 2px rgba(255, 208, 0, 0.4);
-    width: 100%;
-    height: 120%;
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: rotate(-0.5deg) translate(-50%, -55%);
-  }
-  article :global(li > p:first-of-type > em) {
-    display: inline-block;
-    vertical-align: top;
-  }
-  article :global(li > p:first-of-type > em::before) {
-    width: calc(100% + 70px);
-    transform: rotate(-0.5deg) translate(-52%, -55%);
+    padding: 0 0.2rem;
   }
 
   @media screen and (max-width: 960px) {

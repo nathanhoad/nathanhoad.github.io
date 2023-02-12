@@ -1,6 +1,6 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, b as insert_hydration, f as transition_in, t as transition_out, A as destroy_component, h as detach, k as element, q as text, l as claim_element, m as children, r as claim_text, n as attr, J as src_url_equal, H as append_hydration, C as noop } from "../../../chunks/index-1cf7e9b2.js";
 import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
-import { H as Header_simple, A as Article } from "../../../chunks/article-e05b01a0.js";
+import { H as Header_simple, A as Article } from "../../../chunks/article-828bfacf.js";
 const TAVERN_URL = "" + new URL("../../../assets/tavern-lighting-8ef2c72e.jpg", import.meta.url).href;
 function create_default_slot(ctx) {
   let header;
