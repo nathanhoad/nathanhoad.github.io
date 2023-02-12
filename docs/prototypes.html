@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Slab:wght@400;900&display=swap");
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --font-sans: "Noto Sans", sans-serif;
+        --font-serif: "Roboto Slab", serif;
+      }
+    </style>
+    <meta http-equiv="content-security-policy" content="">
+		<link href="./app/immutable/assets/footer-cb91ccdc.css" rel="stylesheet">
+		<link href="./app/immutable/assets/article-7f4c0d41.css" rel="stylesheet">
+		<link rel="modulepreload" href="./app/immutable/start-b91fe225.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index-1cf7e9b2.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/singletons-28808700.js">
+		<link rel="modulepreload" href="./app/immutable/components/layout.svelte-4ca07a18.js">
+		<link rel="modulepreload" href="./app/immutable/modules/pages/_layout.ts-fa3c4266.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/_layout-9a8b0c19.js">
+		<link rel="modulepreload" href="./app/immutable/components/pages/prototypes/_page.svelte-324044cf.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/footer-523c7bc4.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/article-75fa4ce9.js"><title>Publishing prototypes</title><!-- HEAD_svelte-1jxn8yo_START --><meta property="og:title" content="Publishing prototypes"><meta name="description" content="Going through the release process is good practice and gives you a sense of completing a project"><meta property="og:description" content="Going through the release process is good practice and gives you a sense of completing a project"><meta property="og:image" content="https://nathanhoad.net/share.jpg"><meta property="og:url" content="https://nathanhoad.net/prototypes"><link type="image/png" href="/favicon.png" rel="icon"><meta name="author" content="Nathan Hoad"><meta name="verify-v1" content="FJjra037EqYRGo8w0Atq5BHkBi8B+MPZSD+0jKQebLs="><meta name="p:domain_verify" content="5c8fe00840c14d6c92865fc017137b69"><!-- HEAD_svelte-1jxn8yo_END -->
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+
+
+
+
+<header class="svelte-7xbkhu"><strong class="svelte-7xbkhu"><a href="/" class="svelte-7xbkhu">Nathan Hoad</a></strong>
+
+  <aside class="svelte-7xbkhu"><a href="https://youtube.com/@nathan_hoad" class="svelte-7xbkhu"><img src="/youtube-light.svg" alt="YouTube" class="svelte-7xbkhu"></a>
+    <a href="/discord" class="svelte-7xbkhu"><img src="/discord-light.svg" alt="Discord" class="svelte-7xbkhu"></a>
+    <a href="https://mastodon.social/@nathanhoad" class="svelte-7xbkhu"><img src="/mastodon-light.svg" alt="Mastodon" class="svelte-7xbkhu"></a>
+    <a href="https://github.com/nathanhoad" class="svelte-7xbkhu"><img src="/github-light.svg" alt="GitHub" class="svelte-7xbkhu"></a></aside>
+</header>
+
+<article class="svelte-1jo1u5n"><header><h1>Publishing prototypes</h1>
+    <aside>August 2021</aside></header>
+
+  <p>I was recently watching John Romero&#39;s talk from GDC 16 when one of his principles stuck out to me:</p>
+
+  <figure><blockquote>&quot;No prototypes. Just make the game. Polish as you go. Don&#39;t depend on polish happening later. Always maintain constantly shippable
+      code.&quot;
+    </blockquote>
+
+    <figcaption>—John Romero</figcaption></figure>
+
+  <p>When you&#39;ve had the success that he had with id Software back in the day it&#39;s hard to argue. So argue I won&#39;t. Instead I will elaborate
+    on the point Romero has made with my own interpretation of it.
+  </p>
+
+  <figure><blockquote>&quot;Publish your prototypes. Test out ideas on smaller games and release them before committing them to bigger projects.&quot;
+    </blockquote>
+    <figcaption>—me</figcaption></figure>
+
+  <p>This way you still technically aren&#39;t making &#39;prototypes&#39; because you&#39;re releasing actual games but you&#39;re also getting the benefits of
+    testing out ideas beforehand.
+  </p>
+  <p>Perhaps not all prototypes make it far enough for them but, for any that do, there is value in the “releasing a game” experience.</p>
+
+  <figure><a href="https://nathanhoad.itch.io/timesweeper"><img src="/app/immutable/assets/timesweeper-d76e803e.jpg" alt="Screenshot of Timesweeper"></a>
+    <figcaption>Timesweeper is a two-player showdown.</figcaption></figure>
+
+  <p>I recently published a game on <a href="https://gotm.io/nathanhoad/timesweeper">Gotm.io</a> and
+    <a href="https://nathanhoad.itch.io/timesweeper">Itch</a> (the Itch version is just the Gotm version embedded) called Timesweeper.
+  </p>
+  <p>Timesweeper began as a quick prototype of the high level multiplayer API in Godot 3, then a quick prototype to see if that would work
+    with the Gotm addon.
+  </p>
+  <p>It wasn&#39;t long before I had the whole thing functional as a very rough prototype. The game was mostly playable but setting it up each
+    time was a bit cumbersome.
+  </p>
+  <p>I figured that I was close enough to having an actual game I should just tidy up the rough edges and actually finish it.</p>
+  <p>I added a title screen and some UI to host/join games as well as the end screen when someone wins.</p>
+
+  <aside class="right"><figure><img src="/app/immutable/assets/trash-treasure-43eabd58.jpg" alt="Painting of Ibis on a pile of trash.">
+      <figcaption>You never know when your trash will become someone&#39;s treasure.</figcaption></figure></aside>
+
+  <p>There are four main reasons I like releasing prototype games:</p>
+
+  <ol><li>It makes you solve any actual problems, not just prove the basic idea. If you have to release the game into the wild you have to make
+      sure your idea is fully formed. This means you won&#39;t have half-baked ideas making their way into your bigger project.
+    </li>
+    <li>Doing something a second time is always better. You can make a small mess of the first implementation while you learn how best to do
+      it. Then, with your newfound knowledge, you can implement a cleaner solution into the main project.
+    </li>
+    <li>Even if you don&#39;t end up using the idea for anything else you&#39;ve got something to show for it. In the example of Pixel Beach, I&#39;m not
+      sure if I&#39;ll end up using the web-app-as-desktop-game method for releasing my bigger project but it was fun to test out and I have a
+      full game to show for the effort.
+    </li>
+    <li>You never know when someone will fall in love with your &#39;throwaway&#39; game.</li></ol>
+</article>
+
+<footer class="svelte-1wjc3jb"><p class="svelte-1wjc3jb">If you want to keep up to date with my adventures in game development then you should <a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">subscribe to my YouTube channel</a>
+    or <a href="/discord" class="svelte-1wjc3jb">join my Discord</a>.
+  </p>
+
+  <ul class="svelte-1wjc3jb"><li class="svelte-1wjc3jb"><a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">YouTube</a></li>
+    <li class="svelte-1wjc3jb"><a href="/discord" class="svelte-1wjc3jb">Discord</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://mastodon.social/@nathanhoad" class="svelte-1wjc3jb">Mastodon</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://github.com/nathanhoad" class="svelte-1wjc3jb">GitHub</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://twitter.com/nathanhoad" class="svelte-1wjc3jb">Twitter</a></li></ul>
+  <aside class="svelte-1wjc3jb">© Nathan Hoad</aside>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="xi90vi">
+			import { start } from "./app/immutable/start-b91fe225.js";
+
+			start({
+				assets: "",
+				env: {},
+				target: document.querySelector('[data-sveltekit-hydrate="xi90vi"]').parentNode,
+				version: "1676172372603",
+				hydrate: {
+					node_ids: [0, 10],
+					data: [null,null],
+					form: null,
+					error: null
+				}
+			});
+		</script>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Slab:wght@400;900&display=swap");
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --font-sans: "Noto Sans", sans-serif;
+        --font-serif: "Roboto Slab", serif;
+      }
+    </style>
+    <meta http-equiv="content-security-policy" content="">
+		<link href="./app/immutable/assets/footer-cb91ccdc.css" rel="stylesheet">
+		<link href="./app/immutable/assets/article-7f4c0d41.css" rel="stylesheet">
+		<link rel="modulepreload" href="./app/immutable/start-b91fe225.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index-1cf7e9b2.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/singletons-28808700.js">
+		<link rel="modulepreload" href="./app/immutable/components/layout.svelte-4ca07a18.js">
+		<link rel="modulepreload" href="./app/immutable/modules/pages/_layout.ts-fa3c4266.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/_layout-9a8b0c19.js">
+		<link rel="modulepreload" href="./app/immutable/components/pages/fsm/_page.svelte-4707361e.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/footer-523c7bc4.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/article-75fa4ce9.js"><title>Using finite state machines for behaviour</title><!-- HEAD_svelte-1jxn8yo_START --><meta property="og:title" content="Using finite state machines for behaviour"><meta name="description" content="Finite state machines help break apart the code that powers character behaviour and make it easier to understand and reuse"><meta property="og:description" content="Finite state machines help break apart the code that powers character behaviour and make it easier to understand and reuse"><meta property="og:image" content="https://nathanhoad.net/share.jpg"><meta property="og:url" content="https://nathanhoad.net/fsm"><link type="image/png" href="/favicon.png" rel="icon"><meta name="author" content="Nathan Hoad"><meta name="verify-v1" content="FJjra037EqYRGo8w0Atq5BHkBi8B+MPZSD+0jKQebLs="><meta name="p:domain_verify" content="5c8fe00840c14d6c92865fc017137b69"><!-- HEAD_svelte-1jxn8yo_END -->
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+
+
+
+
+<header class="svelte-7xbkhu"><strong class="svelte-7xbkhu"><a href="/" class="svelte-7xbkhu">Nathan Hoad</a></strong>
+
+  <aside class="svelte-7xbkhu"><a href="https://youtube.com/@nathan_hoad" class="svelte-7xbkhu"><img src="/youtube-light.svg" alt="YouTube" class="svelte-7xbkhu"></a>
+    <a href="/discord" class="svelte-7xbkhu"><img src="/discord-light.svg" alt="Discord" class="svelte-7xbkhu"></a>
+    <a href="https://mastodon.social/@nathanhoad" class="svelte-7xbkhu"><img src="/mastodon-light.svg" alt="Mastodon" class="svelte-7xbkhu"></a>
+    <a href="https://github.com/nathanhoad" class="svelte-7xbkhu"><img src="/github-light.svg" alt="GitHub" class="svelte-7xbkhu"></a></aside>
+</header>
+
+<article class="svelte-1jo1u5n"><header><h1>Using finite state machines for behaviour</h1>
+    <aside>May 2021</aside></header>
+
+  <p>I use finite state machines for the behaviour of townsfolk and enemies in my game.</p>
+
+  <p>What does that mean?</p>
+
+  <p>At any given time an NPC can be in one of many “behaviour states” depending on what&#39;s happening to them.</p>
+
+  <figure><video src="/app/immutable/assets/sharing-states-5f1e08f4.mp4" autoplay playsinline muted loop></video>
+    <figcaption>Designing states with dependency injection means they can be shared amongst different kinds of NPCs.</figcaption></figure>
+
+  <p>For example, an enemy might contain states for “patrolling” and “chasing”.</p>
+
+  <p>Breaking up behaviour makes it simpler to think about. When “patrolling”, the enemy just follows a path back and forward until they see
+    the player. Then they change state to “chasing” where they move towards the player. If they lose sight of the player they go back to
+    “patrolling” and return to their path.
+  </p>
+
+  <p>Breaking up behaviour has another benefit - you can share them with other types of NPC.</p>
+
+  <p>A friendly person in a town might also make use of the patrolling state.</p>
+
+  <p>There&#39;s no real limit to how many states you can have or how much you share them but there are two rules that I&#39;ve found have helped
+    keep things manageable:
+  </p>
+
+  <ol><li><p><em>States define their dependencies</em></p>
+      <p>Anything external information that the state needs should be explicitly defined. In the case of Godot this means declaring export
+        variables that can be populated by the owner node.
+      </p></li>
+    <li><p><em>States don&#39;t transition to other states themselves</em></p>
+      <p>Each state should have no idea that other states exist. That&#39;s the best way to keep them simple and shareable.</p>
+
+      <p>Instead of transitioning itself, a state should simply provide a list of events that can happen while in that state.</p>
+
+      <p>In the example from earlier, the patrolling state might signal that it has seen the player. From there the NPC that owns the state
+        machine can decide whether it needs to transition or not.
+      </p></li></ol>
+
+  <p>If you&#39;re interested in using a finite state machine for your game then have a look at my videos on <a href="https://youtu.be/tZgEXWleWxg">enemy behaviour</a>
+    and
+    <a href="https://youtu.be/CZV9aNiZdRs">smarter NPCs</a>
+    and have a look at
+    <a href="https://www.gdquest.com/tutorial/godot/design-patterns/finite-state-machine/">GDQuest&#39;s guide to finite state machines</a>.
+  </p>
+</article>
+
+<footer class="svelte-1wjc3jb"><p class="svelte-1wjc3jb">If you want to keep up to date with my adventures in game development then you should <a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">subscribe to my YouTube channel</a>
+    or <a href="/discord" class="svelte-1wjc3jb">join my Discord</a>.
+  </p>
+
+  <ul class="svelte-1wjc3jb"><li class="svelte-1wjc3jb"><a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">YouTube</a></li>
+    <li class="svelte-1wjc3jb"><a href="/discord" class="svelte-1wjc3jb">Discord</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://mastodon.social/@nathanhoad" class="svelte-1wjc3jb">Mastodon</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://github.com/nathanhoad" class="svelte-1wjc3jb">GitHub</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://twitter.com/nathanhoad" class="svelte-1wjc3jb">Twitter</a></li></ul>
+  <aside class="svelte-1wjc3jb">© Nathan Hoad</aside>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="iygo7b">
+			import { start } from "./app/immutable/start-b91fe225.js";
+
+			start({
+				assets: "",
+				env: {},
+				target: document.querySelector('[data-sveltekit-hydrate="iygo7b"]').parentNode,
+				version: "1676172372603",
+				hydrate: {
+					node_ids: [0, 5],
+					data: [null,null],
+					form: null,
+					error: null
+				}
+			});
+		</script>
+	</div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Slab:wght@400;900&display=swap");
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --font-sans: "Noto Sans", sans-serif;
+        --font-serif: "Roboto Slab", serif;
+      }
+    </style>
+    <meta http-equiv="content-security-policy" content="">
+		<link href="./app/immutable/assets/footer-cb91ccdc.css" rel="stylesheet">
+		<link href="./app/immutable/assets/article-7f4c0d41.css" rel="stylesheet">
+		<link rel="modulepreload" href="./app/immutable/start-b91fe225.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index-1cf7e9b2.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/singletons-28808700.js">
+		<link rel="modulepreload" href="./app/immutable/components/layout.svelte-4ca07a18.js">
+		<link rel="modulepreload" href="./app/immutable/modules/pages/_layout.ts-fa3c4266.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/_layout-9a8b0c19.js">
+		<link rel="modulepreload" href="./app/immutable/components/pages/puzzles/_page.svelte-4c3e20ee.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/footer-523c7bc4.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/article-75fa4ce9.js"><title>What makes a good puzzle?</title><!-- HEAD_svelte-1jxn8yo_START --><meta property="og:title" content="What makes a good puzzle?"><meta name="description" content="I have two simple questions that I ask myself when coming up with puzzles"><meta property="og:description" content="I have two simple questions that I ask myself when coming up with puzzles"><meta property="og:image" content="https://nathanhoad.net/share.jpg"><meta property="og:url" content="https://nathanhoad.net/puzzles"><link type="image/png" href="/favicon.png" rel="icon"><meta name="author" content="Nathan Hoad"><meta name="verify-v1" content="FJjra037EqYRGo8w0Atq5BHkBi8B+MPZSD+0jKQebLs="><meta name="p:domain_verify" content="5c8fe00840c14d6c92865fc017137b69"><!-- HEAD_svelte-1jxn8yo_END -->
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+
+
+
+
+<header class="svelte-7xbkhu"><strong class="svelte-7xbkhu"><a href="/" class="svelte-7xbkhu">Nathan Hoad</a></strong>
+
+  <aside class="svelte-7xbkhu"><a href="https://youtube.com/@nathan_hoad" class="svelte-7xbkhu"><img src="/youtube-light.svg" alt="YouTube" class="svelte-7xbkhu"></a>
+    <a href="/discord" class="svelte-7xbkhu"><img src="/discord-light.svg" alt="Discord" class="svelte-7xbkhu"></a>
+    <a href="https://mastodon.social/@nathanhoad" class="svelte-7xbkhu"><img src="/mastodon-light.svg" alt="Mastodon" class="svelte-7xbkhu"></a>
+    <a href="https://github.com/nathanhoad" class="svelte-7xbkhu"><img src="/github-light.svg" alt="GitHub" class="svelte-7xbkhu"></a></aside>
+</header>
+
+<article class="svelte-1jo1u5n"><header><h1>What makes a good puzzle?</h1>
+    <aside>February 2022</aside></header>
+
+  <p>I made a <a href="https://github.com/nathanhoad/godot_puzzle_dependencies">Godot addon for building puzzle dependency charts</a>.</p>
+  <p>It <a href="https://grumpygamer.com/puzzle_dependency_charts">helps with designing adventurer game puzzles</a> and ensuring there are no
+    dead ends that make progression impossible.
+  </p>
+  <p>Puzzle dependency charts also help highlight the breadth of puzzles and show where a game is too linear or too overwhelming.</p>
+  <p>Having no dead ends and multiple options are things that make a good puzzle game but what about the puzzles themselves?</p>
+  <p>I have two questions I ask myself when I&#39;ve thought of a potential puzzle:</p>
+
+  <ol><li><p><em>How would a player know to do that?</em></p>
+
+      <p>The first question makes sure the player isn&#39;t stumbling around in the dark.</p>
+      <p>There should be enough knowledge provided in the game to hypothesise about the solution.</p>
+      <p>Telegraphing can be done in a few ways, from subtle character dialogue (or even obvious character dialogue if it fits the style of
+        the game) through to environmental hints.
+      </p>
+
+      <aside class="right"><figure><img src="/app/immutable/assets/links-awakening-c2c37563.jpg" alt="Screenshot from Link's Awakening on Nintendo Switch">
+          <figcaption>There are varying degrees of subtlety when it comes to telegraphing puzzles.</figcaption></figure></aside>
+
+      <p>One example of good environmental hinting can be found in Zelda: Link&#39;s Awakening.</p>
+      <p>There is a hidden room in the Key Cavern that can only be accessed by using bombs against a specific wall.</p>
+      <p>Usually walls that are susceptible to bombs have special cracks in them but to help the player discover this particular wall they
+        are given an extra hint - a giant arrow on the ground drawn with tiles.
+      </p>
+      <p>It&#39;s not overly subtle but it also doesn&#39;t explicitly spell it out either.</p></li>
+    <li><p><em>Does the solution make sense once you know the answer?</em></p>
+
+      <p>This second question is for after the solution is found.</p>
+      <p>If a player randomly stumbles on the answer but are still confused as to why that worked then the puzzle is probably either too
+        abstract, relies on overly specific knowledge, or is just a bad idea in general.
+      </p>
+      <p>That doesn&#39;t mean solutions have to be boring.</p>
+      <p>It just means that the game needs to be internally consistent and the puzzles need to abide by the games own rules.</p>
+
+      <aside class="right"><figure><img src="/app/immutable/assets/full-throttle-cb8b68dd.jpg" alt="Screenshot from Full Throttle on PC">
+          <figcaption>Sometimes the solution is just rearranging the pieces.</figcaption></figure></aside>
+
+      <p>There&#39;s a puzzle in Full Throttle that involves a chain that when pulled opens a gate. As soon as you let go, however, the gate
+        closes again.
+      </p>
+      <p>You have a padlock that you might initially think should be used on the chain to keep the gate open but the solution to the puzzle
+        is to padlock the gate shut so that the chain stays in place.
+      </p>
+      <p>You can then climb the chain to get over the wall.</p>
+      <p>The solution is surprising but it does make sense.</p></li></ol>
+
+  <p>Unfortunately, as the puzzle designer, you can never truly know if you&#39;ve hit the mark until you put your puzzles in front of real
+    players.
+  </p>
+  <p>You&#39;ll know you&#39;ve found the perfect balance when the player gets a sense of being clever when they figure it out.</p>
+</article>
+
+<footer class="svelte-1wjc3jb"><p class="svelte-1wjc3jb">If you want to keep up to date with my adventures in game development then you should <a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">subscribe to my YouTube channel</a>
+    or <a href="/discord" class="svelte-1wjc3jb">join my Discord</a>.
+  </p>
+
+  <ul class="svelte-1wjc3jb"><li class="svelte-1wjc3jb"><a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">YouTube</a></li>
+    <li class="svelte-1wjc3jb"><a href="/discord" class="svelte-1wjc3jb">Discord</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://mastodon.social/@nathanhoad" class="svelte-1wjc3jb">Mastodon</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://github.com/nathanhoad" class="svelte-1wjc3jb">GitHub</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://twitter.com/nathanhoad" class="svelte-1wjc3jb">Twitter</a></li></ul>
+  <aside class="svelte-1wjc3jb">© Nathan Hoad</aside>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="1wx6025">
+			import { start } from "./app/immutable/start-b91fe225.js";
+
+			start({
+				assets: "",
+				env: {},
+				target: document.querySelector('[data-sveltekit-hydrate="1wx6025"]').parentNode,
+				version: "1676172372603",
+				hydrate: {
+					node_ids: [0, 11],
+					data: [null,null],
+					form: null,
+					error: null
+				}
+			});
+		</script>
+	</div>
+  </body>
+</html>

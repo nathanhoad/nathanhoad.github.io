@@ -1,19 +1,29 @@
 {
-  "name": "nathanhoad",
-  "version": "7.6.1",
-  "description": "The code that powers https://nathanhoad.net",
+  "name": "nathanhoad.github.io",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "hey run"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --plugin-search-dir . --check .",
+    "format": "prettier --plugin-search-dir . --write ."
   },
-  "author": "Nathan Hoad",
-  "homepage": "https://github.com/nathanhoad/nathanhoad#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/nathanhoad/nathanhoad.git"
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^1.0.0",
+    "@sveltejs/adapter-static": "^2.0.1",
+    "@sveltejs/kit": "^1.0.0",
+    "@types/prismjs": "^1.26.0",
+    "prettier": "^2.8.0",
+    "prettier-plugin-svelte": "^2.8.1",
+    "prismjs": "^1.29.0",
+    "svelte": "^3.54.0",
+    "svelte-check": "^3.0.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
   },
-  "license": "ISC",
-  "dependencies": {
-    "@nathanhoad/hey": "^1.8.0"
-  }
+  "type": "module"
 }

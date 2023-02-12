@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Slab:wght@400;900&display=swap");
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --font-sans: "Noto Sans", sans-serif;
+        --font-serif: "Roboto Slab", serif;
+      }
+    </style>
+    <meta http-equiv="content-security-policy" content="">
+		<link href="./app/immutable/assets/footer-cb91ccdc.css" rel="stylesheet">
+		<link href="./app/immutable/assets/article-7f4c0d41.css" rel="stylesheet">
+		<link rel="modulepreload" href="./app/immutable/start-b91fe225.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index-1cf7e9b2.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/singletons-28808700.js">
+		<link rel="modulepreload" href="./app/immutable/components/layout.svelte-4ca07a18.js">
+		<link rel="modulepreload" href="./app/immutable/modules/pages/_layout.ts-fa3c4266.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/_layout-9a8b0c19.js">
+		<link rel="modulepreload" href="./app/immutable/components/pages/hackathon/_page.svelte-d4efc3fb.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/footer-523c7bc4.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/article-75fa4ce9.js"><title>Building a hand-painted puzzle game in 48 hours</title><!-- HEAD_svelte-1jxn8yo_START --><meta property="og:title" content="Building a hand-painted puzzle game in 48 hours"><meta name="description" content="We build a winning puzzle game for React Riot"><meta property="og:description" content="We build a winning puzzle game for React Riot"><meta property="og:image" content="/app/immutable/assets/header-f3a9edaf.jpg"><meta property="og:url" content="https://nathanhoad.net/hackaton"><link type="image/png" href="/favicon.png" rel="icon"><meta name="author" content="Nathan Hoad"><meta name="verify-v1" content="FJjra037EqYRGo8w0Atq5BHkBi8B+MPZSD+0jKQebLs="><meta name="p:domain_verify" content="5c8fe00840c14d6c92865fc017137b69"><!-- HEAD_svelte-1jxn8yo_END -->
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+
+
+
+
+<header class="svelte-7xbkhu"><strong class="svelte-7xbkhu"><a href="/" class="svelte-7xbkhu">Nathan Hoad</a></strong>
+
+  <aside class="svelte-7xbkhu"><a href="https://youtube.com/@nathan_hoad" class="svelte-7xbkhu"><img src="/youtube-light.svg" alt="YouTube" class="svelte-7xbkhu"></a>
+    <a href="/discord" class="svelte-7xbkhu"><img src="/discord-light.svg" alt="Discord" class="svelte-7xbkhu"></a>
+    <a href="https://mastodon.social/@nathanhoad" class="svelte-7xbkhu"><img src="/mastodon-light.svg" alt="Mastodon" class="svelte-7xbkhu"></a>
+    <a href="https://github.com/nathanhoad" class="svelte-7xbkhu"><img src="/github-light.svg" alt="GitHub" class="svelte-7xbkhu"></a></aside>
+</header>
+
+<article class="svelte-1jo1u5n"><header><h1>Building a hand-painted puzzle game in 48 hours</h1>
+    <aside>July 2017</aside></header>
+
+  <p>Last week I, along with <a href="https://lillypiri.com">Lilly</a>,
+    <a href="https://benhoad.net">Ben</a>, and <a href="https://www.edwilbert.com/">Taz</a>, competed in the first ever React Riot, a 48
+    hour coding competition. We were lucky enough to win the top prize.
+  </p>
+
+  <figure><a href="https://nathanhoad.itch.io/the-definitely-ending-story"><img src="/app/immutable/assets/header-f3a9edaf.jpg" alt="The Definitely Ending Story"></a>
+    <figcaption>Our entry, The Definitely Ending Story, took out the top prize.</figcaption></figure>
+
+  <p>In the week leading up to the weekend we decided to make some kind of adventure game, along the lines of Monkey Island and Day of the
+    Tentacle.
+  </p>
+
+  <p>Of course, the requirement of using <a href="https://reactjs.org/">React</a> meant that we were a little limited as to what we could actually
+    do in terms of complex animation. Realising this, we concluded that the best approach might be to build something that resembled a children&#39;s
+    story book (limiting any need for animation) but with puzzles and a simple storyline.
+  </p>
+
+  <aside class="right"><figure><img src="/app/immutable/assets/town-f129a833.jpg" alt="A painting of a town">
+      <figcaption>Everything was hand painted.</figcaption></figure></aside>
+
+  <p>I&#39;ve always been a fan of Ron Gilbert&#39;s blog and in particular his post about rules for adventure games. His idea of the puzzle
+    dependency chart was invaluable in designing the game - Last Friday night I found a scrap piece of paper and sketched up a rough
+    overview of how the puzzles might work.
+  </p>
+  <p>We then brainstormed about different lines of dialogue and what kinds of characters would be in the world (knowing that we would also
+    have to paint all of the backgrounds and characters within the 48 hours we tried to keep them to the minimum required to tell the
+    story).
+  </p>
+  <p>The rest of the weekend was a blur of building the engine, building out the React components to handle each location, writing all of the
+    lines of dialogue and fitting them into the talk trees, painting all of the backgrounds and characters, and occasionally finding time to
+    eat and sleep.
+  </p>
+  <p>There are still a few bugs that we didn&#39;t get time to fix (we were going up until 10 minutes before the finish time) as well as a few
+    concepts that still have rough edges (your inventory being full of drinks, for one) but overall we are proud of what we built.
+  </p>
+  <p><a href="https://nathanhoad.itch.io/the-definitely-ending-story">See if you can make it to Granny&#39;s House.</a></p>
+</article>
+
+<footer class="svelte-1wjc3jb"><p class="svelte-1wjc3jb">If you want to keep up to date with my adventures in game development then you should <a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">subscribe to my YouTube channel</a>
+    or <a href="/discord" class="svelte-1wjc3jb">join my Discord</a>.
+  </p>
+
+  <ul class="svelte-1wjc3jb"><li class="svelte-1wjc3jb"><a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">YouTube</a></li>
+    <li class="svelte-1wjc3jb"><a href="/discord" class="svelte-1wjc3jb">Discord</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://mastodon.social/@nathanhoad" class="svelte-1wjc3jb">Mastodon</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://github.com/nathanhoad" class="svelte-1wjc3jb">GitHub</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://twitter.com/nathanhoad" class="svelte-1wjc3jb">Twitter</a></li></ul>
+  <aside class="svelte-1wjc3jb">© Nathan Hoad</aside>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="173g2i9">
+			import { start } from "./app/immutable/start-b91fe225.js";
+
+			start({
+				assets: "",
+				env: {},
+				target: document.querySelector('[data-sveltekit-hydrate="173g2i9"]').parentNode,
+				version: "1676172372603",
+				hydrate: {
+					node_ids: [0, 8],
+					data: [null,null],
+					form: null,
+					error: null
+				}
+			});
+		</script>
+	</div>
+  </body>
+</html>

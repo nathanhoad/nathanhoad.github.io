@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Slab:wght@400;900&display=swap");
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      :root {
+        --font-sans: "Noto Sans", sans-serif;
+        --font-serif: "Roboto Slab", serif;
+      }
+    </style>
+    <meta http-equiv="content-security-policy" content="">
+		<link href="./app/immutable/assets/_page-7f623385.css" rel="stylesheet">
+		<link href="./app/immutable/assets/article-7f4c0d41.css" rel="stylesheet">
+		<link href="./app/immutable/assets/footer-cb91ccdc.css" rel="stylesheet">
+		<link rel="modulepreload" href="./app/immutable/start-b91fe225.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index-1cf7e9b2.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/singletons-28808700.js">
+		<link rel="modulepreload" href="./app/immutable/components/layout.svelte-4ca07a18.js">
+		<link rel="modulepreload" href="./app/immutable/modules/pages/_layout.ts-fa3c4266.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/_layout-9a8b0c19.js">
+		<link rel="modulepreload" href="./app/immutable/components/pages/gdm/_page.svelte-dc4f95a1.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/article-75fa4ce9.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/footer-523c7bc4.js"><title>Making a dialogue manager for Godot</title><!-- HEAD_svelte-1jxn8yo_START --><meta property="og:title" content="Making a dialogue manager for Godot"><meta name="description" content="If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager"><meta property="og:description" content="If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager"><meta property="og:image" content="/app/immutable/assets/editor-1acc6147.png"><meta property="og:url" content="https://nathanhoad.net/gdm"><link type="image/png" href="/favicon.png" rel="icon"><meta name="author" content="Nathan Hoad"><meta name="verify-v1" content="FJjra037EqYRGo8w0Atq5BHkBi8B+MPZSD+0jKQebLs="><meta name="p:domain_verify" content="5c8fe00840c14d6c92865fc017137b69"><!-- HEAD_svelte-1jxn8yo_END -->
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+
+
+
+
+<header class="svelte-7xbkhu"><strong class="svelte-7xbkhu"><a href="/" class="svelte-7xbkhu">Nathan Hoad</a></strong>
+
+  <aside class="svelte-7xbkhu"><a href="https://youtube.com/@nathan_hoad" class="svelte-7xbkhu"><img src="/youtube-light.svg" alt="YouTube" class="svelte-7xbkhu"></a>
+    <a href="/discord" class="svelte-7xbkhu"><img src="/discord-light.svg" alt="Discord" class="svelte-7xbkhu"></a>
+    <a href="https://mastodon.social/@nathanhoad" class="svelte-7xbkhu"><img src="/mastodon-light.svg" alt="Mastodon" class="svelte-7xbkhu"></a>
+    <a href="https://github.com/nathanhoad" class="svelte-7xbkhu"><img src="/github-light.svg" alt="GitHub" class="svelte-7xbkhu"></a></aside>
+</header>
+
+<article class="svelte-1jo1u5n"><header><h1>Making a dialogue manager for Godot</h1>
+    <aside>February 2022</aside></header>
+
+  <p>If you&#39;re making your game with Godot like me and you need some dialogue like me then you should check out <a href="https://github.com/nathanhoad/godot_dialogue_manager">Godot Dialogue Manager</a>.
+  </p>
+
+  <figure><a href="https://github.com/nathanhoad/godot_dialogue_manager"><img src="/app/immutable/assets/editor-1acc6147.png" alt="Screenshot of Dialogue Manager in Godot"></a>
+    <figcaption><a href="https://github.com/nathanhoad/godot_dialogue_manager">Godot Dialogue Manager</a> is my branching dialogue editor that I use to
+      write dialogue for my game
+    </figcaption></figure>
+
+  <p>As part of the first Godot Addons Jam I decided to take all the bits and pieces that I&#39;d learned from making my standalone dialogue
+    editor and dialogue runtime and make a new all-in-one dialogue manager addon.
+  </p>
+
+  <p>The first step was to make the basic plugin file structure and get something showing up in the editor.</p>
+
+  <p>Thanks to <a href="https://youtu.be/qy4nBHMXIPk">Emilio&#39;s video about making your first editor plugin</a> I knew how to do that.
+  </p>
+
+  <p>In the main plugin file you can just instance a copy of your main screen and add it to the editor interface like this.</p>
+
+  <pre class="language-gdscript svelte-1r92eoc"><code><!-- HTML_TAG_START --><span class="token keyword">func</span> <span class="token function">_enter_tree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
+    <span class="token keyword control">if</span> Engine<span class="token punctuation">.</span>editor_hint<span class="token punctuation">:</span>
+        main_view <span class="token operator">=</span> MainView<span class="token punctuation">.</span><span class="token function">instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token function">get_editor_interface</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get_editor_viewport</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add_child</span><span class="token punctuation">(</span>main_view<span class="token punctuation">)</span>
+        main_view<span class="token punctuation">.</span>plugin <span class="token operator">=</span> <span class="token keyword">self</span>
+        <span class="token function">make_visible</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">_exit_tree</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
+    <span class="token keyword control">if</span> <span class="token function">is_instance_valid</span><span class="token punctuation">(</span>main_view<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        main_view<span class="token punctuation">.</span><span class="token function">queue_free</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">has_main_screen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">bool</span><span class="token punctuation">:</span>
+    <span class="token keyword control">return</span> <span class="token boolean">true</span>
+<!-- HTML_TAG_END --></code></pre>
+
+  <p>Then you can specify a title and an icon for your editor tab.</p>
+
+  <pre class="language-gdscript svelte-1r92eoc"><code><!-- HTML_TAG_START --><span class="token keyword">func</span> <span class="token function">get_plugin_name</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">String</span><span class="token punctuation">:</span>
+    <span class="token keyword control">return</span> <span class="token string">"Dialogue"</span>
+
+<span class="token keyword">func</span> <span class="token function">get_plugin_icon</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Texture</span><span class="token punctuation">:</span>
+    <span class="token keyword">var</span> scale <span class="token operator">=</span> <span class="token function">get_editor_interface</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get_editor_scale</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> base_color <span class="token operator">=</span> <span class="token function">get_editor_interface</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get_editor_settings</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get_setting</span><span class="token punctuation">(</span><span class="token string">"interface/theme/base_color"</span><span class="token punctuation">)</span>
+    <span class="token keyword">var</span> theme <span class="token operator">=</span> <span class="token string">"light"</span> <span class="token keyword control">if</span> base_color<span class="token punctuation">.</span>v <span class="token operator">></span> <span class="token number">0.5</span> <span class="token keyword control">else</span> <span class="token string">"dark"</span>
+    <span class="token keyword control">return</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token string">"res://addons/dialogue_manager/assets/icons/icon_%s_%d.svg"</span> <span class="token operator">%</span> <span class="token punctuation">[</span>theme<span class="token punctuation">,</span> scale<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token class-name">Texture</span>
+<!-- HTML_TAG_END --></code></pre>
+
+  <p>All that stuff about scale and theme there is to make sure the icon renders at the right size compared to the other editor icons.</p>
+  <p>When I originally opened the plugin up on my Mac to test it I was greeted with a tiny icon.</p>
+  <p>You can overcome this by having different icons for different editor scales.</p>
+  <p>I do this by just having identical clones of the same SVG file and just setting the import scale to what I want.</p>
+  <p>And you&#39;ll need another copy of each so you can swap between dark and light themes.</p>
+  <p>Building out the interface was pretty much the same process as building it the first time around - It&#39;s all just VBoxes and HBoxes.</p>
+  <p>One thing that was different, though, is that I had to add the <code>tool</code> keyword to any script that&#39;s used in the plugin.
+  </p>
+  <p>I did read it in the docs and then totally forgot about it.</p>
+  <p>Then, after getting some very confusing behaviour and errors on things that shouldn&#39;t have errors I worked out that that&#39;s what I was
+    missing.
+  </p>
+  <p>And then I proceeded to fall for that trap a further 8 times.</p>
+  <p>Once I had the general UI I moved onto the parser.</p>
+  <p>The parser I wrote for the standalone editor would have probably been fine to copy over but I wanted to take the opportunity to tidy it
+    up a bit.
+  </p>
+  <p>It may not be best way to write a parser but it works and its mostly easy to follow.</p>
+  <p>It iterates over each line and works out what type it is.</p>
+  <p>Then, depending on that type it looks up whatever it needs to look up in order to satisfy any properties that type has.</p>
+  <p>Then it does some basic error checking of whatever properties it has worked out.</p>
+
+  <figure><img src="/app/immutable/assets/errors-02c864a0.jpg" alt="Screenshot of error checking">
+    <figcaption>The dialogue editor will do periodic error checking on your syntax.</figcaption></figure>
+
+  <p>If there are any errors then the UI shows them in a list.</p>
+
+  <p>I couldn&#39;t find a proper way to highlight error lines so I&#39;m repurposing the bookmarking feature of TextEdits and colouring them red to
+    show error lines.
+  </p>
+
+  <p>The results of each parse get stored in the resource file automatically.</p>
+
+  <p>If you try to run some dialogue with a resource containing errors you&#39;ll get a runtime error telling you as much and which file it is.
+  </p>
+
+  <p>Next up I wanted to set up the icons for my toolbar.</p>
+
+  <p>I wasn&#39;t about to make my scaled and themed icon problem a million times worse by making my own toolbar icons so I opted to use the
+    icons provided by Godot itself.
+  </p>
+
+  <p>To work out what icons I could use I found another addon called the Godot Editor Theme Explorer that lets you inspect the current editor
+    theme and pull out colours, fonts, styles, and most importantly, icons.
+  </p>
+
+  <p>Using built-in icons also means you don&#39;t have to deal with scale and theme colouring and the plugin blends in better with the rest of
+    the editor.
+  </p>
+
+  <p>And, speaking of blending into the editor, another thing I wanted to add is for when you double click a dialogue resource in the file
+    system panel it would open up in the dialogue editor.
+  </p>
+
+  <p>It turned out being as simple as implementing two functions: <code>handles</code> and
+    <code>edit</code>.
+  </p>
+
+  <pre class="language-gdscript svelte-1r92eoc"><code><!-- HTML_TAG_START --><span class="token keyword">func</span> <span class="token function">handles</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">bool</span><span class="token punctuation">:</span>
+  <span class="token keyword control">return</span> object <span class="token keyword">is</span> DialogueResource
+
+<span class="token keyword">func</span> <span class="token function">edit</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">void</span><span class="token punctuation">:</span>
+  main_view<span class="token punctuation">.</span>current_resource <span class="token operator">=</span> object
+<!-- HTML_TAG_END --></code></pre>
+
+  <p><code>handles</code> is given the current object being opened and you return true if your plugin can handle that file.
+  </p>
+
+  <p>Here I just check to see if it&#39;s a dialogue resource.</p>
+
+  <p>Then in <code>edit</code> you get the same object so your plugin can do something with it.</p>
+
+  <p>I just set it to be the current resource being edited which opens it up in the main dialogue edit window.</p>
+
+  <p>One of the things the dialogue manager needs at run time is a list of global game states.</p>
+
+  <p>It uses these whenever you reference a variable or method.</p>
+
+  <aside class="right"><figure><img src="/app/immutable/assets/states-settings-aca4c4a7.jpg" alt="Screenshot of runtime state configuration">
+      <figcaption>You can configure your runtime states in the editor.</figcaption></figure></aside>
+
+  <p>You can do it programmatically but I&#39;ve also added an interface in settings to make it a bit easier.</p>
+
+  <p>It lists out the autoloads you have on your project and you can enable which ones contain game state and methods that you want your
+    dialogue to have access to.
+  </p>
+
+  <p>I couldn&#39;t find a proper way to get the list of autoloads so this is just loading the <code>project.godot</code> config file and reading
+    from that.
+  </p>
+
+  <p>Once the editor was done I moved onto the runtime.</p>
+
+  <p>Most of the code there was similar to my old runtime but with a few quality of life modifications that came with the new parser and
+    integrated editor.
+  </p>
+
+  <aside class="left"><figure><img src="/app/immutable/assets/example-balloon-21a17167.jpg" alt="Screenshot of example balloon">
+      <figcaption>Use the example balloon to test out dialogue.</figcaption></figure></aside>
+
+  <p>I added an example dialogue balloon that can be used as a starting point for testing out dialogue.</p>
+
+  <p>You can look at the code to see how it works as a basis for your own balloon.</p>
+
+  <p>One other quick thing I&#39;ll mention is that the plugin will try and check for updates to itself when you first open it.</p>
+
+  <p>It does an HTTP request to the plugin GitHub page and checks the version available there.</p>
+
+  <aside class="right"><figure><a href="https://youtu.be/08HHSQGXfgM"><img src="/app/immutable/assets/tutorial-103953db.png" alt="YouTube video thumbnail"></a>
+      <figcaption>I made a tutorial video to help get you started.</figcaption></figure></aside>
+
+  <p>If there is a new version you&#39;ll see a button pop up in the top right that, when you click it, it will open a browser to GitHub so you
+    can download the new version.
+  </p>
+
+  <p>That&#39;s probably all I have to say about the plugin for now.</p>
+
+  <p>I&#39;m already using it for all of my dialogue so I&#39;ll probably be adding features as I need them.</p>
+</article>
+
+<footer class="svelte-1wjc3jb"><p class="svelte-1wjc3jb">If you want to keep up to date with my adventures in game development then you should <a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">subscribe to my YouTube channel</a>
+    or <a href="/discord" class="svelte-1wjc3jb">join my Discord</a>.
+  </p>
+
+  <ul class="svelte-1wjc3jb"><li class="svelte-1wjc3jb"><a href="https://youtube.com/@nathan_hoad" class="svelte-1wjc3jb">YouTube</a></li>
+    <li class="svelte-1wjc3jb"><a href="/discord" class="svelte-1wjc3jb">Discord</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://mastodon.social/@nathanhoad" class="svelte-1wjc3jb">Mastodon</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://github.com/nathanhoad" class="svelte-1wjc3jb">GitHub</a></li>
+    <li class="svelte-1wjc3jb"><a href="https://twitter.com/nathanhoad" class="svelte-1wjc3jb">Twitter</a></li></ul>
+  <aside class="svelte-1wjc3jb">© Nathan Hoad</aside>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="qhmffb">
+			import { start } from "./app/immutable/start-b91fe225.js";
+
+			start({
+				assets: "",
+				env: {},
+				target: document.querySelector('[data-sveltekit-hydrate="qhmffb"]').parentNode,
+				version: "1676172372603",
+				hydrate: {
+					node_ids: [0, 6],
+					data: [null,null],
+					form: null,
+					error: null
+				}
+			});
+		</script>
+	</div>
+  </body>
+</html>
