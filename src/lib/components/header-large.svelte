@@ -11,7 +11,7 @@
   </main>
 
   <section>
-    <img src="/cliff.gif" alt="" />
+    <img src="/cliff.gif" alt="" width="1440" height="810" />
   </section>
 </header>
 
@@ -53,6 +53,8 @@
     display: block;
     margin: auto;
     max-width: 100%;
+    width: auto;
+    height: auto;
   }
 
   @media screen and (max-width: 1280px) {

@@ -35,7 +35,7 @@
 
   <figure>
     <a href="https://github.com/nathanhoad/godot_dialogue_manager">
-      <img src={GDM_URL} alt="Screenshot of Dialogue Manager in Godot" />
+      <img src={GDM_URL} alt="Screenshot of Dialogue Manager in Godot" width="1920" height="1080" />
     </a>
     <figcaption>
       <a href="https://github.com/nathanhoad/godot_dialogue_manager">Godot Dialogue Manager</a> is my branching dialogue editor that I use to
@@ -117,7 +117,7 @@ func get_plugin_icon() -> Texture:
   <p>Then it does some basic error checking of whatever properties it has worked out.</p>
 
   <figure>
-    <img src={ERRORS_URL} alt="Screenshot of error checking" />
+    <img src={ERRORS_URL} alt="Screenshot of error checking" width="1282" height="195" />
     <figcaption>The dialogue editor will do periodic error checking on your syntax.</figcaption>
   </figure>
 
@@ -188,7 +188,7 @@ func edit(object) -> void:
 
   <aside class="right">
     <figure>
-      <img src={STATES_URL} alt="Screenshot of runtime state configuration" />
+      <img src={STATES_URL} alt="Screenshot of runtime state configuration" width="600" height="523" />
       <figcaption>You can configure your runtime states in the editor.</figcaption>
     </figure>
   </aside>
@@ -214,7 +214,7 @@ func edit(object) -> void:
 
   <aside class="left">
     <figure>
-      <img src={EXAMPLE_BALLOON_URL} alt="Screenshot of example balloon" />
+      <img src={EXAMPLE_BALLOON_URL} alt="Screenshot of example balloon" width="520" height="208" />
       <figcaption>Use the example balloon to test out dialogue.</figcaption>
     </figure>
   </aside>
@@ -230,7 +230,7 @@ func edit(object) -> void:
   <aside class="right">
     <figure>
       <a href="https://youtu.be/08HHSQGXfgM">
-        <img src={TUTORIAL_URL} alt="YouTube video thumbnail" />
+        <img src={TUTORIAL_URL} alt="YouTube video thumbnail" width="1920" height="1080" />
       </a>
       <figcaption>I made a tutorial video to help get you started.</figcaption>
     </figure>

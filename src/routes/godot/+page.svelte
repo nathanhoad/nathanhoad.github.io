@@ -31,7 +31,7 @@
   <p>So why did I choose <a href="https://godotengine.org/">Godot</a>?</p>
 
   <figure>
-    <img src={TAVERN_URL} alt="Screenshot of pixel tavern" />
+    <img src={TAVERN_URL} alt="Screenshot of pixel tavern" width="1920" height="1080" />
     <figcaption>Coco's adventures moved to Godot.</figcaption>
   </figure>
 

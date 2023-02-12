@@ -28,37 +28,37 @@
   <ul class="projects">
     <li>
       <a href="https://youtube.com/@nathan_hoad">
-        <img src="/devlogs-on-youtube.png" alt="" />
+        <img src="/devlogs-on-youtube.png" alt="" width="960" height="540" />
         <span>Gamedev Videos</span>
       </a>
     </li>
     <li>
       <a href="https://github.com/nathanhoad/godot_dialogue_manager">
-        <img src="/dialogue-manager.png" alt="" />
+        <img src="/dialogue-manager.jpg" alt="" width="960" height="540" />
         <span>Dialogue Manager</span>
       </a>
     </li>
     <li>
       <a href="https://github.com/nathanhoad/godot_puzzle_dependencies">
-        <img src="/puzzle-dependencies.png" alt="" />
+        <img src="/puzzle-dependencies.jpg" alt="" width="960" height="540" />
         <span>Puzzle Dependencies</span>
       </a>
     </li>
     <li>
       <a href="https://github.com/nathanhoad/godot_input_helper">
-        <img src="/input-helper.png" alt="" />
+        <img src="/input-helper.jpg" alt="" width="960" height="540" />
         <span>Input Helper</span>
       </a>
     </li>
     <li>
       <a href="https://nathanhoad.itch.io/the-definitely-ending-story">
-        <img src="/the-definitely-ending-story.png" alt="" />
+        <img src="/the-definitely-ending-story.jpg" alt="" width="960" height="540" />
         <span>The Definitely Ending Story</span>
       </a>
     </li>
     <li>
       <a href="https://nathanhoad.itch.io/timesweeper">
-        <img src="/timesweeper.png" alt="" />
+        <img src="/timesweeper.jpg" alt="" width="960" height="540" />
         <span>Timesweeper</span>
       </a>
     </li>
@@ -164,6 +164,8 @@
   .projects a img {
     display: block;
     max-width: 100%;
+    width: auto;
+    height: auto;
   }
 
   .projects a span {

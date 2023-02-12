@@ -61,6 +61,14 @@
 
   article :global(img) {
     max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  article :global(video) {
+    max-width: 100%;
+    width: auto;
+    height: auto;
   }
 
   article :global(a) {

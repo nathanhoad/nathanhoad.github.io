@@ -52,7 +52,9 @@
   <p>Perhaps not all prototypes make it far enough for them but, for any that do, there is value in the “releasing a game” experience.</p>
 
   <figure>
-    <a href="https://nathanhoad.itch.io/timesweeper"> <img src={TIMESWEEPER_URL} alt="Screenshot of Timesweeper" /></a>
+    <a href="https://nathanhoad.itch.io/timesweeper">
+      <img src={TIMESWEEPER_URL} alt="Screenshot of Timesweeper" width="1920" height="1080" />
+    </a>
     <figcaption>Timesweeper is a two-player showdown.</figcaption>
   </figure>
 
@@ -73,7 +75,7 @@
 
   <aside class="right">
     <figure>
-      <img src={TRASH_TREASURE_URL} alt="Painting of Ibis on a pile of trash." />
+      <img src={TRASH_TREASURE_URL} alt="Painting of Ibis on a pile of trash." width="1600" height="1351" />
       <figcaption>You never know when your trash will become someone's treasure.</figcaption>
     </figure>
   </aside>

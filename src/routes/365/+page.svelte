@@ -26,7 +26,7 @@
   </header>
 
   <figure>
-    <img src={DOGS_URL} alt="Dogs playing a game of Dungeons & Dragons" />
+    <img src={DOGS_URL} alt="Dogs playing a game of Dungeons & Dragons" width="2000" height="1104" />
     <figcaption>Day 324 - "Dogs playing Dungeons & Dragons</figcaption>
   </figure>
 
@@ -41,7 +41,7 @@
 
   <aside class="left">
     <figure>
-      <img src={DAY_1_URL} alt="Painting of a cat drinking a tea and reading a newspaper" />
+      <img src={DAY_1_URL} alt="Painting of a cat drinking a tea and reading a newspaper" width="1080" height="1080" />
       <figcaption>Day 1 Day 1 - Off to a... start</figcaption>
     </figure>
   </aside>
@@ -70,7 +70,7 @@
 
   <aside>
     <figure>
-      <img src={BIN_CHICKENS_URL} alt="Painting of ibises playing in a band" />
+      <img src={BIN_CHICKENS_URL} alt="Painting of ibises playing in a band" width="1600" height="1560" />
       <figcaption>Day 48 - The first of many ibis paintings.</figcaption>
     </figure>
   </aside>
@@ -105,7 +105,7 @@
 
   <aside class="right">
     <figure>
-      <img src={SELF_PORTRAIT_URL} alt="A self portrait" />
+      <img src={SELF_PORTRAIT_URL} alt="A self portrait" width="1200" height="1138" />
       <figcaption>Day 11 - A self portrait.</figcaption>
     </figure>
   </aside>

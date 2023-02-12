@@ -21,16 +21,16 @@
     </style>
     <meta http-equiv="content-security-policy" content="">
 		<link href="./app/immutable/assets/_page-7f623385.css" rel="stylesheet">
-		<link href="./app/immutable/assets/article-7f4c0d41.css" rel="stylesheet">
+		<link href="./app/immutable/assets/article-1c366049.css" rel="stylesheet">
 		<link href="./app/immutable/assets/footer-cb91ccdc.css" rel="stylesheet">
-		<link rel="modulepreload" href="./app/immutable/start-b91fe225.js">
+		<link rel="modulepreload" href="./app/immutable/start-6f937722.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/index-1cf7e9b2.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/singletons-28808700.js">
 		<link rel="modulepreload" href="./app/immutable/components/layout.svelte-4ca07a18.js">
 		<link rel="modulepreload" href="./app/immutable/modules/pages/_layout.ts-fa3c4266.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/_layout-9a8b0c19.js">
-		<link rel="modulepreload" href="./app/immutable/components/pages/gdm/_page.svelte-dc4f95a1.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/article-75fa4ce9.js">
+		<link rel="modulepreload" href="./app/immutable/components/pages/gdm/_page.svelte-d7d4fb32.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/article-ab5fd542.js">
 		<link rel="modulepreload" href="./app/immutable/chunks/footer-523c7bc4.js"><title>Making a dialogue manager for Godot</title><!-- HEAD_svelte-1jxn8yo_START --><meta property="og:title" content="Making a dialogue manager for Godot"><meta name="description" content="If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager"><meta property="og:description" content="If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager"><meta property="og:image" content="/app/immutable/assets/editor-1acc6147.png"><meta property="og:url" content="https://nathanhoad.net/gdm"><link type="image/png" href="/favicon.png" rel="icon"><meta name="author" content="Nathan Hoad"><meta name="verify-v1" content="FJjra037EqYRGo8w0Atq5BHkBi8B+MPZSD+0jKQebLs="><meta name="p:domain_verify" content="5c8fe00840c14d6c92865fc017137b69"><!-- HEAD_svelte-1jxn8yo_END -->
   </head>
 
@@ -48,13 +48,13 @@
     <a href="https://github.com/nathanhoad" class="svelte-7xbkhu"><img src="/github-light.svg" alt="GitHub" class="svelte-7xbkhu"></a></aside>
 </header>
 
-<article class="svelte-1jo1u5n"><header><h1>Making a dialogue manager for Godot</h1>
+<article class="svelte-havcfm"><header><h1>Making a dialogue manager for Godot</h1>
     <aside>February 2022</aside></header>
 
   <p>If you&#39;re making your game with Godot like me and you need some dialogue like me then you should check out <a href="https://github.com/nathanhoad/godot_dialogue_manager">Godot Dialogue Manager</a>.
   </p>
 
-  <figure><a href="https://github.com/nathanhoad/godot_dialogue_manager"><img src="/app/immutable/assets/editor-1acc6147.png" alt="Screenshot of Dialogue Manager in Godot"></a>
+  <figure><a href="https://github.com/nathanhoad/godot_dialogue_manager"><img src="/app/immutable/assets/editor-1acc6147.png" alt="Screenshot of Dialogue Manager in Godot" width="1920" height="1080"></a>
     <figcaption><a href="https://github.com/nathanhoad/godot_dialogue_manager">Godot Dialogue Manager</a> is my branching dialogue editor that I use to
       write dialogue for my game
     </figcaption></figure>
@@ -119,7 +119,7 @@
   <p>Then, depending on that type it looks up whatever it needs to look up in order to satisfy any properties that type has.</p>
   <p>Then it does some basic error checking of whatever properties it has worked out.</p>
 
-  <figure><img src="/app/immutable/assets/errors-02c864a0.jpg" alt="Screenshot of error checking">
+  <figure><img src="/app/immutable/assets/errors-02c864a0.jpg" alt="Screenshot of error checking" width="1282" height="195">
     <figcaption>The dialogue editor will do periodic error checking on your syntax.</figcaption></figure>
 
   <p>If there are any errors then the UI shows them in a list.</p>
@@ -175,7 +175,7 @@
 
   <p>It uses these whenever you reference a variable or method.</p>
 
-  <aside class="right"><figure><img src="/app/immutable/assets/states-settings-aca4c4a7.jpg" alt="Screenshot of runtime state configuration">
+  <aside class="right"><figure><img src="/app/immutable/assets/states-settings-aca4c4a7.jpg" alt="Screenshot of runtime state configuration" width="600" height="523">
       <figcaption>You can configure your runtime states in the editor.</figcaption></figure></aside>
 
   <p>You can do it programmatically but I&#39;ve also added an interface in settings to make it a bit easier.</p>
@@ -194,7 +194,7 @@
     integrated editor.
   </p>
 
-  <aside class="left"><figure><img src="/app/immutable/assets/example-balloon-21a17167.jpg" alt="Screenshot of example balloon">
+  <aside class="left"><figure><img src="/app/immutable/assets/example-balloon-21a17167.jpg" alt="Screenshot of example balloon" width="520" height="208">
       <figcaption>Use the example balloon to test out dialogue.</figcaption></figure></aside>
 
   <p>I added an example dialogue balloon that can be used as a starting point for testing out dialogue.</p>
@@ -205,7 +205,7 @@
 
   <p>It does an HTTP request to the plugin GitHub page and checks the version available there.</p>
 
-  <aside class="right"><figure><a href="https://youtu.be/08HHSQGXfgM"><img src="/app/immutable/assets/tutorial-103953db.png" alt="YouTube video thumbnail"></a>
+  <aside class="right"><figure><a href="https://youtu.be/08HHSQGXfgM"><img src="/app/immutable/assets/tutorial-103953db.png" alt="YouTube video thumbnail" width="1920" height="1080"></a>
       <figcaption>I made a tutorial video to help get you started.</figcaption></figure></aside>
 
   <p>If there is a new version you&#39;ll see a button pop up in the top right that, when you click it, it will open a browser to GitHub so you
@@ -230,14 +230,14 @@
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="qhmffb">
-			import { start } from "./app/immutable/start-b91fe225.js";
+		<script type="module" data-sveltekit-hydrate="12mn2o9">
+			import { start } from "./app/immutable/start-6f937722.js";
 
 			start({
 				assets: "",
 				env: {},
-				target: document.querySelector('[data-sveltekit-hydrate="qhmffb"]').parentNode,
-				version: "1676174392339",
+				target: document.querySelector('[data-sveltekit-hydrate="12mn2o9"]').parentNode,
+				version: "1676176094533",
 				hydrate: {
 					node_ids: [0, 6],
 					data: [null,null],

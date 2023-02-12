@@ -23,7 +23,7 @@
   </figure>
 
   <figure>
-    <img src={EVEREST_URL} alt="" />
+    <img src={EVEREST_URL} alt="Illustration of Mount Everest" width="1920" height="1080" />
     <figcaption>Illustration by Nathan Hoad</figcaption>
   </figure>
 

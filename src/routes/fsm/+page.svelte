@@ -28,7 +28,7 @@
   <p>At any given time an NPC can be in one of many “behaviour states” depending on what's happening to them.</p>
 
   <figure>
-    <video src={SHARING_STATES_URL} autoplay playsinline muted loop />
+    <video src={SHARING_STATES_URL} autoplay playsinline muted loop width="1920" height="1080" />
     <figcaption>Designing states with dependency injection means they can be shared amongst different kinds of NPCs.</figcaption>
   </figure>
 

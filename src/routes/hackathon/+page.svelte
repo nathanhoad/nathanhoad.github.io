@@ -31,7 +31,7 @@
 
   <figure>
     <a href="https://nathanhoad.itch.io/the-definitely-ending-story">
-      <img src={HEADER_URL} alt="The Definitely Ending Story" />
+      <img src={HEADER_URL} alt="The Definitely Ending Story" width="1410" height="1122" />
     </a>
     <figcaption>Our entry, The Definitely Ending Story, took out the top prize.</figcaption>
   </figure>
@@ -49,7 +49,7 @@
 
   <aside class="right">
     <figure>
-      <img src={TOWN_URL} alt="A painting of a town" />
+      <img src={TOWN_URL} alt="A painting of a town" width="750" height="1138" />
       <figcaption>Everything was hand painted.</figcaption>
     </figure>
   </aside>
