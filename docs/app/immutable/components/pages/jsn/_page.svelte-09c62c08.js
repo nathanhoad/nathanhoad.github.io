@@ -1,7 +1,7 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, b as insert_hydration, f as transition_in, t as transition_out, A as destroy_component, h as detach, k as element, q as text, l as claim_element, m as children, r as claim_text, J as src_url_equal, n as attr, H as append_hydration, C as noop } from "../../../chunks/index-1cf7e9b2.js";
-import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
+import { M as Meta, F as Footer } from "../../../chunks/footer-7cdefdb4.js";
 import { H as Header_simple, A as Article } from "../../../chunks/article-828bfacf.js";
-const EVEREST_URL = "" + new URL("../../../assets/everest-ea76d325.svg", import.meta.url).href;
+const EVEREST_URL = "" + new URL("../../../assets/everest-716ec289.svg", import.meta.url).href;
 function create_default_slot(ctx) {
   let header;
   let h1;
@@ -79,7 +79,7 @@ function create_default_slot(ctx) {
       t11 = text("There is a long road between a dream and reality. The path is not well worn and sometimes hard to see.");
       t12 = space();
       p1 = element("p");
-      t13 = text(`You've probably had a moment where you've seen a demonstration of a seemingly amazing skill or heard about an achievement by someone and
+      t13 = text(`You've probably had a moment where you've seen a demonstration of a seemingly amazing skill or heard about an achievement by someone and\r
     thought "I want to know how to do that."`);
       t14 = space();
       p2 = element("p");
@@ -89,7 +89,7 @@ function create_default_slot(ctx) {
       t17 = text("The difference is huge. Knowing is the loot at the end of a quest and learning is the quest itself.");
       t18 = space();
       p4 = element("p");
-      t19 = text("It takes discipline to get to the end and you can never really be sure if it will be the same end when you get there. Looking at the\n    scale of the undertaking can be daunting but don't be put off by it.");
+      t19 = text("It takes discipline to get to the end and you can never really be sure if it will be the same end when you get there. Looking at the\r\n    scale of the undertaking can be daunting but don't be put off by it.");
       t20 = space();
       p5 = element("p");
       t21 = text("Remember that learning is not all or nothing - along the way you'll be collecting valuable experience.");
@@ -98,7 +98,7 @@ function create_default_slot(ctx) {
       t23 = text("The main thing is that you just start. You'll gain momentum and it's a lot easier to keep something in motion than it is to stop it.");
       t24 = space();
       p7 = element("p");
-      t25 = text("Don't know where to start? Pick something simple and do that first. Want to learn to paint? Just start painting one simple thing each\n    day. Want to build robots? Buy an Arduino and start tinkering.");
+      t25 = text("Don't know where to start? Pick something simple and do that first. Want to learn to paint? Just start painting one simple thing each\r\n    day. Want to build robots? Buy an Arduino and start tinkering.");
       t26 = space();
       p8 = element("p");
       t27 = text(`As Karen Lamb says, "A year from now you'll wish you started today."`);
@@ -156,7 +156,7 @@ function create_default_slot(ctx) {
       t12 = claim_space(nodes);
       p1 = claim_element(nodes, "P", {});
       var p1_nodes = children(p1);
-      t13 = claim_text(p1_nodes, `You've probably had a moment where you've seen a demonstration of a seemingly amazing skill or heard about an achievement by someone and
+      t13 = claim_text(p1_nodes, `You've probably had a moment where you've seen a demonstration of a seemingly amazing skill or heard about an achievement by someone and\r
     thought "I want to know how to do that."`);
       p1_nodes.forEach(detach);
       t14 = claim_space(nodes);
@@ -172,7 +172,7 @@ function create_default_slot(ctx) {
       t18 = claim_space(nodes);
       p4 = claim_element(nodes, "P", {});
       var p4_nodes = children(p4);
-      t19 = claim_text(p4_nodes, "It takes discipline to get to the end and you can never really be sure if it will be the same end when you get there. Looking at the\n    scale of the undertaking can be daunting but don't be put off by it.");
+      t19 = claim_text(p4_nodes, "It takes discipline to get to the end and you can never really be sure if it will be the same end when you get there. Looking at the\r\n    scale of the undertaking can be daunting but don't be put off by it.");
       p4_nodes.forEach(detach);
       t20 = claim_space(nodes);
       p5 = claim_element(nodes, "P", {});
@@ -187,7 +187,7 @@ function create_default_slot(ctx) {
       t24 = claim_space(nodes);
       p7 = claim_element(nodes, "P", {});
       var p7_nodes = children(p7);
-      t25 = claim_text(p7_nodes, "Don't know where to start? Pick something simple and do that first. Want to learn to paint? Just start painting one simple thing each\n    day. Want to build robots? Buy an Arduino and start tinkering.");
+      t25 = claim_text(p7_nodes, "Don't know where to start? Pick something simple and do that first. Want to learn to paint? Just start painting one simple thing each\r\n    day. Want to build robots? Buy an Arduino and start tinkering.");
       p7_nodes.forEach(detach);
       t26 = claim_space(nodes);
       p8 = claim_element(nodes, "P", {});

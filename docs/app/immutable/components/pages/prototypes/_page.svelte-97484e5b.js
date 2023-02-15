@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, b as insert_hydration, f as transition_in, t as transition_out, A as destroy_component, h as detach, k as element, q as text, l as claim_element, m as children, r as claim_text, J as src_url_equal, n as attr, H as append_hydration, C as noop } from "../../../chunks/index-1cf7e9b2.js";
-import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
+import { M as Meta, F as Footer } from "../../../chunks/footer-7cdefdb4.js";
 import { H as Header_simple, A as Article } from "../../../chunks/article-828bfacf.js";
 const TIMESWEEPER_URL = "" + new URL("../../../assets/timesweeper-d76e803e.jpg", import.meta.url).href;
 const TRASH_TREASURE_URL = "" + new URL("../../../assets/trash-treasure-43eabd58.jpg", import.meta.url).href;
@@ -103,14 +103,14 @@ function create_default_slot(ctx) {
       t5 = space();
       figure0 = element("figure");
       blockquote0 = element("blockquote");
-      t6 = text(`"No prototypes. Just make the game. Polish as you go. Don't depend on polish happening later. Always maintain constantly shippable
+      t6 = text(`"No prototypes. Just make the game. Polish as you go. Don't depend on polish happening later. Always maintain constantly shippable\r
       code."`);
       t7 = space();
       figcaption0 = element("figcaption");
       t8 = text("—John Romero");
       t9 = space();
       p1 = element("p");
-      t10 = text("When you've had the success that he had with id Software back in the day it's hard to argue. So argue I won't. Instead I will elaborate\n    on the point Romero has made with my own interpretation of it.");
+      t10 = text("When you've had the success that he had with id Software back in the day it's hard to argue. So argue I won't. Instead I will elaborate\r\n    on the point Romero has made with my own interpretation of it.");
       t11 = space();
       figure1 = element("figure");
       blockquote1 = element("blockquote");
@@ -120,7 +120,7 @@ function create_default_slot(ctx) {
       t14 = text("—me");
       t15 = space();
       p2 = element("p");
-      t16 = text("This way you still technically aren't making 'prototypes' because you're releasing actual games but you're also getting the benefits of\n    testing out ideas beforehand.");
+      t16 = text("This way you still technically aren't making 'prototypes' because you're releasing actual games but you're also getting the benefits of\r\n    testing out ideas beforehand.");
       t17 = space();
       p3 = element("p");
       t18 = text("Perhaps not all prototypes make it far enough for them but, for any that do, there is value in the “releasing a game” experience.");
@@ -136,16 +136,16 @@ function create_default_slot(ctx) {
       t23 = text("I recently published a game on ");
       a1 = element("a");
       t24 = text("Gotm.io");
-      t25 = text(" and\n    ");
+      t25 = text(" and\r\n    ");
       a2 = element("a");
       t26 = text("Itch");
       t27 = text(" (the Itch version is just the Gotm version embedded) called Timesweeper.");
       t28 = space();
       p5 = element("p");
-      t29 = text("Timesweeper began as a quick prototype of the high level multiplayer API in Godot 3, then a quick prototype to see if that would work\n    with the Gotm addon.");
+      t29 = text("Timesweeper began as a quick prototype of the high level multiplayer API in Godot 3, then a quick prototype to see if that would work\r\n    with the Gotm addon.");
       t30 = space();
       p6 = element("p");
-      t31 = text("It wasn't long before I had the whole thing functional as a very rough prototype. The game was mostly playable but setting it up each\n    time was a bit cumbersome.");
+      t31 = text("It wasn't long before I had the whole thing functional as a very rough prototype. The game was mostly playable but setting it up each\r\n    time was a bit cumbersome.");
       t32 = space();
       p7 = element("p");
       t33 = text("I figured that I was close enough to having an actual game I should just tidy up the rough edges and actually finish it.");
@@ -165,13 +165,13 @@ function create_default_slot(ctx) {
       t41 = space();
       ol = element("ol");
       li0 = element("li");
-      t42 = text("It makes you solve any actual problems, not just prove the basic idea. If you have to release the game into the wild you have to make\n      sure your idea is fully formed. This means you won't have half-baked ideas making their way into your bigger project.");
+      t42 = text("It makes you solve any actual problems, not just prove the basic idea. If you have to release the game into the wild you have to make\r\n      sure your idea is fully formed. This means you won't have half-baked ideas making their way into your bigger project.");
       t43 = space();
       li1 = element("li");
-      t44 = text("Doing something a second time is always better. You can make a small mess of the first implementation while you learn how best to do\n      it. Then, with your newfound knowledge, you can implement a cleaner solution into the main project.");
+      t44 = text("Doing something a second time is always better. You can make a small mess of the first implementation while you learn how best to do\r\n      it. Then, with your newfound knowledge, you can implement a cleaner solution into the main project.");
       t45 = space();
       li2 = element("li");
-      t46 = text("Even if you don't end up using the idea for anything else you've got something to show for it. In the example of Pixel Beach, I'm not\n      sure if I'll end up using the web-app-as-desktop-game method for releasing my bigger project but it was fun to test out and I have a\n      full game to show for the effort.");
+      t46 = text("Even if you don't end up using the idea for anything else you've got something to show for it. In the example of Pixel Beach, I'm not\r\n      sure if I'll end up using the web-app-as-desktop-game method for releasing my bigger project but it was fun to test out and I have a\r\n      full game to show for the effort.");
       t47 = space();
       li3 = element("li");
       t48 = text("You never know when someone will fall in love with your 'throwaway' game.");
@@ -200,7 +200,7 @@ function create_default_slot(ctx) {
       var figure0_nodes = children(figure0);
       blockquote0 = claim_element(figure0_nodes, "BLOCKQUOTE", {});
       var blockquote0_nodes = children(blockquote0);
-      t6 = claim_text(blockquote0_nodes, `"No prototypes. Just make the game. Polish as you go. Don't depend on polish happening later. Always maintain constantly shippable
+      t6 = claim_text(blockquote0_nodes, `"No prototypes. Just make the game. Polish as you go. Don't depend on polish happening later. Always maintain constantly shippable\r
       code."`);
       blockquote0_nodes.forEach(detach);
       t7 = claim_space(figure0_nodes);
@@ -212,7 +212,7 @@ function create_default_slot(ctx) {
       t9 = claim_space(nodes);
       p1 = claim_element(nodes, "P", {});
       var p1_nodes = children(p1);
-      t10 = claim_text(p1_nodes, "When you've had the success that he had with id Software back in the day it's hard to argue. So argue I won't. Instead I will elaborate\n    on the point Romero has made with my own interpretation of it.");
+      t10 = claim_text(p1_nodes, "When you've had the success that he had with id Software back in the day it's hard to argue. So argue I won't. Instead I will elaborate\r\n    on the point Romero has made with my own interpretation of it.");
       p1_nodes.forEach(detach);
       t11 = claim_space(nodes);
       figure1 = claim_element(nodes, "FIGURE", {});
@@ -230,7 +230,7 @@ function create_default_slot(ctx) {
       t15 = claim_space(nodes);
       p2 = claim_element(nodes, "P", {});
       var p2_nodes = children(p2);
-      t16 = claim_text(p2_nodes, "This way you still technically aren't making 'prototypes' because you're releasing actual games but you're also getting the benefits of\n    testing out ideas beforehand.");
+      t16 = claim_text(p2_nodes, "This way you still technically aren't making 'prototypes' because you're releasing actual games but you're also getting the benefits of\r\n    testing out ideas beforehand.");
       p2_nodes.forEach(detach);
       t17 = claim_space(nodes);
       p3 = claim_element(nodes, "P", {});
@@ -263,7 +263,7 @@ function create_default_slot(ctx) {
       var a1_nodes = children(a1);
       t24 = claim_text(a1_nodes, "Gotm.io");
       a1_nodes.forEach(detach);
-      t25 = claim_text(p4_nodes, " and\n    ");
+      t25 = claim_text(p4_nodes, " and\r\n    ");
       a2 = claim_element(p4_nodes, "A", { href: true });
       var a2_nodes = children(a2);
       t26 = claim_text(a2_nodes, "Itch");
@@ -273,12 +273,12 @@ function create_default_slot(ctx) {
       t28 = claim_space(nodes);
       p5 = claim_element(nodes, "P", {});
       var p5_nodes = children(p5);
-      t29 = claim_text(p5_nodes, "Timesweeper began as a quick prototype of the high level multiplayer API in Godot 3, then a quick prototype to see if that would work\n    with the Gotm addon.");
+      t29 = claim_text(p5_nodes, "Timesweeper began as a quick prototype of the high level multiplayer API in Godot 3, then a quick prototype to see if that would work\r\n    with the Gotm addon.");
       p5_nodes.forEach(detach);
       t30 = claim_space(nodes);
       p6 = claim_element(nodes, "P", {});
       var p6_nodes = children(p6);
-      t31 = claim_text(p6_nodes, "It wasn't long before I had the whole thing functional as a very rough prototype. The game was mostly playable but setting it up each\n    time was a bit cumbersome.");
+      t31 = claim_text(p6_nodes, "It wasn't long before I had the whole thing functional as a very rough prototype. The game was mostly playable but setting it up each\r\n    time was a bit cumbersome.");
       p6_nodes.forEach(detach);
       t32 = claim_space(nodes);
       p7 = claim_element(nodes, "P", {});
@@ -318,17 +318,17 @@ function create_default_slot(ctx) {
       var ol_nodes = children(ol);
       li0 = claim_element(ol_nodes, "LI", {});
       var li0_nodes = children(li0);
-      t42 = claim_text(li0_nodes, "It makes you solve any actual problems, not just prove the basic idea. If you have to release the game into the wild you have to make\n      sure your idea is fully formed. This means you won't have half-baked ideas making their way into your bigger project.");
+      t42 = claim_text(li0_nodes, "It makes you solve any actual problems, not just prove the basic idea. If you have to release the game into the wild you have to make\r\n      sure your idea is fully formed. This means you won't have half-baked ideas making their way into your bigger project.");
       li0_nodes.forEach(detach);
       t43 = claim_space(ol_nodes);
       li1 = claim_element(ol_nodes, "LI", {});
       var li1_nodes = children(li1);
-      t44 = claim_text(li1_nodes, "Doing something a second time is always better. You can make a small mess of the first implementation while you learn how best to do\n      it. Then, with your newfound knowledge, you can implement a cleaner solution into the main project.");
+      t44 = claim_text(li1_nodes, "Doing something a second time is always better. You can make a small mess of the first implementation while you learn how best to do\r\n      it. Then, with your newfound knowledge, you can implement a cleaner solution into the main project.");
       li1_nodes.forEach(detach);
       t45 = claim_space(ol_nodes);
       li2 = claim_element(ol_nodes, "LI", {});
       var li2_nodes = children(li2);
-      t46 = claim_text(li2_nodes, "Even if you don't end up using the idea for anything else you've got something to show for it. In the example of Pixel Beach, I'm not\n      sure if I'll end up using the web-app-as-desktop-game method for releasing my bigger project but it was fun to test out and I have a\n      full game to show for the effort.");
+      t46 = claim_text(li2_nodes, "Even if you don't end up using the idea for anything else you've got something to show for it. In the example of Pixel Beach, I'm not\r\n      sure if I'll end up using the web-app-as-desktop-game method for releasing my bigger project but it was fun to test out and I have a\r\n      full game to show for the effort.");
       li2_nodes.forEach(detach);
       t47 = claim_space(ol_nodes);
       li3 = claim_element(ol_nodes, "LI", {});

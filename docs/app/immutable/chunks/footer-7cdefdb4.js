@@ -226,7 +226,7 @@ function create_fragment(ctx) {
       t0 = text("If you want to keep up to date with my adventures in game development then you should ");
       a0 = element("a");
       t1 = text("subscribe to my YouTube channel");
-      t2 = text("\n    or ");
+      t2 = text("\r\n    or ");
       a1 = element("a");
       t3 = text("join my Discord");
       t4 = text(".");
@@ -266,7 +266,7 @@ function create_fragment(ctx) {
       var a0_nodes = children(a0);
       t1 = claim_text(a0_nodes, "subscribe to my YouTube channel");
       a0_nodes.forEach(detach);
-      t2 = claim_text(p_nodes, "\n    or ");
+      t2 = claim_text(p_nodes, "\r\n    or ");
       a1 = claim_element(p_nodes, "A", { href: true, class: true });
       var a1_nodes = children(a1);
       t3 = claim_text(a1_nodes, "join my Discord");

@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, b as insert_hydration, f as transition_in, t as transition_out, A as destroy_component, h as detach, k as element, q as text, l as claim_element, m as children, r as claim_text, n as attr, J as src_url_equal, H as append_hydration, C as noop } from "../../../chunks/index-1cf7e9b2.js";
-import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
+import { M as Meta, F as Footer } from "../../../chunks/footer-7cdefdb4.js";
 import { H as Header_simple, A as Article } from "../../../chunks/article-828bfacf.js";
 const TAVERN_URL = "" + new URL("../../../assets/tavern-lighting-8ef2c72e.jpg", import.meta.url).href;
 function create_default_slot(ctx) {
@@ -68,10 +68,10 @@ function create_default_slot(ctx) {
       t2 = text("September 2020");
       t3 = space();
       p0 = element("p");
-      t4 = text("I've been making games here and there for about 25 years but t's only been in the last few years that I've started doing it more\n    deliberately.");
+      t4 = text("I've been making games here and there for about 25 years but t's only been in the last few years that I've started doing it more\r\n    deliberately.");
       t5 = space();
       p1 = element("p");
-      t6 = text("Back in the early days all I had available to me was a copy of The Games Factory I bought from a local computer store but these days\n    there's a never-ending supply of game-making tools.");
+      t6 = text("Back in the early days all I had available to me was a copy of The Games Factory I bought from a local computer store but these days\r\n    there's a never-ending supply of game-making tools.");
       t7 = space();
       p2 = element("p");
       t8 = text("So why did I choose ");
@@ -86,13 +86,13 @@ function create_default_slot(ctx) {
       t13 = text("Coco's adventures moved to Godot.");
       t14 = space();
       p3 = element("p");
-      t15 = text("The first big reason for me is that it's free and open source. Some of the other popular engines have had some scary looking license\n    revisions over the years but, based on how the project is structured, Godot is immune from that.");
+      t15 = text("The first big reason for me is that it's free and open source. Some of the other popular engines have had some scary looking license\r\n    revisions over the years but, based on how the project is structured, Godot is immune from that.");
       t16 = space();
       p4 = element("p");
       t17 = text("Another reason is that it's light.");
       t18 = space();
       p5 = element("p");
-      t19 = text("Godot doesn't need much to run and its footprint Is tiny. In less than 100mb you get a full game engine. And there is a surprising\n    amount of stuff packed into that size.");
+      t19 = text("Godot doesn't need much to run and its footprint Is tiny. In less than 100mb you get a full game engine. And there is a surprising\r\n    amount of stuff packed into that size.");
       t20 = space();
       p6 = element("p");
       t21 = text("I like the node-based structure.");
@@ -110,7 +110,7 @@ function create_default_slot(ctx) {
       t29 = text("One of the biggest reasons for me though is the community.");
       t30 = space();
       p10 = element("p");
-      t31 = text("Everybody is passionate about Godot and there is always someone willing to help you out. There are countless high quality tutorials that\n    teach everything you need to get started.");
+      t31 = text("Everybody is passionate about Godot and there is always someone willing to help you out. There are countless high quality tutorials that\r\n    teach everything you need to get started.");
       t32 = space();
       p11 = element("p");
       t33 = text("I've used a long list of game-making software over the years but Godot is the first one that feels like home.");
@@ -132,12 +132,12 @@ function create_default_slot(ctx) {
       t3 = claim_space(nodes);
       p0 = claim_element(nodes, "P", {});
       var p0_nodes = children(p0);
-      t4 = claim_text(p0_nodes, "I've been making games here and there for about 25 years but t's only been in the last few years that I've started doing it more\n    deliberately.");
+      t4 = claim_text(p0_nodes, "I've been making games here and there for about 25 years but t's only been in the last few years that I've started doing it more\r\n    deliberately.");
       p0_nodes.forEach(detach);
       t5 = claim_space(nodes);
       p1 = claim_element(nodes, "P", {});
       var p1_nodes = children(p1);
-      t6 = claim_text(p1_nodes, "Back in the early days all I had available to me was a copy of The Games Factory I bought from a local computer store but these days\n    there's a never-ending supply of game-making tools.");
+      t6 = claim_text(p1_nodes, "Back in the early days all I had available to me was a copy of The Games Factory I bought from a local computer store but these days\r\n    there's a never-ending supply of game-making tools.");
       p1_nodes.forEach(detach);
       t7 = claim_space(nodes);
       p2 = claim_element(nodes, "P", {});
@@ -167,7 +167,7 @@ function create_default_slot(ctx) {
       t14 = claim_space(nodes);
       p3 = claim_element(nodes, "P", {});
       var p3_nodes = children(p3);
-      t15 = claim_text(p3_nodes, "The first big reason for me is that it's free and open source. Some of the other popular engines have had some scary looking license\n    revisions over the years but, based on how the project is structured, Godot is immune from that.");
+      t15 = claim_text(p3_nodes, "The first big reason for me is that it's free and open source. Some of the other popular engines have had some scary looking license\r\n    revisions over the years but, based on how the project is structured, Godot is immune from that.");
       p3_nodes.forEach(detach);
       t16 = claim_space(nodes);
       p4 = claim_element(nodes, "P", {});
@@ -177,7 +177,7 @@ function create_default_slot(ctx) {
       t18 = claim_space(nodes);
       p5 = claim_element(nodes, "P", {});
       var p5_nodes = children(p5);
-      t19 = claim_text(p5_nodes, "Godot doesn't need much to run and its footprint Is tiny. In less than 100mb you get a full game engine. And there is a surprising\n    amount of stuff packed into that size.");
+      t19 = claim_text(p5_nodes, "Godot doesn't need much to run and its footprint Is tiny. In less than 100mb you get a full game engine. And there is a surprising\r\n    amount of stuff packed into that size.");
       p5_nodes.forEach(detach);
       t20 = claim_space(nodes);
       p6 = claim_element(nodes, "P", {});
@@ -207,7 +207,7 @@ function create_default_slot(ctx) {
       t30 = claim_space(nodes);
       p10 = claim_element(nodes, "P", {});
       var p10_nodes = children(p10);
-      t31 = claim_text(p10_nodes, "Everybody is passionate about Godot and there is always someone willing to help you out. There are countless high quality tutorials that\n    teach everything you need to get started.");
+      t31 = claim_text(p10_nodes, "Everybody is passionate about Godot and there is always someone willing to help you out. There are countless high quality tutorials that\r\n    teach everything you need to get started.");
       p10_nodes.forEach(detach);
       t32 = claim_space(nodes);
       p11 = claim_element(nodes, "P", {});

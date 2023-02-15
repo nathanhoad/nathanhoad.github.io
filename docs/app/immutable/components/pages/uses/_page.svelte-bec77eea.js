@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, b as insert_hydration, f as transition_in, t as transition_out, A as destroy_component, h as detach, k as element, q as text, l as claim_element, m as children, r as claim_text, n as attr, H as append_hydration, C as noop } from "../../../chunks/index-1cf7e9b2.js";
-import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
+import { M as Meta, F as Footer } from "../../../chunks/footer-7cdefdb4.js";
 import { H as Header_simple, A as Article } from "../../../chunks/article-828bfacf.js";
 function create_default_slot(ctx) {
   let header;
@@ -169,7 +169,7 @@ function create_default_slot(ctx) {
       li7 = element("li");
       a7 = element("a");
       t35 = text("Krita");
-      t36 = text(" for drawing on my\n      ");
+      t36 = text(" for drawing on my\r\n      ");
       a8 = element("a");
       t37 = text("Surface Pro 9");
       t38 = space();
@@ -325,7 +325,7 @@ function create_default_slot(ctx) {
       var a7_nodes = children(a7);
       t35 = claim_text(a7_nodes, "Krita");
       a7_nodes.forEach(detach);
-      t36 = claim_text(li7_nodes, " for drawing on my\n      ");
+      t36 = claim_text(li7_nodes, " for drawing on my\r\n      ");
       a8 = claim_element(li7_nodes, "A", { href: true });
       var a8_nodes = children(a8);
       t37 = claim_text(a8_nodes, "Surface Pro 9");

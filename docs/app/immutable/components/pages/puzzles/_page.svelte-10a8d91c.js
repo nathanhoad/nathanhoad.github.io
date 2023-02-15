@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, b as insert_hydration, f as transition_in, t as transition_out, A as destroy_component, h as detach, k as element, q as text, l as claim_element, m as children, r as claim_text, n as attr, J as src_url_equal, H as append_hydration, C as noop } from "../../../chunks/index-1cf7e9b2.js";
-import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
+import { M as Meta, F as Footer } from "../../../chunks/footer-7cdefdb4.js";
 import { H as Header_simple, A as Article } from "../../../chunks/article-828bfacf.js";
 const LINKS_AWAKENING_URL = "" + new URL("../../../assets/links-awakening-c2c37563.jpg", import.meta.url).href;
 const FULL_THROTTLE_URL = "" + new URL("../../../assets/full-throttle-cb8b68dd.jpg", import.meta.url).href;
@@ -128,7 +128,7 @@ function create_default_slot(ctx) {
       t8 = text("It ");
       a1 = element("a");
       t9 = text("helps with designing adventurer game puzzles");
-      t10 = text(" and ensuring there are no\n    dead ends that make progression impossible.");
+      t10 = text(" and ensuring there are no\r\n    dead ends that make progression impossible.");
       t11 = space();
       p2 = element("p");
       t12 = text("Puzzle dependency charts also help highlight the breadth of puzzles and show where a game is too linear or too overwhelming.");
@@ -152,7 +152,7 @@ function create_default_slot(ctx) {
       t22 = text("There should be enough knowledge provided in the game to hypothesise about the solution.");
       t23 = space();
       p8 = element("p");
-      t24 = text("Telegraphing can be done in a few ways, from subtle character dialogue (or even obvious character dialogue if it fits the style of\n        the game) through to environmental hints.");
+      t24 = text("Telegraphing can be done in a few ways, from subtle character dialogue (or even obvious character dialogue if it fits the style of\r\n        the game) through to environmental hints.");
       t25 = space();
       aside1 = element("aside");
       figure0 = element("figure");
@@ -168,7 +168,7 @@ function create_default_slot(ctx) {
       t31 = text("There is a hidden room in the Key Cavern that can only be accessed by using bombs against a specific wall.");
       t32 = space();
       p11 = element("p");
-      t33 = text("Usually walls that are susceptible to bombs have special cracks in them but to help the player discover this particular wall they\n        are given an extra hint - a giant arrow on the ground drawn with tiles.");
+      t33 = text("Usually walls that are susceptible to bombs have special cracks in them but to help the player discover this particular wall they\r\n        are given an extra hint - a giant arrow on the ground drawn with tiles.");
       t34 = space();
       p12 = element("p");
       t35 = text("It's not overly subtle but it also doesn't explicitly spell it out either.");
@@ -182,7 +182,7 @@ function create_default_slot(ctx) {
       t39 = text("This second question is for after the solution is found.");
       t40 = space();
       p15 = element("p");
-      t41 = text("If a player randomly stumbles on the answer but are still confused as to why that worked then the puzzle is probably either too\n        abstract, relies on overly specific knowledge, or is just a bad idea in general.");
+      t41 = text("If a player randomly stumbles on the answer but are still confused as to why that worked then the puzzle is probably either too\r\n        abstract, relies on overly specific knowledge, or is just a bad idea in general.");
       t42 = space();
       p16 = element("p");
       t43 = text("That doesn't mean solutions have to be boring.");
@@ -198,10 +198,10 @@ function create_default_slot(ctx) {
       t48 = text("Sometimes the solution is just rearranging the pieces.");
       t49 = space();
       p18 = element("p");
-      t50 = text("There's a puzzle in Full Throttle that involves a chain that when pulled opens a gate. As soon as you let go, however, the gate\n        closes again.");
+      t50 = text("There's a puzzle in Full Throttle that involves a chain that when pulled opens a gate. As soon as you let go, however, the gate\r\n        closes again.");
       t51 = space();
       p19 = element("p");
-      t52 = text("You have a padlock that you might initially think should be used on the chain to keep the gate open but the solution to the puzzle\n        is to padlock the gate shut so that the chain stays in place.");
+      t52 = text("You have a padlock that you might initially think should be used on the chain to keep the gate open but the solution to the puzzle\r\n        is to padlock the gate shut so that the chain stays in place.");
       t53 = space();
       p20 = element("p");
       t54 = text("You can then climb the chain to get over the wall.");
@@ -210,7 +210,7 @@ function create_default_slot(ctx) {
       t56 = text("The solution is surprising but it does make sense.");
       t57 = space();
       p22 = element("p");
-      t58 = text("Unfortunately, as the puzzle designer, you can never truly know if you've hit the mark until you put your puzzles in front of real\n    players.");
+      t58 = text("Unfortunately, as the puzzle designer, you can never truly know if you've hit the mark until you put your puzzles in front of real\r\n    players.");
       t59 = space();
       p23 = element("p");
       t60 = text("You'll know you've found the perfect balance when the player gets a sense of being clever when they figure it out.");
@@ -247,7 +247,7 @@ function create_default_slot(ctx) {
       var a1_nodes = children(a1);
       t9 = claim_text(a1_nodes, "helps with designing adventurer game puzzles");
       a1_nodes.forEach(detach);
-      t10 = claim_text(p1_nodes, " and ensuring there are no\n    dead ends that make progression impossible.");
+      t10 = claim_text(p1_nodes, " and ensuring there are no\r\n    dead ends that make progression impossible.");
       p1_nodes.forEach(detach);
       t11 = claim_space(nodes);
       p2 = claim_element(nodes, "P", {});
@@ -289,7 +289,7 @@ function create_default_slot(ctx) {
       t23 = claim_space(li0_nodes);
       p8 = claim_element(li0_nodes, "P", {});
       var p8_nodes = children(p8);
-      t24 = claim_text(p8_nodes, "Telegraphing can be done in a few ways, from subtle character dialogue (or even obvious character dialogue if it fits the style of\n        the game) through to environmental hints.");
+      t24 = claim_text(p8_nodes, "Telegraphing can be done in a few ways, from subtle character dialogue (or even obvious character dialogue if it fits the style of\r\n        the game) through to environmental hints.");
       p8_nodes.forEach(detach);
       t25 = claim_space(li0_nodes);
       aside1 = claim_element(li0_nodes, "ASIDE", { class: true });
@@ -322,7 +322,7 @@ function create_default_slot(ctx) {
       t32 = claim_space(li0_nodes);
       p11 = claim_element(li0_nodes, "P", {});
       var p11_nodes = children(p11);
-      t33 = claim_text(p11_nodes, "Usually walls that are susceptible to bombs have special cracks in them but to help the player discover this particular wall they\n        are given an extra hint - a giant arrow on the ground drawn with tiles.");
+      t33 = claim_text(p11_nodes, "Usually walls that are susceptible to bombs have special cracks in them but to help the player discover this particular wall they\r\n        are given an extra hint - a giant arrow on the ground drawn with tiles.");
       p11_nodes.forEach(detach);
       t34 = claim_space(li0_nodes);
       p12 = claim_element(li0_nodes, "P", {});
@@ -348,7 +348,7 @@ function create_default_slot(ctx) {
       t40 = claim_space(li1_nodes);
       p15 = claim_element(li1_nodes, "P", {});
       var p15_nodes = children(p15);
-      t41 = claim_text(p15_nodes, "If a player randomly stumbles on the answer but are still confused as to why that worked then the puzzle is probably either too\n        abstract, relies on overly specific knowledge, or is just a bad idea in general.");
+      t41 = claim_text(p15_nodes, "If a player randomly stumbles on the answer but are still confused as to why that worked then the puzzle is probably either too\r\n        abstract, relies on overly specific knowledge, or is just a bad idea in general.");
       p15_nodes.forEach(detach);
       t42 = claim_space(li1_nodes);
       p16 = claim_element(li1_nodes, "P", {});
@@ -381,12 +381,12 @@ function create_default_slot(ctx) {
       t49 = claim_space(li1_nodes);
       p18 = claim_element(li1_nodes, "P", {});
       var p18_nodes = children(p18);
-      t50 = claim_text(p18_nodes, "There's a puzzle in Full Throttle that involves a chain that when pulled opens a gate. As soon as you let go, however, the gate\n        closes again.");
+      t50 = claim_text(p18_nodes, "There's a puzzle in Full Throttle that involves a chain that when pulled opens a gate. As soon as you let go, however, the gate\r\n        closes again.");
       p18_nodes.forEach(detach);
       t51 = claim_space(li1_nodes);
       p19 = claim_element(li1_nodes, "P", {});
       var p19_nodes = children(p19);
-      t52 = claim_text(p19_nodes, "You have a padlock that you might initially think should be used on the chain to keep the gate open but the solution to the puzzle\n        is to padlock the gate shut so that the chain stays in place.");
+      t52 = claim_text(p19_nodes, "You have a padlock that you might initially think should be used on the chain to keep the gate open but the solution to the puzzle\r\n        is to padlock the gate shut so that the chain stays in place.");
       p19_nodes.forEach(detach);
       t53 = claim_space(li1_nodes);
       p20 = claim_element(li1_nodes, "P", {});
@@ -403,7 +403,7 @@ function create_default_slot(ctx) {
       t57 = claim_space(nodes);
       p22 = claim_element(nodes, "P", {});
       var p22_nodes = children(p22);
-      t58 = claim_text(p22_nodes, "Unfortunately, as the puzzle designer, you can never truly know if you've hit the mark until you put your puzzles in front of real\n    players.");
+      t58 = claim_text(p22_nodes, "Unfortunately, as the puzzle designer, you can never truly know if you've hit the mark until you put your puzzles in front of real\r\n    players.");
       p22_nodes.forEach(detach);
       t59 = claim_space(nodes);
       p23 = claim_element(nodes, "P", {});

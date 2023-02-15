@@ -202,6 +202,12 @@
     font-family: "Noto Sans", sans-serif;
   }
 
+  @media screen and (max-width: 960px) {
+    .projects {
+      margin: 1.5rem 0;
+    }
+  }
+
   @media screen and (max-width: 700px) {
     section {
       max-width: calc(100% - 30px);

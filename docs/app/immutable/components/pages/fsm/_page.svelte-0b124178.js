@@ -1,5 +1,5 @@
 import { S as SvelteComponent, i as init, s as safe_not_equal, x as create_component, a as space, y as claim_component, c as claim_space, z as mount_component, b as insert_hydration, f as transition_in, t as transition_out, A as destroy_component, h as detach, k as element, q as text, l as claim_element, m as children, r as claim_text, J as src_url_equal, n as attr, H as append_hydration, C as noop } from "../../../chunks/index-1cf7e9b2.js";
-import { M as Meta, F as Footer } from "../../../chunks/footer-03ca8822.js";
+import { M as Meta, F as Footer } from "../../../chunks/footer-7cdefdb4.js";
 import { H as Header_simple, A as Article } from "../../../chunks/article-828bfacf.js";
 const SHARING_STATES_URL = "" + new URL("../../../assets/sharing-states-5f1e08f4.mp4", import.meta.url).href;
 function create_default_slot(ctx) {
@@ -103,7 +103,7 @@ function create_default_slot(ctx) {
       t13 = text("For example, an enemy might contain states for “patrolling” and “chasing”.");
       t14 = space();
       p4 = element("p");
-      t15 = text("Breaking up behaviour makes it simpler to think about. When “patrolling”, the enemy just follows a path back and forward until they see\n    the player. Then they change state to “chasing” where they move towards the player. If they lose sight of the player they go back to\n    “patrolling” and return to their path.");
+      t15 = text("Breaking up behaviour makes it simpler to think about. When “patrolling”, the enemy just follows a path back and forward until they see\r\n    the player. Then they change state to “chasing” where they move towards the player. If they lose sight of the player they go back to\r\n    “patrolling” and return to their path.");
       t16 = space();
       p5 = element("p");
       t17 = text("Breaking up behaviour has another benefit - you can share them with other types of NPC.");
@@ -112,7 +112,7 @@ function create_default_slot(ctx) {
       t19 = text("A friendly person in a town might also make use of the patrolling state.");
       t20 = space();
       p7 = element("p");
-      t21 = text("There's no real limit to how many states you can have or how much you share them but there are two rules that I've found have helped\n    keep things manageable:");
+      t21 = text("There's no real limit to how many states you can have or how much you share them but there are two rules that I've found have helped\r\n    keep things manageable:");
       t22 = space();
       ol = element("ol");
       li0 = element("li");
@@ -121,7 +121,7 @@ function create_default_slot(ctx) {
       t23 = text("States define their dependencies");
       t24 = space();
       p9 = element("p");
-      t25 = text("Anything external information that the state needs should be explicitly defined. In the case of Godot this means declaring export\n        variables that can be populated by the owner node.");
+      t25 = text("Anything external information that the state needs should be explicitly defined. In the case of Godot this means declaring export\r\n        variables that can be populated by the owner node.");
       t26 = space();
       li1 = element("li");
       p10 = element("p");
@@ -135,16 +135,16 @@ function create_default_slot(ctx) {
       t31 = text("Instead of transitioning itself, a state should simply provide a list of events that can happen while in that state.");
       t32 = space();
       p13 = element("p");
-      t33 = text("In the example from earlier, the patrolling state might signal that it has seen the player. From there the NPC that owns the state\n        machine can decide whether it needs to transition or not.");
+      t33 = text("In the example from earlier, the patrolling state might signal that it has seen the player. From there the NPC that owns the state\r\n        machine can decide whether it needs to transition or not.");
       t34 = space();
       p14 = element("p");
       t35 = text("If you're interested in using a finite state machine for your game then have a look at my videos on ");
       a0 = element("a");
       t36 = text("enemy behaviour");
-      t37 = text("\n    and\n    ");
+      t37 = text("\r\n    and\r\n    ");
       a1 = element("a");
       t38 = text("smarter NPCs");
-      t39 = text("\n    and have a look at\n    ");
+      t39 = text("\r\n    and have a look at\r\n    ");
       a2 = element("a");
       t40 = text("GDQuest's guide to finite state machines");
       t41 = text(".");
@@ -197,7 +197,7 @@ function create_default_slot(ctx) {
       t14 = claim_space(nodes);
       p4 = claim_element(nodes, "P", {});
       var p4_nodes = children(p4);
-      t15 = claim_text(p4_nodes, "Breaking up behaviour makes it simpler to think about. When “patrolling”, the enemy just follows a path back and forward until they see\n    the player. Then they change state to “chasing” where they move towards the player. If they lose sight of the player they go back to\n    “patrolling” and return to their path.");
+      t15 = claim_text(p4_nodes, "Breaking up behaviour makes it simpler to think about. When “patrolling”, the enemy just follows a path back and forward until they see\r\n    the player. Then they change state to “chasing” where they move towards the player. If they lose sight of the player they go back to\r\n    “patrolling” and return to their path.");
       p4_nodes.forEach(detach);
       t16 = claim_space(nodes);
       p5 = claim_element(nodes, "P", {});
@@ -212,7 +212,7 @@ function create_default_slot(ctx) {
       t20 = claim_space(nodes);
       p7 = claim_element(nodes, "P", {});
       var p7_nodes = children(p7);
-      t21 = claim_text(p7_nodes, "There's no real limit to how many states you can have or how much you share them but there are two rules that I've found have helped\n    keep things manageable:");
+      t21 = claim_text(p7_nodes, "There's no real limit to how many states you can have or how much you share them but there are two rules that I've found have helped\r\n    keep things manageable:");
       p7_nodes.forEach(detach);
       t22 = claim_space(nodes);
       ol = claim_element(nodes, "OL", {});
@@ -229,7 +229,7 @@ function create_default_slot(ctx) {
       t24 = claim_space(li0_nodes);
       p9 = claim_element(li0_nodes, "P", {});
       var p9_nodes = children(p9);
-      t25 = claim_text(p9_nodes, "Anything external information that the state needs should be explicitly defined. In the case of Godot this means declaring export\n        variables that can be populated by the owner node.");
+      t25 = claim_text(p9_nodes, "Anything external information that the state needs should be explicitly defined. In the case of Godot this means declaring export\r\n        variables that can be populated by the owner node.");
       p9_nodes.forEach(detach);
       li0_nodes.forEach(detach);
       t26 = claim_space(ol_nodes);
@@ -255,7 +255,7 @@ function create_default_slot(ctx) {
       t32 = claim_space(li1_nodes);
       p13 = claim_element(li1_nodes, "P", {});
       var p13_nodes = children(p13);
-      t33 = claim_text(p13_nodes, "In the example from earlier, the patrolling state might signal that it has seen the player. From there the NPC that owns the state\n        machine can decide whether it needs to transition or not.");
+      t33 = claim_text(p13_nodes, "In the example from earlier, the patrolling state might signal that it has seen the player. From there the NPC that owns the state\r\n        machine can decide whether it needs to transition or not.");
       p13_nodes.forEach(detach);
       li1_nodes.forEach(detach);
       ol_nodes.forEach(detach);
@@ -267,12 +267,12 @@ function create_default_slot(ctx) {
       var a0_nodes = children(a0);
       t36 = claim_text(a0_nodes, "enemy behaviour");
       a0_nodes.forEach(detach);
-      t37 = claim_text(p14_nodes, "\n    and\n    ");
+      t37 = claim_text(p14_nodes, "\r\n    and\r\n    ");
       a1 = claim_element(p14_nodes, "A", { href: true });
       var a1_nodes = children(a1);
       t38 = claim_text(a1_nodes, "smarter NPCs");
       a1_nodes.forEach(detach);
-      t39 = claim_text(p14_nodes, "\n    and have a look at\n    ");
+      t39 = claim_text(p14_nodes, "\r\n    and have a look at\r\n    ");
       a2 = claim_element(p14_nodes, "A", { href: true });
       var a2_nodes = children(a2);
       t40 = claim_text(a2_nodes, "GDQuest's guide to finite state machines");

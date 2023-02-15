@@ -53,6 +53,7 @@
     display: block;
     margin: auto;
     max-width: 100%;
+    max-height: 75vh;
     width: auto;
     height: auto;
   }
