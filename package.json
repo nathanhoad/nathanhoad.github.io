@@ -1,6 +1,6 @@
 {
   "name": "nathanhoad.github.io",
-  "version": "0.0.1",
+  "version": "8.0.0",
   "private": true,
   "scripts": {
     "dev": "vite dev",
