@@ -1,21 +1,14 @@
 <script lang="ts">
-  import Meta from "$lib/components/meta.svelte";
-  import Article from "$lib/components/article.svelte";
-  import Footer from "$lib/components/footer.svelte";
-  import HeaderSimple from "$lib/components/header-simple.svelte";
+  import ArticlePage from "$lib/components/article-page.svelte";
 
   import SHARING_STATES_URL from "./sharing-states.mp4";
 </script>
 
-<Meta
+<ArticlePage
   path="/fsm"
   title="Using finite state machines for behaviour"
   description="Finite state machines help break apart the code that powers character behaviour and make it easier to understand and reuse"
-/>
-
-<HeaderSimple />
-
-<Article>
+>
   <header>
     <h1>Using finite state machines for behaviour</h1>
     <aside>May 2021</aside>
@@ -79,12 +72,4 @@
     and have a look at
     <a href="https://www.gdquest.com/tutorial/godot/design-patterns/finite-state-machine/">GDQuest's guide to finite state machines</a>.
   </p>
-</Article>
-
-<Footer />
-
-<style>
-  /* li > p > em:first-of-type::before {
-    width: calc(100% + 70px);
-  } */
-</style>
+</ArticlePage>

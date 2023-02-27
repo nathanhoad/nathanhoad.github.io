@@ -1,15 +1,8 @@
 <script lang="ts">
-  import Meta from "$lib/components/meta.svelte";
-  import HeaderSimple from "$lib/components/header-simple.svelte";
-  import Article from "$lib/components/article.svelte";
-  import Footer from "$lib/components/footer.svelte";
+  import ArticlePage from "$lib/components/article-page.svelte";
 </script>
 
-<Meta path="/uses" title="What I use to make games" description="A list of the things I use to make games" />
-
-<HeaderSimple />
-
-<Article>
+<ArticlePage path="/uses" title="What I use to make games" description="A list of the things I use to make games">
   <header>
     <h1>What I use to make games</h1>
     <aside>January 2023</aside>
@@ -52,6 +45,4 @@
     <li><a href="https://obsproject.com/">OBS Studio</a> to capture game footage</li>
     <li><a href="https://www.blackmagicdesign.com/au/products/davinciresolve/">DaVinci Resolve</a> for editing videos</li>
   </ul>
-</Article>
-
-<Footer />
+</ArticlePage>

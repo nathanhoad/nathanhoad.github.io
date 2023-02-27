@@ -1,27 +1,20 @@
 <script lang="ts">
-  import HeaderSimple from "$lib/components/header-simple.svelte";
-  import Article from "$lib/components/article.svelte";
+  import ArticlePage from "$lib/components/article-page.svelte";
   import Code from "$lib/components/code.svelte";
-  import Footer from "$lib/components/footer.svelte";
 
   import GDM_URL from "./editor.png";
   import ERRORS_URL from "./errors.jpg";
   import STATES_URL from "./states-settings.jpg";
   import EXAMPLE_BALLOON_URL from "./example-balloon.jpg";
   import TUTORIAL_URL from "./tutorial.png";
-  import Meta from "$lib/components/meta.svelte";
 </script>
 
-<Meta
+<ArticlePage
   path="/gdm"
   title="Making a dialogue manager for Godot"
   description="If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager"
   imageUrl={GDM_URL}
-/>
-
-<HeaderSimple />
-
-<Article>
+>
   <header>
     <h1>Making a dialogue manager for Godot</h1>
     <aside>February 2022</aside>
@@ -244,6 +237,4 @@ func edit(object) -> void:
   <p>That's probably all I have to say about the plugin for now.</p>
 
   <p>I'm already using it for all of my dialogue so I'll probably be adding features as I need them.</p>
-</Article>
-
-<Footer />
+</ArticlePage>

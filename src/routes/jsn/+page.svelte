@@ -1,17 +1,10 @@
 <script lang="ts">
-  import Meta from "$lib/components/meta.svelte";
-  import Header from "$lib/components/header-simple.svelte";
-  import Article from "$lib/components/article.svelte";
-  import Footer from "$lib/components/footer.svelte";
+  import ArticlePage from "$lib/components/article-page.svelte";
 
   import EVEREST_URL from "./everest.svg";
 </script>
 
-<Meta path="/jsn" title="Just start now" description="A year from now you'll wish you started today" imageUrl={EVEREST_URL} />
-
-<Header />
-
-<Article>
+<ArticlePage path="/jsn" title="Just start now" description="A year from now you'll wish you started today" imageUrl={EVEREST_URL}>
   <header>
     <h1>Just start now</h1>
     <aside>March 2018</aside>
@@ -48,6 +41,4 @@
   </p>
   <p>As Karen Lamb says, "A year from now you'll wish you started today."</p>
   <p>So, Just start now.</p>
-</Article>
-
-<Footer />
+</ArticlePage>

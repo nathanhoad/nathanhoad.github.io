@@ -1,8 +1,5 @@
 <script lang="ts">
-  import Meta from "$lib/components/meta.svelte";
-  import HeaderSimple from "$lib/components/header-simple.svelte";
-  import Article from "$lib/components/article.svelte";
-  import Footer from "$lib/components/footer.svelte";
+  import ArticlePage from "$lib/components/article-page.svelte";
 
   import DOGS_URL from "./dogs-playing-dungeons-and-dragons.jpg";
   import DAY_1_URL from "./day-1.jpg";
@@ -10,16 +7,12 @@
   import SELF_PORTRAIT_URL from "./self-portrait.jpg";
 </script>
 
-<Meta
+<ArticlePage
   path="/365"
   title="What I Iearned from completing a painting every day for a whole year"
   description="In 2017 I completed a new painting every single day for the whole year and I learnt a few valuable lessons in the process"
   imageUrl={DOGS_URL}
-/>
-
-<HeaderSimple />
-
-<Article>
+>
   <header>
     <h1>What I Iearned from completing a painting every day for a whole year</h1>
     <aside>January 2018</aside>
@@ -130,6 +123,4 @@
   </figure>
 
   <p>Good luck and have fun.</p>
-</Article>
-
-<Footer />
+</ArticlePage>

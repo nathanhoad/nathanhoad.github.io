@@ -1,21 +1,14 @@
 <script lang="ts">
-  import Meta from "$lib/components/meta.svelte";
-  import HeaderSimple from "$lib/components/header-simple.svelte";
-  import Article from "$lib/components/article.svelte";
-  import Footer from "$lib/components/footer.svelte";
+  import ArticlePage from "$lib/components/article-page.svelte";
 
   import TAVERN_URL from "./tavern-lighting.jpg";
 </script>
 
-<Meta
+<ArticlePage
   path="/godot"
   title="Why I'm choosing Godot"
   description="I've used a bunch of game-making tools over the years but Godot is the first one that just feels right to me"
-/>
-
-<HeaderSimple />
-
-<Article>
+>
   <header>
     <h1>Why I'm choosing Godot</h1>
     <aside>September 2020</aside>
@@ -59,6 +52,4 @@
     teach everything you need to get started.
   </p>
   <p>I've used a long list of game-making software over the years but Godot is the first one that feels like home.</p>
-</Article>
-
-<Footer />
+</ArticlePage>

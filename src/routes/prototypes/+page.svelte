@@ -1,22 +1,15 @@
 <script lang="ts">
-  import Meta from "$lib/components/meta.svelte";
-  import HeaderSimple from "$lib/components/header-simple.svelte";
-  import Article from "$lib/components/article.svelte";
-  import Footer from "$lib/components/footer.svelte";
+  import ArticlePage from "$lib/components/article-page.svelte";
 
   import TIMESWEEPER_URL from "./timesweeper.jpg";
   import TRASH_TREASURE_URL from "./trash-treasure.jpg";
 </script>
 
-<Meta
+<ArticlePage
   path="/prototypes"
   title="Publishing prototypes"
   description="Going through the release process is good practice and gives you a sense of completing a project"
-/>
-
-<HeaderSimple />
-
-<Article>
+>
   <header>
     <h1>Publishing prototypes</h1>
     <aside>August 2021</aside>
@@ -98,6 +91,4 @@
     </li>
     <li>You never know when someone will fall in love with your 'throwaway' game.</li>
   </ol>
-</Article>
-
-<Footer />
+</ArticlePage>

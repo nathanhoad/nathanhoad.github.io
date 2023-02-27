@@ -1,23 +1,16 @@
 <script lang="ts">
-  import Meta from "$lib/components/meta.svelte";
-  import HeaderSimple from "$lib/components/header-simple.svelte";
-  import Article from "$lib/components/article.svelte";
-  import Footer from "$lib/components/footer.svelte";
-
+  import ArticlePage from "$lib/components/article-page.svelte";
+  
   import HEADER_URL from "./header.jpg";
   import TOWN_URL from "./town.jpg";
 </script>
 
-<Meta
+<ArticlePage
   path="/hackaton"
   title="Building a hand-painted puzzle game in 48 hours"
   description="We build a winning puzzle game for React Riot"
   imageUrl={HEADER_URL}
-/>
-
-<HeaderSimple />
-
-<Article>
+>
   <header>
     <h1>Building a hand-painted puzzle game in 48 hours</h1>
     <aside>July 2017</aside>
@@ -76,6 +69,4 @@
   <p>
     <a href="https://nathanhoad.itch.io/the-definitely-ending-story">See if you can make it to Granny's House.</a>
   </p>
-</Article>
-
-<Footer />
+</ArticlePage>

@@ -1,22 +1,15 @@
 <script lang="ts">
-  import Meta from "$lib/components/meta.svelte";
-  import Article from "$lib/components/article.svelte";
-  import Footer from "$lib/components/footer.svelte";
-  import HeaderSimple from "$lib/components/header-simple.svelte";
+  import ArticlePage from "$lib/components/article-page.svelte";
 
   import LINKS_AWAKENING_URL from "./links-awakening.jpg";
   import FULL_THROTTLE_URL from "./full-throttle.jpg";
 </script>
 
-<Meta
+<ArticlePage
   path="/puzzles"
   title="What makes a good puzzle?"
   description="I have two simple questions that I ask myself when coming up with puzzles"
-/>
-
-<HeaderSimple />
-
-<Article>
+>
   <header>
     <h1>What makes a good puzzle?</h1>
     <aside>February 2023</aside>
@@ -93,6 +86,4 @@
     players.
   </p>
   <p>You'll know you've found the perfect balance when the player gets a sense of being clever when they figure it out.</p>
-</Article>
-
-<Footer />
+</ArticlePage>
