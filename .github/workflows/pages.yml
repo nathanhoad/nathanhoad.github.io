@@ -34,7 +34,7 @@ jobs:
         needs: build
         environment:
             name: github-pages
-            url: https://nathanhoad.net
+            url: ${{ steps.step_name.outputs.url_output }}
         steps:
             - uses: actions/deploy-pages@v1
               id: deployment
