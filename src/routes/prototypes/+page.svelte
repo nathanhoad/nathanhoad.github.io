@@ -8,7 +8,7 @@
 <ArticlePage
   path="/prototypes"
   title="Publishing prototypes"
-  description="Going through the release process is good practice and gives you a sense of completing a project"
+  description="Going through the release process is good practice and gives you a sense of completing a project."
 >
   <header>
     <h1>Publishing prototypes</h1>

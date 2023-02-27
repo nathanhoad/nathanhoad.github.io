@@ -1,0 +1,1 @@
+import{S as n,i as o,s,o as a}from"../chunks/index.1a1b1f9a.js";function i(t){return a(()=>{typeof document<"u"&&(document.location="https://discord.gg/zwBVQdJchX")}),[]}class c extends n{constructor(e){super(),o(this,e,i,null,s,{})}}export{c as default};

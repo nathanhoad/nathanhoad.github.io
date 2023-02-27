@@ -8,7 +8,7 @@
 <ArticlePage
   path="/hackaton"
   title="Building a hand-painted puzzle game in 48 hours"
-  description="We build a winning puzzle game for React Riot"
+  description="We build a winning puzzle game for React Riot."
   imageUrl={HEADER_URL}
 >
   <header>

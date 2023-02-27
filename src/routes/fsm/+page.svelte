@@ -7,7 +7,7 @@
 <ArticlePage
   path="/fsm"
   title="Using finite state machines for behaviour"
-  description="Finite state machines help break apart the code that powers character behaviour and make it easier to understand and reuse"
+  description="Finite state machines help break apart the code that powers character behaviour and make it easier to understand and reuse."
 >
   <header>
     <h1>Using finite state machines for behaviour</h1>

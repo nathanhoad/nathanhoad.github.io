@@ -8,7 +8,7 @@
 <ArticlePage
   path="/puzzles"
   title="What makes a good puzzle?"
-  description="I have two simple questions that I ask myself when coming up with puzzles"
+  description="I have two simple questions that I ask myself when coming up with puzzles."
 >
   <header>
     <h1>What makes a good puzzle?</h1>

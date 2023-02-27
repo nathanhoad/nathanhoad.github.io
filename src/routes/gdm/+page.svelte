@@ -12,7 +12,7 @@
 <ArticlePage
   path="/gdm"
   title="Making a dialogue manager for Godot"
-  description="If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager"
+  description="If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager."
   imageUrl={GDM_URL}
 >
   <header>

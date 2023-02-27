@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <atom:link href="https://nathanhoad.net/rss.xml" rel="self" type="application/rss+xml" />
+  <title>Nathan Hoad</title>
+  <link>https://nathanhoad.net</link>
+  <description>G'day! I'm Nathan hoad and I'm an independent game developer. Right now I'm working on a classic adventure game about our cat, Coco.</description>
+  <language>en</language>
+  <lastBuildDate>Mon, 27 Feb 2023 21:30:00 +1000</lastBuildDate>
+  <item>
+    <title>What makes a good puzzle?</title>
+    <link>https://nathanhoad.net/puzzles</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/puzzles</guid>
+    <description>I have two simple questions that I ask myself when coming up with puzzles</description>
+    <pubDate>Sun, 12 Feb 2023 22:00:00 +1000</pubDate>
+  </item>
+  <item>
+   <title>What I use to make games</title>
+    <link>https://nathanhoad.net/uses</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/uses</guid>
+    <description>A list of the things I use to make games</description>
+    <pubDate>Sat, 7 Jan 2023 22:00:00 +1000</pubDate>
+  </item>
+  <item>
+    <title>Making a dialogue manager for Godot</title>
+    <link>https://nathanhoad.net/gdm</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/gdm</guid>
+    <description>If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager</description>
+    <pubDate>Tue, 1 Feb 2022 22:00:00 +1000</pubDate>
+  </item>
+  <item>
+   <title>Publishing prototypes</title>
+    <link>https://nathanhoad.net/prototypes</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/prototypes</guid>
+    <description>Going through the release process is good practice and gives you a sense of completing a project.</description>
+    <pubDate>Sat, 7 Aug 2021 22:00:00 +1000</pubDate>
+  </item>
+  <item>
+   <title>Use finite state machines for NPC behaviour</title>
+    <link>https://nathanhoad.net/fsm</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/fsm</guid>
+    <description>Finite state machines help break apart the code that powers character behaviour and make it easier to understand and reuse</description>
+    <pubDate>Sat, 29 May 2021 22:00:00 +1000</pubDate>
+  </item>
+  <item>
+    <title>Why I'm choosing Godot</title>
+    <link>https://nathanhoad.net/godot</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/godot</guid>
+    <description>I've used a bunch of game-making tools over the years but Godot is the first one that just feels right to me.</description>
+    <pubDate>Sat, 26 Sep 2020 22:00:00 +1000</pubDate>
+  </item>
+  <item>
+   <title>Just start now</title>
+    <link>https://nathanhoad.net/jsn</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/jsn</guid>
+    <description>A year from now you'll wish you started today</description>
+    <pubDate>Sat, 3 Mar 2018 22:00:00 +1000</pubDate>
+  </item>
+  <item>
+    <title>What I Iearned from completing a painting every day for a whole year</title>
+    <link>https://nathanhoad.net/365</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/365</guid>
+    <description>In 2017 I completed a new painting every single day for the whole year and I learnt a few valuable lessons in the process</description>
+    <pubDate>Mon, 1 Jan 2018 22:00:00 +1000</pubDate>
+  </item>
+  <item>
+    <title>Making a hand-painted puzzle game in 48 hours</title>
+    <link>https://nathanhoad.net/hackathon</link>
+    <guid isPermaLink='true'>https://nathanhoad.net/hackathon</guid>
+    <description>We build a winning puzzle game for React Riot.</description>
+    <pubDate>Sat, 29 Jul 2017 22:00:00 +1000</pubDate>
+  </item>
+</channel>
+</rss>

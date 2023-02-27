@@ -10,7 +10,7 @@
 <ArticlePage
   path="/365"
   title="What I Iearned from completing a painting every day for a whole year"
-  description="In 2017 I completed a new painting every single day for the whole year and I learnt a few valuable lessons in the process"
+  description="In 2017 I completed a new painting every single day for the whole year and I learnt a few valuable lessons in the process."
   imageUrl={DOGS_URL}
 >
   <header>

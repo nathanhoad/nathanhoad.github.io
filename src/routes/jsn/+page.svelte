@@ -4,7 +4,7 @@
   import EVEREST_URL from "./everest.svg";
 </script>
 
-<ArticlePage path="/jsn" title="Just start now" description="A year from now you'll wish you started today" imageUrl={EVEREST_URL}>
+<ArticlePage path="/jsn" title="Just start now" description="A year from now you'll wish you started today." imageUrl={EVEREST_URL}>
   <header>
     <h1>Just start now</h1>
     <aside>March 2018</aside>

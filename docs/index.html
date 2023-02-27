@@ -20,16 +20,17 @@
       }
     </style>
     <meta http-equiv="content-security-policy" content="">
-		<link href="./app/immutable/assets/_page-ef5b4dfc.css" rel="stylesheet">
-		<link href="./app/immutable/assets/footer-f59d3923.css" rel="stylesheet">
-		<link rel="modulepreload" href="./app/immutable/start-d015f9dc.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/index-1cf7e9b2.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/singletons-28808700.js">
-		<link rel="modulepreload" href="./app/immutable/components/layout.svelte-4ca07a18.js">
-		<link rel="modulepreload" href="./app/immutable/modules/pages/_layout.ts-fa3c4266.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/_layout-9a8b0c19.js">
-		<link rel="modulepreload" href="./app/immutable/components/pages/_page.svelte-4a7f093f.js">
-		<link rel="modulepreload" href="./app/immutable/chunks/footer-7cdefdb4.js"><title>Nathan Hoad</title><!-- HEAD_svelte-1jxn8yo_START --><meta property="og:title" content="Nathan Hoad"><meta name="description" content="G'day! I'm Nathan hoad and I'm an independent game developer. Right now I'm working on a classic adventure game about our cat, Coco."><meta property="og:description" content="G'day! I'm Nathan hoad and I'm an independent game developer. Right now I'm working on a classic adventure game about our cat, Coco."><meta property="og:image" content="https://nathanhoad.net/share.jpg"><meta property="og:url" content="https://nathanhoad.net/"><link type="image/png" href="/favicon.png" rel="icon"><meta name="author" content="Nathan Hoad"><meta name="verify-v1" content="FJjra037EqYRGo8w0Atq5BHkBi8B+MPZSD+0jKQebLs="><meta name="p:domain_verify" content="5c8fe00840c14d6c92865fc017137b69"><!-- HEAD_svelte-1jxn8yo_END -->
+		<link href="./app/immutable/assets/_page.6a2009fe.css" rel="stylesheet">
+		<link href="./app/immutable/assets/footer.035446c4.css" rel="stylesheet">
+		<link rel="modulepreload" href="./app/immutable/entry/start.1203dda5.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/index.1a1b1f9a.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/singletons.6620fcdd.js">
+		<link rel="modulepreload" href="./app/immutable/entry/app.69970a2f.js">
+		<link rel="modulepreload" href="./app/immutable/entry/layout.svelte.aa6274df.js">
+		<link rel="modulepreload" href="./app/immutable/entry/_layout.ts.984db11e.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="./app/immutable/entry/_page.svelte.262a054c.js">
+		<link rel="modulepreload" href="./app/immutable/chunks/footer.10e42c4e.js"><title>Nathan Hoad</title><!-- HEAD_svelte-1jxn8yo_START --><meta property="og:title" content="Nathan Hoad"><meta name="description" content="G'day! I'm Nathan hoad and I'm an independent game developer. Right now I'm working on a classic adventure game about our cat, Coco."><meta property="og:description" content="G'day! I'm Nathan hoad and I'm an independent game developer. Right now I'm working on a classic adventure game about our cat, Coco."><meta property="og:image" content="https://nathanhoad.net/share.jpg"><meta property="og:url" content="https://nathanhoad.net/"><link type="image/png" href="/favicon.png" rel="icon"><meta name="author" content="Nathan Hoad"><meta name="verify-v1" content="FJjra037EqYRGo8w0Atq5BHkBi8B+MPZSD+0jKQebLs="><meta name="p:domain_verify" content="5c8fe00840c14d6c92865fc017137b69"><!-- HEAD_svelte-1jxn8yo_END -->
   </head>
 
   <body data-sveltekit-preload-data="hover">
@@ -97,27 +98,35 @@
     <li class="svelte-1sbn5no"><a href="/discord" class="svelte-1sbn5no">Discord</a></li>
     <li class="svelte-1sbn5no"><a href="https://mastodon.social/@nathanhoad" class="svelte-1sbn5no">Mastodon</a></li>
     <li class="svelte-1sbn5no"><a href="https://github.com/nathanhoad" class="svelte-1sbn5no">GitHub</a></li>
-    <li class="svelte-1sbn5no"><a href="https://twitter.com/nathanhoad" class="svelte-1sbn5no">Twitter</a></li></ul>
+    <li class="svelte-1sbn5no"><a href="/rss.xml" class="svelte-1sbn5no">RSS</a></li></ul>
   <aside class="svelte-1sbn5no">© Nathan Hoad</aside>
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="1sagkyl">
-			import { start } from "./app/immutable/start-d015f9dc.js";
+			
+			<script>
+				{
+					__sveltekit_1wmg7h9 = {
+						env: {},
+						assets: new URL(".", location.href).pathname.replace(/^\/$/, ''),
+						element: document.currentScript.parentElement
+					};
 
-			start({
-				assets: "",
-				env: {},
-				target: document.querySelector('[data-sveltekit-hydrate="1sagkyl"]').parentNode,
-				version: "1676461846278",
-				hydrate: {
-					node_ids: [0, 2],
-					data: [null,null],
-					form: null,
-					error: null
+					const data = [null,null];
+
+					Promise.all([
+						import("./app/immutable/entry/start.1203dda5.js"),
+						import("./app/immutable/entry/app.69970a2f.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_1wmg7h9.element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
 				}
-			});
-		</script>
-	</div>
+			</script>
+		</div>
   </body>
 </html>

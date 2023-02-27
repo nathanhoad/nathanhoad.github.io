@@ -11,7 +11,7 @@
     <li><a href="/discord">Discord</a></li>
     <li><a href="https://mastodon.social/@nathanhoad">Mastodon</a></li>
     <li><a href="https://github.com/nathanhoad">GitHub</a></li>
-    <li><a href="https://twitter.com/nathanhoad">Twitter</a></li>
+    <li><a href="/rss.xml">RSS</a></li>
   </ul>
   <aside>&copy; Nathan Hoad</aside>
 </footer>

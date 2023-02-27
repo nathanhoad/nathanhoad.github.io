@@ -7,7 +7,7 @@
 <ArticlePage
   path="/godot"
   title="Why I'm choosing Godot"
-  description="I've used a bunch of game-making tools over the years but Godot is the first one that just feels right to me"
+  description="I've used a bunch of game-making tools over the years but Godot is the first one that just feels right to me."
 >
   <header>
     <h1>Why I'm choosing Godot</h1>
