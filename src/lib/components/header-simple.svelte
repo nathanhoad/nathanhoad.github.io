@@ -47,11 +47,13 @@
     opacity: 0.5;
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1280px) {
     header {
       max-width: calc(100% - 30px);
     }
+  }
 
+  @media screen and (max-width: 700px) {
     strong a {
       padding-left: 0;
       background: none;
