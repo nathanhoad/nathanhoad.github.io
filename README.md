@@ -10,6 +10,4 @@ All articles are just [SvelteKit](https://kit.svelte.dev/) pages.
 
 ## Publishing to GitHub pages
 
-1. Run `npm run build`
-2. Commit any changes
-3. Push to GitHub.
+Deployment is handled by [GitHub Actions](.github/workflows/pages.yml) so the site will redeploy with each push to `main`.
