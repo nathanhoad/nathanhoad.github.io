@@ -18,8 +18,8 @@
   }
   strong {
     color: #555;
-    font-family: "Roboto Slab", serif;
-    font-weight: 900;
+    font-family: var(--font-sans);
+    font-weight: 700;
     font-size: 1.5rem;
     line-height: 3rem;
     padding: 0;

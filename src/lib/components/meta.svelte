@@ -3,6 +3,8 @@
   export let description: string;
   export let path: string;
   export let imageUrl: string = "https://nathanhoad.net/share.jpg";
+
+  if (!imageUrl.startsWith("http")) imageUrl = `https://nathanhoad.net${imageUrl}`;
 </script>
 
 <svelte:head>

@@ -69,6 +69,10 @@
   <h2>Articles</h2>
   <ul class="articles">
     <li>
+      <a href="/trackers">No more trackers</a>
+      <span>March 2023</span>
+    </li>
+    <li>
       <a href="/puzzles">What makes a good puzzle?</a>
       <span>February 2023</span>
     </li>
@@ -114,16 +118,16 @@
     max-width: 700px;
     margin: auto;
     padding: 1rem 0;
-    font-family: "Roboto Slab", serif;
+    font-family: var(--font-serif);
     font-size: 1.6rem;
-    line-height: 2.4rem;
+    line-height: 2.2rem;
   }
 
   h2 {
     font-size: 1.2rem;
     line-height: 2rem;
     letter-spacing: 0.2rem;
-    font-family: "Noto Sans", sans-serif;
+    font-family:var(--font-sans);
     text-transform: uppercase;
     color: #888;
     margin: 0 0 1rem 0;
@@ -156,7 +160,7 @@
     display: inline-block;
     text-decoration: none;
     color: white;
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--font-sans);
     font-size: 1.2rem;
     line-height: 1.8rem;
   }
@@ -186,7 +190,7 @@
   .articles a {
     text-decoration: none;
     display: block;
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--font-sans);
     font-weight: bold;
     font-size: 1.6rem;
     line-height: 2.4rem;
@@ -199,7 +203,7 @@
   .articles span {
     font-size: 1.1rem;
     color: #757575;
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--font-sans);
   }
 
   @media screen and (max-width: 960px) {

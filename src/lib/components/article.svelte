@@ -51,12 +51,12 @@
   article :global(p),
   article :global(ol),
   article :global(ul) {
-    margin: 1rem auto 1.5rem auto;
+    margin: 0 auto 1rem auto;
     max-width: 700px;
     font-family: var(--font-serif);
-    font-size: 1.3rem;
-    line-height: 2.2rem;
-    color: #333;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    color: #222;
   }
 
   article :global(img) {
@@ -72,7 +72,7 @@
   }
 
   article :global(a) {
-    color: #333;
+    color: #222;
   }
 
   article :global(p code) {
@@ -179,7 +179,7 @@
   }
   article > :global(ol li),
   article > :global(ul li) {
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
   }
 
   article :global(p em) {

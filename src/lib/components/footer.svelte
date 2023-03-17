@@ -27,7 +27,7 @@
     max-width: 600px;
     margin: auto;
     text-align: center;
-    font-family: "Roboto Slab", serif;
+    font-family: var(--font-serif);
     font-size: 1.4rem;
     line-height: 2.2rem;
     color: #ddd;

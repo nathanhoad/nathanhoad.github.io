@@ -28,9 +28,9 @@
   }
   h1 {
     color: white;
-    font-family: "Roboto Slab", serif;
-    font-weight: 900;
-    font-size: 3rem;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 2.5rem;
     line-height: 3rem;
     padding: 3rem 0 1rem 0;
     margin: 0;
