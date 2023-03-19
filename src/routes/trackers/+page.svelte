@@ -5,7 +5,7 @@
   import SHARE_URL from "./share.jpg";
 </script>
 
-<ArticlePage path="/addons" title="No more trackers" description="This site now loads zero external resources." imageUrl={SHARE_URL}>
+<ArticlePage path="/trackers" title="No more trackers" description="This site now loads zero external resources." imageUrl={SHARE_URL}>
   <header>
     <img src={COOKIES_URL} alt="A robot eating cookies" width="800" height="800" />
     <h1>No more trackers</h1>

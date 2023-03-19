@@ -1,6 +1,7 @@
 <script lang="ts">
   import Meta from "$lib/components/meta.svelte";
   import Header from "$lib/components/header-large.svelte";
+  import Articles from "$lib/components/articles.svelte";
   import Footer from "$lib/components/footer.svelte";
 </script>
 
@@ -67,48 +68,7 @@
 
 <section>
   <h2>Articles</h2>
-  <ul class="articles">
-    <li>
-      <a href="/trackers">No more trackers</a>
-      <span>March 2023</span>
-    </li>
-    <li>
-      <a href="/puzzles">What makes a good puzzle?</a>
-      <span>February 2023</span>
-    </li>
-    <li>
-      <a href="/uses">What I use to make games</a>
-      <span>January 2023</span>
-    </li>
-    <li>
-      <a href="/gdm">Making a dialogue manager for Godot</a>
-      <span>Febrary 2022</span>
-    </li>
-    <li>
-      <a href="/prototypes">Publishing prototypes</a>
-      <span>August 2021</span>
-    </li>
-    <li>
-      <a href="/fsm">Use finite state machines for NPC behaviour</a>
-      <span>May 2021</span>
-    </li>
-    <li>
-      <a href="/godot">Why I'm choosing Godot</a>
-      <span>September 2020</span>
-    </li>
-    <li>
-      <a href="/jsn">Just start now</a>
-      <span>March 2018</span>
-    </li>
-    <li>
-      <a href="/365">What I Iearned from completing a painting every day for a whole year</a>
-      <span>January 2018</span>
-    </li>
-    <li>
-      <a href="/hackathon">Making a hand-painted puzzle game in 48 hours</a>
-      <span>July 2017</span>
-    </li>
-  </ul>
+  <Articles />
 </section>
 
 <Footer />
@@ -175,35 +135,6 @@
   .projects a span {
     display: block;
     padding: 0.8rem 1rem;
-  }
-
-  .articles {
-    list-style: none;
-    padding: 1rem 0 0 0;
-    margin: 0;
-  }
-
-  .articles li {
-    margin-bottom: 1.8rem;
-  }
-
-  .articles a {
-    text-decoration: none;
-    display: block;
-    font-family: var(--font-sans);
-    font-weight: bold;
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-  }
-
-  .articles a:hover {
-    text-decoration: underline;
-  }
-
-  .articles span {
-    font-size: 1.1rem;
-    color: #757575;
-    font-family: var(--font-sans);
   }
 
   @media screen and (max-width: 960px) {

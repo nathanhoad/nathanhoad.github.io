@@ -1,0 +1,62 @@
+[
+  {
+    "title": "No more trackers",
+    "path": "/trackers",
+    "description": "This site no longer makes any external requests.",
+    "publishedAt": "2023-03-18"
+  },
+  {
+    "title": "What makes a good puzzle?",
+    "path": "/puzzles",
+    "description": "I have two simple questions that I ask myself when coming up with puzzles.",
+    "publishedAt": "2023-02-12"
+  },
+  {
+    "title": "What I use to make games",
+    "path": "/uses",
+    "description": "A list of the things I use to make games.",
+    "publishedAt": "2023-01-07"
+  },
+  {
+    "title": "Making a dialogue manager for Godot",
+    "path": "/gdm",
+    "description": "If you're making a Godot game and need some non-linear dialogue then have a look at Dialogue Manager.",
+    "publishedAt": "2022-02-01"
+  },
+  {
+    "title": "Publishing prototypes",
+    "path": "/prototypes",
+    "description": "Going through the release process is good practice and gives you a sense of completing a project.",
+    "publishedAt": "2021-08-07"
+  },
+  {
+    "title": "Use finite state machines for NPC behaviour",
+    "path": "/fsm",
+    "description": "Finite state machines help break apart the code that powers character behaviour and make it easier to understand and reuse.",
+    "publishedAt": "2021-05-29"
+  },
+  {
+    "title": "Why I'm choosing Godot",
+    "path": "/godot",
+    "description": "I've used a bunch of game-making tools over the years but Godot is the first one that just feels right to me.",
+    "publishedAt": "2020-09-26"
+  },
+  {
+    "title": "Just start now",
+    "path": "/jsn",
+    "description": "A year from now you'll wish you started today.",
+    "publishedAt": "2018-03-03"
+  },
+  {
+    "title": "What I Iearned from completing a painting every day for a whole year",
+    "path": "/365",
+    "description": "In 2017 I completed a new painting every single day for the whole year and I learnt a few valuable lessons in the process.",
+    "publishedAt": "2018-01-01"
+  },
+  {
+    "title": "Making a hand-painted puzzle game in 48 hours",
+    "path": "/hackathon",
+    "description": "We build a winning puzzle game for React Riot.",
+    "publishedAt": "2017-07-29"
+  }
+]
