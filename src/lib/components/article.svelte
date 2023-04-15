@@ -44,7 +44,7 @@
     font-family: var(--font-sans);
     font-size: 1.6rem;
     line-height: 2.2rem;
-    margin: 3rem auto 2rem auto;
+    margin: 3rem auto 0.7rem auto;
     max-width: 700px;
   }
 

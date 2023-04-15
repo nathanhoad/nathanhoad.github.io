@@ -1,5 +1,11 @@
 [
   {
+    "title": "Godot Editor addon considerations",
+    "path": "/addons",
+    "description": "I've made a few Godot addons so here's a list of general things I think about when building them.",
+    "publishedAt": "2023-04-15"
+  },
+  {
     "title": "No more trackers",
     "path": "/trackers",
     "description": "This site no longer makes any external requests.",
