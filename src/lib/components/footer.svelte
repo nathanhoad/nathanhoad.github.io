@@ -6,6 +6,8 @@
     or <a href="/discord">join my Discord</a>.
   </p>
 
+  <p><a href="https://patreon.com/nathanhoad">Subscribe to my Patreon</a> or <a href="https://ko-fi.com/nathanhoad">buy me a coffee</a>.</p>
+
   <ul>
     <li><a href="https://youtube.com/@nathan_hoad">YouTube</a></li>
     <li><a href="/discord">Discord</a></li>
@@ -25,7 +27,7 @@
 
   p {
     max-width: 600px;
-    margin: auto;
+    margin: 0 auto 2rem;
     text-align: center;
     font-family: var(--font-serif);
     font-size: 1.4rem;
