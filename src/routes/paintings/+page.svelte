@@ -1,5 +1,8 @@
 <script>
+  import Meta from "$lib/components/meta.svelte";
   import Footer from "$lib/components/footer.svelte";
+
+  import SHARE_URL from "./share.jpg";
 
   import SELF_PORTRAIT_URL from "./self-portrait.jpg";
   import ARCADE_URL from "./arcade.jpg";
@@ -152,7 +155,7 @@
     RITOS_URL,
 
     WEREWOLF_URL,
-    
+
     ROGUE_URL,
     SHARK_URL,
     SLAM_URL,
@@ -171,6 +174,8 @@
 
   const BIG_IMAGES = [DND_URL, EMU_URL, KANGAROOS_URL, JELLYFISH_URL, DROPBEAR_URL, GIFT_URL, WEREWOLF_URL];
 </script>
+
+<Meta path="/paintings" title="Paintings by Nathan Hoad" description="A selection of works produced by Nathan Hoad" imageUrl={SHARE_URL} />
 
 <main>
   <header>
