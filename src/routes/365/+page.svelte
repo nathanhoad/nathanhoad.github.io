@@ -24,7 +24,7 @@
   </figure>
 
   <p>
-    On January 1st, 2017 I decided to start one of those 'project365' challenges where you take a photo or create some piece of art every
+    On January 1st, 2017 I decided to start one of those 'project365' challenges where you take a photo or <a href="/paintings">create some piece of art</a> every
     day for a sequential 365 days.
   </p>
   <p>
