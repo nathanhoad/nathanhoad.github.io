@@ -6,7 +6,7 @@
     or <a href="/discord">join my Discord</a>.
   </p>
 
-  <p><a href="https://patreon.com/nathanhoad">Subscribe to my Patreon</a> or <a href="https://ko-fi.com/nathanhoad">buy me a coffee</a>.</p>
+  <p><a href="https://patreon.com/nathanhoad">Subscribe to my Patreon</a>.</p>
 
   <ul>
     <li><a href="https://youtube.com/@nathan_hoad">YouTube</a></li>
